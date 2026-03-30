@@ -1,0 +1,9 @@
+docker-compose build api-gateway
+docker-compose build crm-service
+docker-compose build vehicle-service
+docker-compose build finance-service
+docker-compose build deal-service
+docker-compose build partner-service
+docker-compose build lead-service
+docker-compose build analytics-service
+docker-compose up -d

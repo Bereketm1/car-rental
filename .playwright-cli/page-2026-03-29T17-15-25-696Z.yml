@@ -1,0 +1,113 @@
+- generic [ref=e3]:
+  - complementary [ref=e4]:
+    - generic [ref=e5]:
+      - generic [ref=e6]: M
+      - generic [ref=e7]:
+        - paragraph [ref=e8]: Vehicle Financing Platform
+        - generic [ref=e9]: MerkatoMotors
+    - generic [ref=e10]:
+      - generic [ref=e11]: AU
+      - generic [ref=e12]:
+        - generic [ref=e13]: Admin User
+        - generic [ref=e14]: admin
+    - navigation [ref=e15]:
+      - generic [ref=e16]:
+        - generic [ref=e17]: Overview
+        - link "Dashboard Executive overview" [ref=e18] [cursor=pointer]:
+          - /url: /dashboard
+          - img [ref=e20]
+          - generic [ref=e25]:
+            - generic [ref=e26]: Dashboard
+            - generic [ref=e27]: Executive overview
+        - link "Analytics Commercial performance" [ref=e28] [cursor=pointer]:
+          - /url: /analytics
+          - img [ref=e30]
+          - generic [ref=e32]:
+            - generic [ref=e33]: Analytics
+            - generic [ref=e34]: Commercial performance
+        - link "Platform health Services and audit trail" [ref=e35] [cursor=pointer]:
+          - /url: /health
+          - img [ref=e37]
+          - generic [ref=e39]:
+            - generic [ref=e40]: Platform health
+            - generic [ref=e41]: Services and audit trail
+      - generic [ref=e42]:
+        - generic [ref=e43]: Operations
+        - link "Customer CRM Registration, interests, loans" [ref=e44] [cursor=pointer]:
+          - /url: /customers
+          - img [ref=e46]
+          - generic [ref=e50]:
+            - generic [ref=e51]: Customer CRM
+            - generic [ref=e52]: Registration, interests, loans
+        - link "Supplier portal Inventory and supplier records" [ref=e53] [cursor=pointer]:
+          - /url: /vehicles
+          - img [ref=e55]
+          - generic [ref=e58]:
+            - generic [ref=e59]: Supplier portal
+            - generic [ref=e60]: Inventory and supplier records
+        - link "Deal flow Selection through purchase" [ref=e61] [cursor=pointer]:
+          - /url: /deals
+          - img [ref=e63]
+          - generic [ref=e66]:
+            - generic [ref=e67]: Deal flow
+            - generic [ref=e68]: Selection through purchase
+        - link "Finance portal Reviews and institutions" [ref=e69] [cursor=pointer]:
+          - /url: /finance
+          - img [ref=e71]
+          - generic [ref=e75]:
+            - generic [ref=e76]: Finance portal
+            - generic [ref=e77]: Reviews and institutions
+      - generic [ref=e78]:
+        - generic [ref=e79]: Growth
+        - link "Partnerships Agreements and commissions" [ref=e80] [cursor=pointer]:
+          - /url: /partners
+          - img [ref=e82]
+          - generic [ref=e87]:
+            - generic [ref=e88]: Partnerships
+            - generic [ref=e89]: Agreements and commissions
+        - link "Marketing Leads, campaigns, referrals" [ref=e90] [cursor=pointer]:
+          - /url: /marketing
+          - img [ref=e92]
+          - generic [ref=e95]:
+            - generic [ref=e96]: Marketing
+            - generic [ref=e97]: Leads, campaigns, referrals
+        - link "Settings Workspace preferences and controls" [ref=e98] [cursor=pointer]:
+          - /url: /settings
+          - img [ref=e100]
+          - generic [ref=e103]:
+            - generic [ref=e104]: Settings
+            - generic [ref=e105]: Workspace preferences and controls
+    - generic [ref=e106]:
+      - generic [ref=e107]:
+        - img [ref=e108]
+        - generic [ref=e111]: System status
+      - generic [ref=e112]: Stable
+      - paragraph [ref=e113]: Customer, vehicle, finance, partner, and reporting workflows are available in one workspace.
+      - generic [ref=e114]: Online
+  - generic [ref=e116]:
+    - banner [ref=e117]:
+      - generic [ref=e118]:
+        - paragraph [ref=e119]: Vehicle Financing Operations
+        - heading "Dashboard" [level=1] [ref=e120]
+        - paragraph [ref=e121]: Executive overview
+      - generic [ref=e122]:
+        - generic [ref=e123]:
+          - generic [ref=e124]:
+            - img [ref=e125]
+            - text: Ethiopian financing market
+          - generic [ref=e128]:
+            - img [ref=e129]
+            - text: Quick actions
+        - generic [ref=e131]:
+          - img [ref=e132]
+          - textbox "Search customers, vehicles, deals" [ref=e135]
+        - button "Toggle theme" [ref=e136] [cursor=pointer]:
+          - img [ref=e137]
+        - button "Toggle notifications" [ref=e140] [cursor=pointer]:
+          - img [ref=e141]
+        - generic [ref=e144]:
+          - generic [ref=e145]: AU
+          - generic [ref=e146]:
+            - generic [ref=e147]: Admin User
+            - generic [ref=e148]: admin
+    - main [ref=e149]

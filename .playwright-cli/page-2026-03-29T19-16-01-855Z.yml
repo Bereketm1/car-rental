@@ -1,0 +1,487 @@
+- generic [ref=e3]:
+  - complementary [ref=e4]:
+    - generic [ref=e5]:
+      - generic [ref=e6]: M
+      - generic [ref=e7]:
+        - paragraph [ref=e8]: Vehicle Financing Platform
+        - generic [ref=e9]: MerkatoMotors
+    - generic [ref=e10]:
+      - generic [ref=e11]: AU
+      - generic [ref=e12]:
+        - generic [ref=e13]: Admin User
+        - generic [ref=e14]: admin
+    - navigation [ref=e15]:
+      - generic [ref=e16]:
+        - generic [ref=e17]: Overview
+        - link "Dashboard" [ref=e18] [cursor=pointer]:
+          - /url: /dashboard
+          - img [ref=e20]
+          - generic [ref=e25]: Dashboard
+        - link "Analytics" [ref=e26] [cursor=pointer]:
+          - /url: /analytics
+          - img [ref=e28]
+          - generic [ref=e30]: Analytics
+        - link "Platform health" [ref=e31] [cursor=pointer]:
+          - /url: /health
+          - img [ref=e33]
+          - generic [ref=e35]: Platform health
+      - generic [ref=e36]:
+        - generic [ref=e37]: Operations
+        - link "Customer CRM" [ref=e38] [cursor=pointer]:
+          - /url: /customers
+          - img [ref=e40]
+          - generic [ref=e44]: Customer CRM
+        - link "Supplier portal" [ref=e45] [cursor=pointer]:
+          - /url: /vehicles
+          - img [ref=e47]
+          - generic [ref=e50]: Supplier portal
+        - link "Deal flow" [ref=e51] [cursor=pointer]:
+          - /url: /deals
+          - img [ref=e53]
+          - generic [ref=e56]: Deal flow
+        - link "Finance portal" [ref=e57] [cursor=pointer]:
+          - /url: /finance
+          - img [ref=e59]
+          - generic [ref=e63]: Finance portal
+      - generic [ref=e64]:
+        - generic [ref=e65]: Growth
+        - link "Partnerships" [ref=e66] [cursor=pointer]:
+          - /url: /partners
+          - img [ref=e68]
+          - generic [ref=e73]: Partnerships
+        - link "Marketing" [ref=e74] [cursor=pointer]:
+          - /url: /marketing
+          - img [ref=e76]
+          - generic [ref=e79]: Marketing
+        - link "Settings" [ref=e80] [cursor=pointer]:
+          - /url: /settings
+          - img [ref=e82]
+          - generic [ref=e85]: Settings
+  - generic [ref=e86]:
+    - banner [ref=e87]:
+      - generic [ref=e88]:
+        - paragraph [ref=e89]: Vehicle Financing Operations
+        - heading "Supplier portal" [level=1] [ref=e90]
+        - paragraph [ref=e91]: Inventory and supplier records
+      - generic [ref=e92]:
+        - generic [ref=e93]:
+          - img [ref=e94]
+          - textbox "Search customers, vehicles, deals" [ref=e97]
+        - button "Toggle theme" [ref=e98] [cursor=pointer]:
+          - img [ref=e99]
+        - button "Toggle notifications" [ref=e102] [cursor=pointer]:
+          - img [ref=e103]
+        - generic [ref=e106]:
+          - generic [ref=e107]: AU
+          - generic [ref=e108]:
+            - generic [ref=e109]: Admin User
+            - generic [ref=e110]: admin
+    - main [ref=e111]:
+      - generic [ref=e113]:
+        - generic [ref=e114]:
+          - generic [ref=e128]:
+            - heading "Vehicle supplier portal" [level=1] [ref=e129]
+            - paragraph [ref=e130]: Register suppliers, maintain inventory quality, route matched buyer demand, and keep the marketplace stocked with finance-ready vehicles.
+          - generic [ref=e131]:
+            - generic [ref=e132]: Supplier onboarding
+            - generic [ref=e133]: Inventory management
+            - generic [ref=e134]: Lead routing
+        - generic [ref=e117]:
+          - article [ref=e135]:
+            - generic [ref=e136]:
+              - img [ref=e138]
+              - generic [ref=e141]: Vehicles listed
+            - generic [ref=e142]: "28"
+            - paragraph [ref=e143]: Across all active suppliers
+          - article [ref=e144]:
+            - generic [ref=e145]:
+              - img [ref=e147]
+              - generic [ref=e150]: Available stock
+            - generic [ref=e151]: "28"
+            - paragraph [ref=e152]: Units ready for customer matching
+          - article [ref=e153]:
+            - generic [ref=e154]:
+              - img [ref=e156]
+              - generic [ref=e160]: Supplier leads
+            - generic [ref=e161]: "12"
+            - paragraph [ref=e162]: Customer inquiries matched to supplier inventory
+          - article [ref=e163]:
+            - generic [ref=e164]:
+              - img [ref=e166]
+              - generic [ref=e170]: Suppliers
+            - generic [ref=e171]: "4"
+            - paragraph [ref=e172]: Partner businesses registered in the portal
+        - generic [ref=e123]:
+          - button "Inventory command" [ref=e173] [cursor=pointer]
+          - button "Supplier network" [ref=e174] [cursor=pointer]
+          - button "Lead desk" [active] [ref=e175] [cursor=pointer]
+        - generic [ref=e176]:
+          - generic [ref=e177]:
+            - generic [ref=e179]:
+              - generic [ref=e180]: Supplier lead routing
+              - generic [ref=e181]: Searchable operational tables for ongoing marketplace supply management.
+            - generic [ref=e182]:
+              - generic [ref=e183]:
+                - generic [ref=e185]:
+                  - img [ref=e186]
+                  - textbox "Search leads by name, interest, source, or status" [ref=e821]
+                - generic [ref=e190]: Showing 20 records
+              - table [ref=e192]:
+                - rowgroup [ref=e193]:
+                  - row "Lead Vehicle interest Matched supplier Status Actions" [ref=e822]:
+                    - columnheader "Lead" [ref=e823] [cursor=pointer]:
+                      - generic [ref=e824]: Lead
+                    - columnheader "Vehicle interest" [ref=e825] [cursor=pointer]:
+                      - generic [ref=e826]: Vehicle interest
+                    - columnheader "Matched supplier" [ref=e827]:
+                      - generic [ref=e828]: Matched supplier
+                    - columnheader "Status" [ref=e201]:
+                      - generic [ref=e202]: Status
+                    - columnheader "Actions" [ref=e205]:
+                      - generic [ref=e206]: Actions
+                - rowgroup [ref=e207]:
+                  - row "Demo Lead 1774811124766 lead-1774811124766@merkatomotors.com � +251944000004 Toyota Corolla Demo 1774811124766 Demo Supplier 1774811124766 +3 more Qualified Contacted Qualified" [ref=e829]:
+                    - cell "Demo Lead 1774811124766 lead-1774811124766@merkatomotors.com � +251944000004" [ref=e830]:
+                      - generic [ref=e831]:
+                        - generic [ref=e832]: Demo Lead 1774811124766
+                        - generic [ref=e833]: lead-1774811124766@merkatomotors.com � +251944000004
+                    - cell "Toyota Corolla Demo 1774811124766" [ref=e834]
+                    - cell "Demo Supplier 1774811124766 +3 more" [ref=e835]
+                    - cell "Qualified" [ref=e836]:
+                      - generic [ref=e837]: Qualified
+                    - cell "Contacted Qualified" [ref=e839]:
+                      - generic [ref=e840]:
+                        - button "Contacted" [ref=e841] [cursor=pointer]
+                        - button "Qualified" [ref=e842] [cursor=pointer]
+                  - row "Demo Lead 1774810965430 lead-1774810965430@merkatomotors.com � +251944000004 Toyota Corolla Demo 1774810965430 Demo Supplier 1774810965430 +3 more Qualified Contacted Qualified" [ref=e843]:
+                    - cell "Demo Lead 1774810965430 lead-1774810965430@merkatomotors.com � +251944000004" [ref=e844]:
+                      - generic [ref=e845]:
+                        - generic [ref=e846]: Demo Lead 1774810965430
+                        - generic [ref=e847]: lead-1774810965430@merkatomotors.com � +251944000004
+                    - cell "Toyota Corolla Demo 1774810965430" [ref=e848]
+                    - cell "Demo Supplier 1774810965430 +3 more" [ref=e849]
+                    - cell "Qualified" [ref=e850]:
+                      - generic [ref=e851]: Qualified
+                    - cell "Contacted Qualified" [ref=e853]:
+                      - generic [ref=e854]:
+                        - button "Contacted" [ref=e855] [cursor=pointer]
+                        - button "Qualified" [ref=e856] [cursor=pointer]
+                  - row "Demo Lead 1774810846604 lead-1774810846604@merkatomotors.com � +251944000004 Toyota Corolla Demo 1774810846604 Demo Supplier 1774810846604 +3 more Qualified Contacted Qualified" [ref=e857]:
+                    - cell "Demo Lead 1774810846604 lead-1774810846604@merkatomotors.com � +251944000004" [ref=e858]:
+                      - generic [ref=e859]:
+                        - generic [ref=e860]: Demo Lead 1774810846604
+                        - generic [ref=e861]: lead-1774810846604@merkatomotors.com � +251944000004
+                    - cell "Toyota Corolla Demo 1774810846604" [ref=e862]
+                    - cell "Demo Supplier 1774810846604 +3 more" [ref=e863]
+                    - cell "Qualified" [ref=e864]:
+                      - generic [ref=e865]: Qualified
+                    - cell "Contacted Qualified" [ref=e867]:
+                      - generic [ref=e868]:
+                        - button "Contacted" [ref=e869] [cursor=pointer]
+                        - button "Qualified" [ref=e870] [cursor=pointer]
+                  - row "Smoke Lead 1774799890 lead.1774799890@example.com � +251944444444 Toyota Corolla Demo Supplier 1774811124766 +3 more Qualified Contacted Qualified" [ref=e871]:
+                    - cell "Smoke Lead 1774799890 lead.1774799890@example.com � +251944444444" [ref=e872]:
+                      - generic [ref=e873]:
+                        - generic [ref=e874]: Smoke Lead 1774799890
+                        - generic [ref=e875]: lead.1774799890@example.com � +251944444444
+                    - cell "Toyota Corolla" [ref=e876]
+                    - cell "Demo Supplier 1774811124766 +3 more" [ref=e877]
+                    - cell "Qualified" [ref=e878]:
+                      - generic [ref=e879]: Qualified
+                    - cell "Contacted Qualified" [ref=e881]:
+                      - generic [ref=e882]:
+                        - button "Contacted" [ref=e883] [cursor=pointer]
+                        - button "Qualified" [ref=e884] [cursor=pointer]
+                  - row "Tsion Girma tsion@email.com � +251988888888 Toyota Yaris Demo Supplier 1774811124766 +3 more New Contacted Qualified" [ref=e885]:
+                    - cell "Tsion Girma tsion@email.com � +251988888888" [ref=e886]:
+                      - generic [ref=e887]:
+                        - generic [ref=e888]: Tsion Girma
+                        - generic [ref=e889]: tsion@email.com � +251988888888
+                    - cell "Toyota Yaris" [ref=e890]
+                    - cell "Demo Supplier 1774811124766 +3 more" [ref=e891]
+                    - cell "New" [ref=e892]:
+                      - generic [ref=e893]: New
+                    - cell "Contacted Qualified" [ref=e895]:
+                      - generic [ref=e896]:
+                        - button "Contacted" [ref=e897] [cursor=pointer]
+                        - button "Qualified" [ref=e898] [cursor=pointer]
+                  - row "Abel Workneh abel@email.com � +251977777777 Kia Sportage Open marketplace pool New Contacted Qualified" [ref=e899]:
+                    - cell "Abel Workneh abel@email.com � +251977777777" [ref=e900]:
+                      - generic [ref=e901]:
+                        - generic [ref=e902]: Abel Workneh
+                        - generic [ref=e903]: abel@email.com � +251977777777
+                    - cell "Kia Sportage" [ref=e904]
+                    - cell "Open marketplace pool" [ref=e905]
+                    - cell "New" [ref=e906]:
+                      - generic [ref=e907]: New
+                    - cell "Contacted Qualified" [ref=e909]:
+                      - generic [ref=e910]:
+                        - button "Contacted" [ref=e911] [cursor=pointer]
+                        - button "Qualified" [ref=e912] [cursor=pointer]
+                  - row "Frehiwot Tadesse frehiwot@email.com � +251966666666 Toyota RAV4 Demo Supplier 1774811124766 +3 more New Contacted Qualified" [ref=e913]:
+                    - cell "Frehiwot Tadesse frehiwot@email.com � +251966666666" [ref=e914]:
+                      - generic [ref=e915]:
+                        - generic [ref=e916]: Frehiwot Tadesse
+                        - generic [ref=e917]: frehiwot@email.com � +251966666666
+                    - cell "Toyota RAV4" [ref=e918]
+                    - cell "Demo Supplier 1774811124766 +3 more" [ref=e919]
+                    - cell "New" [ref=e920]:
+                      - generic [ref=e921]: New
+                    - cell "Contacted Qualified" [ref=e923]:
+                      - generic [ref=e924]:
+                        - button "Contacted" [ref=e925] [cursor=pointer]
+                        - button "Qualified" [ref=e926] [cursor=pointer]
+                  - row "Naod Getachew naod@email.com � +251955555555 Nissan X-Trail Open marketplace pool New Contacted Qualified" [ref=e927]:
+                    - cell "Naod Getachew naod@email.com � +251955555555" [ref=e928]:
+                      - generic [ref=e929]:
+                        - generic [ref=e930]: Naod Getachew
+                        - generic [ref=e931]: naod@email.com � +251955555555
+                    - cell "Nissan X-Trail" [ref=e932]
+                    - cell "Open marketplace pool" [ref=e933]
+                    - cell "New" [ref=e934]:
+                      - generic [ref=e935]: New
+                    - cell "Contacted Qualified" [ref=e937]:
+                      - generic [ref=e938]:
+                        - button "Contacted" [ref=e939] [cursor=pointer]
+                        - button "Qualified" [ref=e940] [cursor=pointer]
+                  - row "Liya Mesfin liya@email.com � +251944444444 Suzuki Vitara Open marketplace pool New Contacted Qualified" [ref=e941]:
+                    - cell "Liya Mesfin liya@email.com � +251944444444" [ref=e942]:
+                      - generic [ref=e943]:
+                        - generic [ref=e944]: Liya Mesfin
+                        - generic [ref=e945]: liya@email.com � +251944444444
+                    - cell "Suzuki Vitara" [ref=e946]
+                    - cell "Open marketplace pool" [ref=e947]
+                    - cell "New" [ref=e948]:
+                      - generic [ref=e949]: New
+                    - cell "Contacted Qualified" [ref=e951]:
+                      - generic [ref=e952]:
+                        - button "Contacted" [ref=e953] [cursor=pointer]
+                        - button "Qualified" [ref=e954] [cursor=pointer]
+                  - row "Tewodros Hailu tewodros@email.com � +251933333333 Toyota Hilux Demo Supplier 1774811124766 +3 more New Contacted Qualified" [ref=e955]:
+                    - cell "Tewodros Hailu tewodros@email.com � +251933333333" [ref=e956]:
+                      - generic [ref=e957]:
+                        - generic [ref=e958]: Tewodros Hailu
+                        - generic [ref=e959]: tewodros@email.com � +251933333333
+                    - cell "Toyota Hilux" [ref=e960]
+                    - cell "Demo Supplier 1774811124766 +3 more" [ref=e961]
+                    - cell "New" [ref=e962]:
+                      - generic [ref=e963]: New
+                    - cell "Contacted Qualified" [ref=e965]:
+                      - generic [ref=e966]:
+                        - button "Contacted" [ref=e967] [cursor=pointer]
+                        - button "Qualified" [ref=e968] [cursor=pointer]
+                  - row "Sara Fikre sara@email.com � +251922222222 Hyundai Tucson Open marketplace pool New Contacted Qualified" [ref=e969]:
+                    - cell "Sara Fikre sara@email.com � +251922222222" [ref=e970]:
+                      - generic [ref=e971]:
+                        - generic [ref=e972]: Sara Fikre
+                        - generic [ref=e973]: sara@email.com � +251922222222
+                    - cell "Hyundai Tucson" [ref=e974]
+                    - cell "Open marketplace pool" [ref=e975]
+                    - cell "New" [ref=e976]:
+                      - generic [ref=e977]: New
+                    - cell "Contacted Qualified" [ref=e979]:
+                      - generic [ref=e980]:
+                        - button "Contacted" [ref=e981] [cursor=pointer]
+                        - button "Qualified" [ref=e982] [cursor=pointer]
+                  - row "Kidus Alemayehu kidus@email.com � +251911111111 Toyota Corolla Demo Supplier 1774811124766 +3 more New Contacted Qualified" [ref=e983]:
+                    - cell "Kidus Alemayehu kidus@email.com � +251911111111" [ref=e984]:
+                      - generic [ref=e985]:
+                        - generic [ref=e986]: Kidus Alemayehu
+                        - generic [ref=e987]: kidus@email.com � +251911111111
+                    - cell "Toyota Corolla" [ref=e988]
+                    - cell "Demo Supplier 1774811124766 +3 more" [ref=e989]
+                    - cell "New" [ref=e990]:
+                      - generic [ref=e991]: New
+                    - cell "Contacted Qualified" [ref=e993]:
+                      - generic [ref=e994]:
+                        - button "Contacted" [ref=e995] [cursor=pointer]
+                        - button "Qualified" [ref=e996] [cursor=pointer]
+                  - row "Tsion Girma tsion@email.com � +251988888888 Toyota Yaris Demo Supplier 1774811124766 +3 more New Contacted Qualified" [ref=e997]:
+                    - cell "Tsion Girma tsion@email.com � +251988888888" [ref=e998]:
+                      - generic [ref=e999]:
+                        - generic [ref=e1000]: Tsion Girma
+                        - generic [ref=e1001]: tsion@email.com � +251988888888
+                    - cell "Toyota Yaris" [ref=e1002]
+                    - cell "Demo Supplier 1774811124766 +3 more" [ref=e1003]
+                    - cell "New" [ref=e1004]:
+                      - generic [ref=e1005]: New
+                    - cell "Contacted Qualified" [ref=e1007]:
+                      - generic [ref=e1008]:
+                        - button "Contacted" [ref=e1009] [cursor=pointer]
+                        - button "Qualified" [ref=e1010] [cursor=pointer]
+                  - row "Abel Workneh abel@email.com � +251977777777 Kia Sportage Open marketplace pool New Contacted Qualified" [ref=e1011]:
+                    - cell "Abel Workneh abel@email.com � +251977777777" [ref=e1012]:
+                      - generic [ref=e1013]:
+                        - generic [ref=e1014]: Abel Workneh
+                        - generic [ref=e1015]: abel@email.com � +251977777777
+                    - cell "Kia Sportage" [ref=e1016]
+                    - cell "Open marketplace pool" [ref=e1017]
+                    - cell "New" [ref=e1018]:
+                      - generic [ref=e1019]: New
+                    - cell "Contacted Qualified" [ref=e1021]:
+                      - generic [ref=e1022]:
+                        - button "Contacted" [ref=e1023] [cursor=pointer]
+                        - button "Qualified" [ref=e1024] [cursor=pointer]
+                  - row "Frehiwot Tadesse frehiwot@email.com � +251966666666 Toyota RAV4 Demo Supplier 1774811124766 +3 more New Contacted Qualified" [ref=e1025]:
+                    - cell "Frehiwot Tadesse frehiwot@email.com � +251966666666" [ref=e1026]:
+                      - generic [ref=e1027]:
+                        - generic [ref=e1028]: Frehiwot Tadesse
+                        - generic [ref=e1029]: frehiwot@email.com � +251966666666
+                    - cell "Toyota RAV4" [ref=e1030]
+                    - cell "Demo Supplier 1774811124766 +3 more" [ref=e1031]
+                    - cell "New" [ref=e1032]:
+                      - generic [ref=e1033]: New
+                    - cell "Contacted Qualified" [ref=e1035]:
+                      - generic [ref=e1036]:
+                        - button "Contacted" [ref=e1037] [cursor=pointer]
+                        - button "Qualified" [ref=e1038] [cursor=pointer]
+                  - row "Naod Getachew naod@email.com � +251955555555 Nissan X-Trail Open marketplace pool New Contacted Qualified" [ref=e1039]:
+                    - cell "Naod Getachew naod@email.com � +251955555555" [ref=e1040]:
+                      - generic [ref=e1041]:
+                        - generic [ref=e1042]: Naod Getachew
+                        - generic [ref=e1043]: naod@email.com � +251955555555
+                    - cell "Nissan X-Trail" [ref=e1044]
+                    - cell "Open marketplace pool" [ref=e1045]
+                    - cell "New" [ref=e1046]:
+                      - generic [ref=e1047]: New
+                    - cell "Contacted Qualified" [ref=e1049]:
+                      - generic [ref=e1050]:
+                        - button "Contacted" [ref=e1051] [cursor=pointer]
+                        - button "Qualified" [ref=e1052] [cursor=pointer]
+                  - row "Liya Mesfin liya@email.com � +251944444444 Suzuki Vitara Open marketplace pool New Contacted Qualified" [ref=e1053]:
+                    - cell "Liya Mesfin liya@email.com � +251944444444" [ref=e1054]:
+                      - generic [ref=e1055]:
+                        - generic [ref=e1056]: Liya Mesfin
+                        - generic [ref=e1057]: liya@email.com � +251944444444
+                    - cell "Suzuki Vitara" [ref=e1058]
+                    - cell "Open marketplace pool" [ref=e1059]
+                    - cell "New" [ref=e1060]:
+                      - generic [ref=e1061]: New
+                    - cell "Contacted Qualified" [ref=e1063]:
+                      - generic [ref=e1064]:
+                        - button "Contacted" [ref=e1065] [cursor=pointer]
+                        - button "Qualified" [ref=e1066] [cursor=pointer]
+                  - row "Tewodros Hailu tewodros@email.com � +251933333333 Toyota Hilux Demo Supplier 1774811124766 +3 more New Contacted Qualified" [ref=e1067]:
+                    - cell "Tewodros Hailu tewodros@email.com � +251933333333" [ref=e1068]:
+                      - generic [ref=e1069]:
+                        - generic [ref=e1070]: Tewodros Hailu
+                        - generic [ref=e1071]: tewodros@email.com � +251933333333
+                    - cell "Toyota Hilux" [ref=e1072]
+                    - cell "Demo Supplier 1774811124766 +3 more" [ref=e1073]
+                    - cell "New" [ref=e1074]:
+                      - generic [ref=e1075]: New
+                    - cell "Contacted Qualified" [ref=e1077]:
+                      - generic [ref=e1078]:
+                        - button "Contacted" [ref=e1079] [cursor=pointer]
+                        - button "Qualified" [ref=e1080] [cursor=pointer]
+                  - row "Sara Fikre sara@email.com � +251922222222 Hyundai Tucson Open marketplace pool New Contacted Qualified" [ref=e1081]:
+                    - cell "Sara Fikre sara@email.com � +251922222222" [ref=e1082]:
+                      - generic [ref=e1083]:
+                        - generic [ref=e1084]: Sara Fikre
+                        - generic [ref=e1085]: sara@email.com � +251922222222
+                    - cell "Hyundai Tucson" [ref=e1086]
+                    - cell "Open marketplace pool" [ref=e1087]
+                    - cell "New" [ref=e1088]:
+                      - generic [ref=e1089]: New
+                    - cell "Contacted Qualified" [ref=e1091]:
+                      - generic [ref=e1092]:
+                        - button "Contacted" [ref=e1093] [cursor=pointer]
+                        - button "Qualified" [ref=e1094] [cursor=pointer]
+                  - row "Kidus Alemayehu kidus@email.com � +251911111111 Toyota Corolla Demo Supplier 1774811124766 +3 more New Contacted Qualified" [ref=e1095]:
+                    - cell "Kidus Alemayehu kidus@email.com � +251911111111" [ref=e1096]:
+                      - generic [ref=e1097]:
+                        - generic [ref=e1098]: Kidus Alemayehu
+                        - generic [ref=e1099]: kidus@email.com � +251911111111
+                    - cell "Toyota Corolla" [ref=e1100]
+                    - cell "Demo Supplier 1774811124766 +3 more" [ref=e1101]
+                    - cell "New" [ref=e1102]:
+                      - generic [ref=e1103]: New
+                    - cell "Contacted Qualified" [ref=e1105]:
+                      - generic [ref=e1106]:
+                        - button "Contacted" [ref=e1107] [cursor=pointer]
+                        - button "Qualified" [ref=e1108] [cursor=pointer]
+          - generic [ref=e712]:
+            - generic [ref=e714]:
+              - generic [ref=e715]: Supplier lead inbox
+              - generic [ref=e716]: Customer demand can be routed straight to suppliers from the same portal.
+            - generic [ref=e1109]:
+              - generic [ref=e1110]:
+                - generic [ref=e1111]:
+                  - generic [ref=e1112]:
+                    - generic [ref=e1113]: Demo Supplier 1774811124766
+                    - generic [ref=e1114]: Demo Operator � Addis Ababa
+                  - generic [ref=e1115]: Active
+                - generic [ref=e1117]: 12 matched lead(s) ready for follow-up � Toyota Corolla Demo 1774811124766, Toyota Corolla Demo 1774810965430, Toyota Corolla Demo 1774810846604
+              - generic [ref=e1118]:
+                - generic [ref=e1119]:
+                  - generic [ref=e1120]:
+                    - generic [ref=e1121]: Demo Supplier 1774810965430
+                    - generic [ref=e1122]: Demo Operator � Addis Ababa
+                  - generic [ref=e1123]: Active
+                - generic [ref=e1125]: 12 matched lead(s) ready for follow-up � Toyota Corolla Demo 1774811124766, Toyota Corolla Demo 1774810965430, Toyota Corolla Demo 1774810846604
+              - generic [ref=e1126]:
+                - generic [ref=e1127]:
+                  - generic [ref=e1128]:
+                    - generic [ref=e1129]: Demo Supplier 1774810846604
+                    - generic [ref=e1130]: Demo Operator � Addis Ababa
+                  - generic [ref=e1131]: Active
+                - generic [ref=e1133]: 12 matched lead(s) ready for follow-up � Toyota Corolla Demo 1774811124766, Toyota Corolla Demo 1774810965430, Toyota Corolla Demo 1774810846604
+              - generic [ref=e1134]:
+                - generic [ref=e1135]:
+                  - generic [ref=e1136]:
+                    - generic [ref=e1137]: Codex Autos 1774799890
+                    - generic [ref=e1138]: Test Supplier � Addis Ababa
+                  - generic [ref=e1139]: Active
+                - generic [ref=e1141]: 12 matched lead(s) ready for follow-up � Toyota Corolla Demo 1774811124766, Toyota Corolla Demo 1774810965430, Toyota Corolla Demo 1774810846604
+        - generic [ref=e760]:
+          - generic [ref=e761]:
+            - generic [ref=e763]:
+              - generic [ref=e764]: Inventory composition
+              - generic [ref=e765]: Top makes currently available in the catalog.
+            - generic [ref=e766]:
+              - generic [ref=e767]:
+                - generic [ref=e768]:
+                  - generic [ref=e769]: Toyota
+                  - generic [ref=e770]: Available
+                - generic [ref=e772]: 14 vehicles currently listed
+              - generic [ref=e773]:
+                - generic [ref=e774]:
+                  - generic [ref=e775]: Hyundai
+                  - generic [ref=e776]: Available
+                - generic [ref=e778]: 4 vehicles currently listed
+              - generic [ref=e779]:
+                - generic [ref=e780]:
+                  - generic [ref=e781]: Kia
+                  - generic [ref=e782]: Available
+                - generic [ref=e784]: 2 vehicles currently listed
+              - generic [ref=e785]:
+                - generic [ref=e786]:
+                  - generic [ref=e787]: Suzuki
+                  - generic [ref=e788]: Available
+                - generic [ref=e790]: 2 vehicles currently listed
+          - generic [ref=e791]:
+            - generic [ref=e793]:
+              - generic [ref=e794]: Supplier highlights
+              - generic [ref=e795]: Quick read on the most visible partners in the portal.
+            - generic [ref=e796]:
+              - generic [ref=e797]:
+                - generic [ref=e798]:
+                  - generic [ref=e799]:
+                    - generic [ref=e800]: Demo Supplier 1774811124766
+                    - generic [ref=e801]: Demo Operator � Addis Ababa
+                  - generic [ref=e802]: Active
+                - generic [ref=e804]: "Inventory mapped: 1 vehicle(s)"
+              - generic [ref=e805]:
+                - generic [ref=e806]:
+                  - generic [ref=e807]:
+                    - generic [ref=e808]: Demo Supplier 1774810965430
+                    - generic [ref=e809]: Demo Operator � Addis Ababa
+                  - generic [ref=e810]: Active
+                - generic [ref=e812]: "Inventory mapped: 1 vehicle(s)"
+              - generic [ref=e813]:
+                - generic [ref=e814]:
+                  - generic [ref=e815]:
+                    - generic [ref=e816]: Demo Supplier 1774810846604
+                    - generic [ref=e817]: Demo Operator � Addis Ababa
+                  - generic [ref=e818]: Active
+                - generic [ref=e820]: "Inventory mapped: 1 vehicle(s)"

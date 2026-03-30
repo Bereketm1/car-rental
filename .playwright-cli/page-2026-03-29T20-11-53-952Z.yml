@@ -1,0 +1,292 @@
+- generic [ref=e1]:
+  - generic [ref=e3]:
+    - complementary [ref=e4]:
+      - generic [ref=e5]:
+        - generic [ref=e6]:
+          - generic [ref=e7]: MM
+          - generic [ref=e8]:
+            - paragraph [ref=e9]: Vehicle financing platform
+            - generic [ref=e10]: Merkato Motors
+        - button "Collapse sidebar" [ref=e516] [cursor=pointer]:
+          - img [ref=e517]
+      - generic [ref=e14]:
+        - generic [ref=e15]: MM
+        - generic [ref=e16]:
+          - generic [ref=e17]: Platform Admin
+          - generic [ref=e18]: Operations lead
+      - navigation [ref=e19]:
+        - generic [ref=e20]:
+          - generic [ref=e21]: Overview
+          - link "DashboardExecutive overview" [ref=e519] [cursor=pointer]:
+            - /url: /dashboard
+            - img [ref=e24]
+            - generic [ref=e29]: DashboardExecutive overview
+          - link "AnalyticsCommercial performance" [ref=e520] [cursor=pointer]:
+            - /url: /analytics
+            - img [ref=e32]
+            - generic [ref=e34]: AnalyticsCommercial performance
+          - link "Platform healthServices and audit trail" [ref=e521] [cursor=pointer]:
+            - /url: /health
+            - img [ref=e37]
+            - generic [ref=e39]: Platform healthServices and audit trail
+        - generic [ref=e40]:
+          - generic [ref=e41]: Operations
+          - link "Customer CRMRegistration, interests, loans" [ref=e522] [cursor=pointer]:
+            - /url: /customers
+            - img [ref=e44]
+            - generic [ref=e48]: Customer CRMRegistration, interests, loans
+          - link "Supplier portalInventory and supplier records" [ref=e523] [cursor=pointer]:
+            - /url: /vehicles
+            - img [ref=e51]
+            - generic [ref=e54]: Supplier portalInventory and supplier records
+          - link "Deal flowSelection through purchase" [ref=e524] [cursor=pointer]:
+            - /url: /deals
+            - img [ref=e57]
+            - generic [ref=e60]: Deal flowSelection through purchase
+          - link "Finance portalReviews and institutions" [ref=e525] [cursor=pointer]:
+            - /url: /finance
+            - img [ref=e63]
+            - generic [ref=e67]: Finance portalReviews and institutions
+        - generic [ref=e68]:
+          - generic [ref=e69]: Growth
+          - link "PartnershipsAgreements and commissions" [ref=e526] [cursor=pointer]:
+            - /url: /partners
+            - img [ref=e72]
+            - generic [ref=e77]: PartnershipsAgreements and commissions
+          - link "MarketingLeads, campaigns, referrals" [ref=e527] [cursor=pointer]:
+            - /url: /marketing
+            - img [ref=e80]
+            - generic [ref=e83]: MarketingLeads, campaigns, referrals
+          - link "SettingsWorkspace preferences and controls" [ref=e528] [cursor=pointer]:
+            - /url: /settings
+            - img [ref=e86]
+            - generic [ref=e89]: SettingsWorkspace preferences and controls
+      - generic [ref=e90]:
+        - generic [ref=e93]: Workspace focus
+        - generic [ref=e94]: "10"
+        - paragraph [ref=e95]: Dashboard is active in the current operating view.
+    - generic [ref=e96]:
+      - generic [ref=e97]:
+        - generic [ref=e98]:
+          - strong [ref=e99]: "Service warning:"
+          - text: Service unreachable. The workspace is still usable, but some records may be stale until connectivity is restored.
+        - button "Dismiss" [ref=e100] [cursor=pointer]
+      - banner [ref=e101]:
+        - generic [ref=e102]:
+          - button "Open navigation" [ref=e103] [cursor=pointer]:
+            - img [ref=e104]
+          - button "Collapse sidebar" [active] [ref=e529] [cursor=pointer]:
+            - img [ref=e530]
+          - generic [ref=e108]:
+            - generic [ref=e109]:
+              - generic [ref=e110]: Merkato Motors workspace
+              - generic [ref=e112]: Overview
+            - heading "Operations console" [level=1] [ref=e113]
+            - paragraph [ref=e114]: Dashboard · Executive overview
+        - generic [ref=e115]:
+          - generic [ref=e116]:
+            - img [ref=e117]
+            - textbox "Search customers, vehicles, deals" [ref=e120]
+          - button "Toggle theme" [ref=e121] [cursor=pointer]:
+            - img [ref=e122]
+          - button "Toggle notifications" [ref=e125] [cursor=pointer]:
+            - img [ref=e126]
+          - generic [ref=e129]:
+            - generic [ref=e130]: MM
+            - generic [ref=e131]:
+              - generic [ref=e132]: Admin User
+              - generic [ref=e133]: admin
+      - main [ref=e134]:
+        - generic [ref=e136]:
+          - generic [ref=e137]:
+            - generic [ref=e181]:
+              - heading "Operations dashboard" [level=1] [ref=e182]
+              - paragraph [ref=e183]: Monitor customer intake, inventory, financing progress, deal execution, partner activity, and lead flow from one clear workspace.
+            - button "Refresh data" [ref=e184] [cursor=pointer]
+          - generic [ref=e140]:
+            - generic [ref=e185]:
+              - generic [ref=e187]:
+                - generic [ref=e188]: Executive summary
+                - generic [ref=e189]: The core commercial picture, without extra decoration.
+              - generic [ref=e190]:
+                - generic [ref=e191]:
+                  - generic [ref=e192]: Closed revenue
+                  - strong [ref=e193]: ETB 0
+                  - paragraph [ref=e194]: Completed marketplace transactions
+                - generic [ref=e195]:
+                  - generic [ref=e196]: Open pipeline
+                  - strong [ref=e197]: ETB 0
+                  - paragraph [ref=e198]: Value still moving through the workflow
+                - generic [ref=e199]:
+                  - generic [ref=e200]: Approval rate
+                  - strong [ref=e201]: 0.0%
+                  - paragraph [ref=e202]: 0 finance reviews on record
+            - generic [ref=e203]:
+              - generic [ref=e205]:
+                - generic [ref=e206]: Priority items
+                - generic [ref=e207]: Queues that need attention to keep transactions moving.
+              - generic [ref=e208]:
+                - generic [ref=e209]:
+                  - generic [ref=e210]:
+                    - generic [ref=e211]:
+                      - generic [ref=e212]: Pending finance reviews
+                      - generic [ref=e213]: Finance teams should clear these files first.
+                    - generic [ref=e214]: Pending
+                  - generic [ref=e216]: "0"
+                - generic [ref=e217]:
+                  - generic [ref=e218]:
+                    - generic [ref=e219]:
+                      - generic [ref=e220]: Reserved vehicles
+                      - generic [ref=e221]: Vehicles currently tied to active deals.
+                    - generic [ref=e222]: Qualified
+                  - generic [ref=e224]: "0"
+                - generic [ref=e225]:
+                  - generic [ref=e226]:
+                    - generic [ref=e227]:
+                      - generic [ref=e228]: New lead follow-up
+                      - generic [ref=e229]: Leads waiting for first contact.
+                    - generic [ref=e230]: New
+                  - generic [ref=e232]: "0"
+          - generic [ref=e145]:
+            - article [ref=e233]:
+              - generic [ref=e234]:
+                - img [ref=e236]
+                - generic [ref=e240]: Customers
+              - generic [ref=e241]: "0"
+              - paragraph [ref=e242]: Registered customer records
+            - article [ref=e243]:
+              - generic [ref=e244]:
+                - img [ref=e246]
+                - generic [ref=e249]: Vehicles available
+              - generic [ref=e250]: "0"
+              - paragraph [ref=e251]: 0 total listed vehicles
+            - article [ref=e252]:
+              - generic [ref=e253]:
+                - img [ref=e255]
+                - generic [ref=e259]: Finance approval
+              - generic [ref=e260]: 0.0%
+              - paragraph [ref=e261]: 0 total financing reviews
+            - article [ref=e262]:
+              - generic [ref=e263]:
+                - img [ref=e265]
+                - generic [ref=e268]: Lead conversion
+              - generic [ref=e269]: 0.0%
+              - paragraph [ref=e270]: 0 captured marketing leads
+          - generic [ref=e151]:
+            - generic [ref=e271]:
+              - generic [ref=e273]:
+                - generic [ref=e274]: Marketplace trend
+                - generic [ref=e275]: Monthly movement across revenue and lead generation.
+              - img [ref=e279]
+            - generic [ref=e282]:
+              - generic [ref=e284]:
+                - generic [ref=e285]: Module coverage
+                - generic [ref=e286]: Each business function is live in the product surface.
+              - generic [ref=e287]:
+                - generic [ref=e288]:
+                  - generic [ref=e289]:
+                    - generic [ref=e290]:
+                      - img [ref=e292]
+                      - generic [ref=e296]:
+                        - generic [ref=e297]: CRM
+                        - generic [ref=e298]: Customer intake, documents, and loan files
+                    - generic [ref=e299]: Active
+                  - generic [ref=e301]: "Live records: 0"
+                - generic [ref=e302]:
+                  - generic [ref=e303]:
+                    - generic [ref=e304]:
+                      - img [ref=e306]
+                      - generic [ref=e309]:
+                        - generic [ref=e310]: Supplier portal
+                        - generic [ref=e311]: Vehicle intake and supplier inventory
+                    - generic [ref=e312]: Pending
+                  - generic [ref=e314]: "Live records: 0"
+                - generic [ref=e315]:
+                  - generic [ref=e316]:
+                    - generic [ref=e317]:
+                      - img [ref=e319]
+                      - generic [ref=e323]:
+                        - generic [ref=e324]: Finance portal
+                        - generic [ref=e325]: Reviews, requested documents, and approvals
+                    - generic [ref=e326]: Pending
+                  - generic [ref=e328]: "Live records: 0"
+                - generic [ref=e329]:
+                  - generic [ref=e330]:
+                    - generic [ref=e331]:
+                      - img [ref=e333]
+                      - generic [ref=e335]:
+                        - generic [ref=e336]: Deal flow
+                        - generic [ref=e337]: Progress from selection to completed purchase
+                    - generic [ref=e338]: Pending
+                  - generic [ref=e340]: "Live records: 0"
+                - generic [ref=e341]:
+                  - generic [ref=e342]:
+                    - generic [ref=e343]:
+                      - img [ref=e345]
+                      - generic [ref=e350]:
+                        - generic [ref=e351]: Partnerships
+                        - generic [ref=e352]: Agreements, commissions, and partner records
+                    - generic [ref=e353]: Pending
+                  - generic [ref=e355]: "Live records: 0"
+                - generic [ref=e356]:
+                  - generic [ref=e357]:
+                    - generic [ref=e358]:
+                      - img [ref=e360]
+                      - generic [ref=e363]:
+                        - generic [ref=e364]: Lead generation
+                        - generic [ref=e365]: Campaigns, referrals, and conversion flow
+                    - generic [ref=e366]: Pending
+                  - generic [ref=e368]: "Live records: 0"
+                - generic [ref=e369]:
+                  - generic [ref=e370]:
+                    - generic [ref=e371]:
+                      - img [ref=e373]
+                      - generic [ref=e375]:
+                        - generic [ref=e376]: Reporting
+                        - generic [ref=e377]: Revenue, volume, and management visibility
+                    - generic [ref=e378]: Pending
+                  - generic [ref=e380]: "Live records: 0"
+          - generic [ref=e381]:
+            - generic [ref=e382]:
+              - generic [ref=e384]:
+                - generic [ref=e385]: Transaction stages
+                - generic [ref=e386]: Deal distribution from vehicle selection to completion.
+              - img [ref=e390]:
+                - generic [ref=e394]:
+                  - generic [ref=e533]: Loan Applied
+                  - generic [ref=e535]: Approved
+                  - generic [ref=e537]: Completed
+                - generic [ref=e406]:
+                  - generic [ref=e408]: "0"
+                  - generic [ref=e410]: "1"
+                  - generic [ref=e412]: "2"
+                  - generic [ref=e414]: "3"
+                  - generic [ref=e416]: "4"
+            - generic [ref=e417]:
+              - generic [ref=e419]:
+                - generic [ref=e420]: Recent activity
+                - generic [ref=e421]: Latest API-backed operational events from the audit feed.
+              - generic [ref=e423]:
+                - heading "No activity yet" [level=3] [ref=e424]
+                - paragraph [ref=e425]: Once operators start using the modules, the audit trail will appear here.
+          - generic [ref=e426]:
+            - generic [ref=e427]:
+              - generic [ref=e429]:
+                - generic [ref=e430]: Recent deals
+                - generic [ref=e431]: Commercial movement across the sales and financing workflow.
+              - table [ref=e433]:
+                - rowgroup [ref=e434]:
+                  - row "Customer Vehicle Amount Stage" [ref=e435]:
+                    - columnheader "Customer" [ref=e436]
+                    - columnheader "Vehicle" [ref=e437]
+                    - columnheader "Amount" [ref=e438]
+                    - columnheader "Stage" [ref=e439]
+                - rowgroup
+            - generic [ref=e440]:
+              - generic [ref=e442]:
+                - generic [ref=e443]: Lead queue
+                - generic [ref=e444]: Current acquisition pulse and buyer intent.
+              - generic [ref=e446]:
+                - heading "No leads yet" [level=3] [ref=e447]
+                - paragraph [ref=e448]: Capture new demand from marketing campaigns and referral channels.
+  - generic [ref=e449]: "0"

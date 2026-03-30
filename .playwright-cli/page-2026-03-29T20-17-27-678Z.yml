@@ -1,0 +1,93 @@
+- generic [ref=e3]:
+  - complementary [ref=e4]:
+    - generic [ref=e5]:
+      - generic [ref=e6]:
+        - generic [ref=e7]: MM
+        - generic [ref=e8]:
+          - paragraph [ref=e9]: Vehicle financing platform
+          - generic [ref=e10]: Merkato Motors
+      - button "Collapse sidebar" [ref=e11] [cursor=pointer]:
+        - img [ref=e12]
+    - generic [ref=e14]:
+      - generic [ref=e15]: MM
+      - generic [ref=e16]:
+        - generic [ref=e17]: Platform Admin
+        - generic [ref=e18]: Operations lead
+    - navigation [ref=e19]:
+      - generic [ref=e20]:
+        - generic [ref=e21]: Overview
+        - link "DashboardExecutive overview" [ref=e22] [cursor=pointer]:
+          - /url: /dashboard
+          - img [ref=e24]
+          - generic [ref=e29]: DashboardExecutive overview
+        - link "AnalyticsCommercial performance" [ref=e30] [cursor=pointer]:
+          - /url: /analytics
+          - img [ref=e32]
+          - generic [ref=e34]: AnalyticsCommercial performance
+        - link "Platform healthServices and audit trail" [ref=e35] [cursor=pointer]:
+          - /url: /health
+          - img [ref=e37]
+          - generic [ref=e39]: Platform healthServices and audit trail
+      - generic [ref=e40]:
+        - generic [ref=e41]: Operations
+        - link "Customer CRMRegistration, interests, loans" [ref=e42] [cursor=pointer]:
+          - /url: /customers
+          - img [ref=e44]
+          - generic [ref=e48]: Customer CRMRegistration, interests, loans
+        - link "Supplier portalInventory and supplier records" [ref=e49] [cursor=pointer]:
+          - /url: /vehicles
+          - img [ref=e51]
+          - generic [ref=e54]: Supplier portalInventory and supplier records
+        - link "Deal flowSelection through purchase" [ref=e55] [cursor=pointer]:
+          - /url: /deals
+          - img [ref=e57]
+          - generic [ref=e60]: Deal flowSelection through purchase
+        - link "Finance portalReviews and institutions" [ref=e61] [cursor=pointer]:
+          - /url: /finance
+          - img [ref=e63]
+          - generic [ref=e67]: Finance portalReviews and institutions
+      - generic [ref=e68]:
+        - generic [ref=e69]: Growth
+        - link "PartnershipsAgreements and commissions" [ref=e70] [cursor=pointer]:
+          - /url: /partners
+          - img [ref=e72]
+          - generic [ref=e77]: PartnershipsAgreements and commissions
+        - link "MarketingLeads, campaigns, referrals" [ref=e78] [cursor=pointer]:
+          - /url: /marketing
+          - img [ref=e80]
+          - generic [ref=e83]: MarketingLeads, campaigns, referrals
+        - link "SettingsWorkspace preferences and controls" [ref=e84] [cursor=pointer]:
+          - /url: /settings
+          - img [ref=e86]
+          - generic [ref=e89]: SettingsWorkspace preferences and controls
+    - generic [ref=e90]:
+      - generic [ref=e93]: Workspace focus
+      - generic [ref=e94]: "10"
+      - paragraph [ref=e95]: Customer CRM is active in the current operating view.
+  - generic [ref=e96]:
+    - banner [ref=e97]:
+      - generic [ref=e98]:
+        - button "Open navigation" [ref=e99] [cursor=pointer]:
+          - img [ref=e100]
+        - button "Collapse sidebar" [ref=e101] [cursor=pointer]:
+          - img [ref=e102]
+        - generic [ref=e104]:
+          - generic [ref=e105]:
+            - generic [ref=e106]: Merkato Motors workspace
+            - generic [ref=e108]: Operations
+          - heading "Operations console" [level=1] [ref=e109]
+          - paragraph [ref=e110]: Customer CRM · Registration, interests, loans
+      - generic [ref=e111]:
+        - generic [ref=e112]:
+          - img [ref=e113]
+          - textbox "Search customers, vehicles, deals" [ref=e116]
+        - button "Toggle theme" [ref=e117] [cursor=pointer]:
+          - img [ref=e118]
+        - button "Toggle notifications" [ref=e121] [cursor=pointer]:
+          - img [ref=e122]
+        - generic [ref=e125]:
+          - generic [ref=e126]: MM
+          - generic [ref=e127]:
+            - generic [ref=e128]: Admin User
+            - generic [ref=e129]: admin
+    - main [ref=e130]

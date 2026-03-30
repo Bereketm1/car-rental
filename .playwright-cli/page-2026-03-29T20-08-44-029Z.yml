@@ -1,0 +1,114 @@
+- generic [ref=e3]:
+  - complementary [ref=e4]:
+    - generic [ref=e5]:
+      - generic [ref=e6]:
+        - generic [ref=e7]: MM
+        - generic [ref=e8]:
+          - paragraph [ref=e9]: Vehicle financing platform
+          - generic [ref=e10]: Merkato Motors
+      - button "Collapse sidebar" [ref=e11] [cursor=pointer]:
+        - img [ref=e12]
+    - generic [ref=e14]:
+      - generic [ref=e15]: MM
+      - generic [ref=e16]:
+        - generic [ref=e17]: Platform Admin
+        - generic [ref=e18]: Operations lead
+    - navigation [ref=e19]:
+      - generic [ref=e20]:
+        - generic [ref=e21]: Overview
+        - link "DashboardExecutive overview" [ref=e22] [cursor=pointer]:
+          - /url: /dashboard
+          - img [ref=e24]
+          - generic [ref=e29]: DashboardExecutive overview
+        - link "AnalyticsCommercial performance" [ref=e30] [cursor=pointer]:
+          - /url: /analytics
+          - img [ref=e32]
+          - generic [ref=e34]: AnalyticsCommercial performance
+        - link "Platform healthServices and audit trail" [ref=e35] [cursor=pointer]:
+          - /url: /health
+          - img [ref=e37]
+          - generic [ref=e39]: Platform healthServices and audit trail
+      - generic [ref=e40]:
+        - generic [ref=e41]: Operations
+        - link "Customer CRMRegistration, interests, loans" [ref=e42] [cursor=pointer]:
+          - /url: /customers
+          - img [ref=e44]
+          - generic [ref=e48]: Customer CRMRegistration, interests, loans
+        - link "Supplier portalInventory and supplier records" [ref=e49] [cursor=pointer]:
+          - /url: /vehicles
+          - img [ref=e51]
+          - generic [ref=e54]: Supplier portalInventory and supplier records
+        - link "Deal flowSelection through purchase" [ref=e55] [cursor=pointer]:
+          - /url: /deals
+          - img [ref=e57]
+          - generic [ref=e60]: Deal flowSelection through purchase
+        - link "Finance portalReviews and institutions" [ref=e61] [cursor=pointer]:
+          - /url: /finance
+          - img [ref=e63]
+          - generic [ref=e67]: Finance portalReviews and institutions
+      - generic [ref=e68]:
+        - generic [ref=e69]: Growth
+        - link "PartnershipsAgreements and commissions" [ref=e70] [cursor=pointer]:
+          - /url: /partners
+          - img [ref=e72]
+          - generic [ref=e77]: PartnershipsAgreements and commissions
+        - link "MarketingLeads, campaigns, referrals" [ref=e78] [cursor=pointer]:
+          - /url: /marketing
+          - img [ref=e80]
+          - generic [ref=e83]: MarketingLeads, campaigns, referrals
+        - link "SettingsWorkspace preferences and controls" [ref=e84] [cursor=pointer]:
+          - /url: /settings
+          - img [ref=e86]
+          - generic [ref=e89]: SettingsWorkspace preferences and controls
+    - generic [ref=e90]:
+      - generic [ref=e93]: Workspace focus
+      - generic [ref=e94]: "10"
+      - paragraph [ref=e95]: Dashboard is active in the current operating view.
+  - generic [ref=e96]:
+    - generic [ref=e97]:
+      - generic [ref=e98]:
+        - strong [ref=e99]: "Service warning:"
+        - text: Service unreachable. The workspace is still usable, but some records may be stale until connectivity is restored.
+      - button "Dismiss" [ref=e100] [cursor=pointer]
+    - banner [ref=e101]:
+      - generic [ref=e102]:
+        - button "Open navigation" [ref=e103] [cursor=pointer]:
+          - img [ref=e104]
+        - button "Collapse sidebar" [ref=e105] [cursor=pointer]:
+          - img [ref=e106]
+        - generic [ref=e108]:
+          - generic [ref=e109]:
+            - generic [ref=e110]: Merkato Motors workspace
+            - generic [ref=e112]: Overview
+          - heading "Operations console" [level=1] [ref=e113]
+          - paragraph [ref=e114]: Dashboard · Executive overview
+      - generic [ref=e115]:
+        - generic [ref=e116]:
+          - img [ref=e117]
+          - textbox "Search customers, vehicles, deals" [ref=e120]
+        - button "Toggle theme" [ref=e121] [cursor=pointer]:
+          - img [ref=e122]
+        - button "Toggle notifications" [ref=e125] [cursor=pointer]:
+          - img [ref=e126]
+        - generic [ref=e129]:
+          - generic [ref=e130]: MM
+          - generic [ref=e131]:
+            - generic [ref=e132]: Admin User
+            - generic [ref=e133]: admin
+    - main [ref=e134]
+  - navigation [ref=e156]:
+    - link [ref=e157] [cursor=pointer]:
+      - /url: /dashboard
+      - img [ref=e158]
+    - link [ref=e163] [cursor=pointer]:
+      - /url: /customers
+      - img [ref=e164]
+    - link [ref=e168] [cursor=pointer]:
+      - /url: /vehicles
+      - img [ref=e169]
+    - link [ref=e172] [cursor=pointer]:
+      - /url: /finance
+      - img [ref=e173]
+    - link [ref=e177] [cursor=pointer]:
+      - /url: /settings
+      - img [ref=e178]

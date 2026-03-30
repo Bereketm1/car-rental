@@ -1,0 +1,113 @@
+- generic [ref=e3]:
+  - complementary [ref=e4]:
+    - generic [ref=e5]:
+      - generic [ref=e6]: M
+      - generic [ref=e7]:
+        - paragraph [ref=e8]: Marketplace OS
+        - generic [ref=e9]: MerkatoMotors
+    - generic [ref=e10]:
+      - generic [ref=e11]: AU
+      - generic [ref=e12]:
+        - generic [ref=e13]: Admin User
+        - generic [ref=e14]: admin
+    - navigation [ref=e15]:
+      - generic [ref=e16]:
+        - generic [ref=e17]: Overview
+        - link "Dashboard Executive marketplace view" [ref=e18] [cursor=pointer]:
+          - /url: /dashboard
+          - img [ref=e20]
+          - generic [ref=e25]:
+            - generic [ref=e26]: Dashboard
+            - generic [ref=e27]: Executive marketplace view
+        - link "Analytics Revenue and conversion intelligence" [ref=e28] [cursor=pointer]:
+          - /url: /analytics
+          - img [ref=e30]
+          - generic [ref=e32]:
+            - generic [ref=e33]: Analytics
+            - generic [ref=e34]: Revenue and conversion intelligence
+        - link "Platform health Operational signals and audit trail" [ref=e35] [cursor=pointer]:
+          - /url: /health
+          - img [ref=e37]
+          - generic [ref=e39]:
+            - generic [ref=e40]: Platform health
+            - generic [ref=e41]: Operational signals and audit trail
+      - generic [ref=e42]:
+        - generic [ref=e43]: Operations
+        - link "Customer CRM Registration, interests, loans, documents" [ref=e44] [cursor=pointer]:
+          - /url: /customers
+          - img [ref=e46]
+          - generic [ref=e50]:
+            - generic [ref=e51]: Customer CRM
+            - generic [ref=e52]: Registration, interests, loans, documents
+        - link "Supplier portal Inventory, suppliers, vehicle lifecycle" [ref=e53] [cursor=pointer]:
+          - /url: /vehicles
+          - img [ref=e55]
+          - generic [ref=e58]:
+            - generic [ref=e59]: Supplier portal
+            - generic [ref=e60]: Inventory, suppliers, vehicle lifecycle
+        - link "Deal flow Selection to purchase orchestration" [ref=e61] [cursor=pointer]:
+          - /url: /deals
+          - img [ref=e63]
+          - generic [ref=e65]:
+            - generic [ref=e66]: Deal flow
+            - generic [ref=e67]: Selection to purchase orchestration
+        - link "Finance portal Reviews, institutions, document requests" [ref=e68] [cursor=pointer]:
+          - /url: /finance
+          - img [ref=e70]
+          - generic [ref=e74]:
+            - generic [ref=e75]: Finance portal
+            - generic [ref=e76]: Reviews, institutions, document requests
+      - generic [ref=e77]:
+        - generic [ref=e78]: Growth
+        - link "Partnerships Agreements, commissions, partner value" [ref=e79] [cursor=pointer]:
+          - /url: /partners
+          - img [ref=e81]
+          - generic [ref=e86]:
+            - generic [ref=e87]: Partnerships
+            - generic [ref=e88]: Agreements, commissions, partner value
+        - link "Marketing Lead generation, campaigns, referrals" [ref=e89] [cursor=pointer]:
+          - /url: /marketing
+          - img [ref=e91]
+          - generic [ref=e94]:
+            - generic [ref=e95]: Marketing
+            - generic [ref=e96]: Lead generation, campaigns, referrals
+        - link "Settings Workspace preferences and controls" [ref=e97] [cursor=pointer]:
+          - /url: /settings
+          - img [ref=e99]
+          - generic [ref=e102]:
+            - generic [ref=e103]: Settings
+            - generic [ref=e104]: Workspace preferences and controls
+    - generic [ref=e105]:
+      - generic [ref=e106]:
+        - img [ref=e107]
+        - generic [ref=e110]: Transaction posture
+      - generic [ref=e111]: Operational
+      - paragraph [ref=e112]: Customer onboarding, financing review, supplier intake, and analytics are available from one cockpit.
+      - generic [ref=e113]: Online
+  - generic [ref=e115]:
+    - banner [ref=e116]:
+      - generic [ref=e117]:
+        - paragraph [ref=e118]: Vehicle Financing Marketplace
+        - heading "Analytics" [level=1] [ref=e119]
+        - paragraph [ref=e120]: Revenue and conversion intelligence
+      - generic [ref=e121]:
+        - generic [ref=e122]:
+          - generic [ref=e123]:
+            - img [ref=e124]
+            - text: Ethiopian financing ecosystem
+          - generic [ref=e127]:
+            - img [ref=e128]
+            - text: Ctrl+K command palette
+        - generic [ref=e130]:
+          - img [ref=e131]
+          - textbox "Search customers, vehicles, deals" [ref=e134]
+        - button "Toggle theme" [ref=e135] [cursor=pointer]:
+          - img [ref=e136]
+        - button "Toggle notifications" [ref=e143] [cursor=pointer]:
+          - img [ref=e144]
+        - generic [ref=e147]:
+          - generic [ref=e148]: AU
+          - generic [ref=e149]:
+            - generic [ref=e150]: Admin User
+            - generic [ref=e151]: admin
+    - main [ref=e152]

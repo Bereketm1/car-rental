@@ -1,0 +1,29 @@
+{
+  "name": "merkato-motors",
+  "version": "1.0.0",
+  "private": true,
+  "description": "MerkatoMotors - Vehicle Financing Marketplace Platform",
+  "workspaces": [
+    "apps/*",
+    "apps/services/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "turbo run dev",
+    "build": "turbo run build",
+    "lint": "turbo run lint",
+    "demo:smoke": "node scripts/demo-smoke.mjs",
+    "dev:web": "npm run dev --workspace=apps/web",
+    "dev:gateway": "npm run dev --workspace=apps/api-gateway",
+    "dev:crm": "npm run dev --workspace=apps/services/crm",
+    "dev:vehicle": "npm run dev --workspace=apps/services/vehicle",
+    "dev:finance": "npm run dev --workspace=apps/services/finance",
+    "dev:deal": "npm run dev --workspace=apps/services/deal",
+    "dev:partner": "npm run dev --workspace=apps/services/partner",
+    "dev:lead": "npm run dev --workspace=apps/services/lead",
+    "dev:analytics": "npm run dev --workspace=apps/services/analytics"
+  },
+  "devDependencies": {
+    "turbo": "^2.0.0"
+  }
+}

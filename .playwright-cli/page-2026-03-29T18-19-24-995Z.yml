@@ -1,0 +1,345 @@
+- generic [ref=e3]:
+  - complementary [ref=e4]:
+    - generic [ref=e5]:
+      - generic [ref=e6]: M
+      - generic [ref=e7]:
+        - paragraph [ref=e8]: Vehicle Financing Platform
+        - generic [ref=e9]: MerkatoMotors
+    - generic [ref=e10]:
+      - generic [ref=e11]: AU
+      - generic [ref=e12]:
+        - generic [ref=e13]: Admin User
+        - generic [ref=e14]: admin
+    - navigation [ref=e15]:
+      - generic [ref=e16]:
+        - generic [ref=e17]: Overview
+        - link "Dashboard" [ref=e18] [cursor=pointer]:
+          - /url: /dashboard
+          - img [ref=e20]
+          - generic [ref=e25]: Dashboard
+        - link "Analytics" [ref=e26] [cursor=pointer]:
+          - /url: /analytics
+          - img [ref=e28]
+          - generic [ref=e30]: Analytics
+        - link "Platform health" [ref=e31] [cursor=pointer]:
+          - /url: /health
+          - img [ref=e33]
+          - generic [ref=e35]: Platform health
+      - generic [ref=e36]:
+        - generic [ref=e37]: Operations
+        - link "Customer CRM" [ref=e38] [cursor=pointer]:
+          - /url: /customers
+          - img [ref=e40]
+          - generic [ref=e44]: Customer CRM
+        - link "Supplier portal" [ref=e45] [cursor=pointer]:
+          - /url: /vehicles
+          - img [ref=e47]
+          - generic [ref=e50]: Supplier portal
+        - link "Deal flow" [ref=e51] [cursor=pointer]:
+          - /url: /deals
+          - img [ref=e53]
+          - generic [ref=e56]: Deal flow
+        - link "Finance portal" [ref=e57] [cursor=pointer]:
+          - /url: /finance
+          - img [ref=e59]
+          - generic [ref=e63]: Finance portal
+      - generic [ref=e64]:
+        - generic [ref=e65]: Growth
+        - link "Partnerships" [ref=e66] [cursor=pointer]:
+          - /url: /partners
+          - img [ref=e68]
+          - generic [ref=e73]: Partnerships
+        - link "Marketing" [ref=e74] [cursor=pointer]:
+          - /url: /marketing
+          - img [ref=e76]
+          - generic [ref=e79]: Marketing
+        - link "Settings" [ref=e80] [cursor=pointer]:
+          - /url: /settings
+          - img [ref=e82]
+          - generic [ref=e85]: Settings
+  - generic [ref=e86]:
+    - banner [ref=e87]:
+      - generic [ref=e88]:
+        - paragraph [ref=e89]: Vehicle Financing Operations
+        - heading "Partnerships" [level=1] [ref=e90]
+        - paragraph [ref=e91]: Agreements and commissions
+      - generic [ref=e92]:
+        - generic [ref=e93]:
+          - img [ref=e94]
+          - textbox "Search customers, vehicles, deals" [ref=e97]
+        - button "Toggle theme" [ref=e98] [cursor=pointer]:
+          - img [ref=e99]
+        - button "Toggle notifications" [ref=e102] [cursor=pointer]:
+          - img [ref=e103]
+        - generic [ref=e106]:
+          - generic [ref=e107]: AU
+          - generic [ref=e108]:
+            - generic [ref=e109]: Admin User
+            - generic [ref=e110]: admin
+    - main [ref=e111]:
+      - generic [ref=e113]:
+        - generic [ref=e114]:
+          - generic [ref=e128]:
+            - heading "Partnership management system" [level=1] [ref=e129]
+            - paragraph [ref=e130]: Track suppliers, lenders, commission structures, and formal agreements that power the marketplace.
+          - generic [ref=e131]:
+            - generic [ref=e132]: Partner ecosystem
+            - generic [ref=e133]: Agreements
+            - generic [ref=e134]: Commission tracking
+        - generic [ref=e117]:
+          - article [ref=e135]:
+            - generic [ref=e136]:
+              - img [ref=e138]
+              - generic [ref=e143]: Partners
+            - generic [ref=e144]: "13"
+            - paragraph [ref=e145]: Active organizations in the network
+          - article [ref=e146]:
+            - generic [ref=e147]:
+              - img [ref=e149]
+              - generic [ref=e152]: Agreements
+            - generic [ref=e153]: "1"
+            - paragraph [ref=e154]: Commercial terms on record
+          - article [ref=e155]:
+            - generic [ref=e156]:
+              - img [ref=e158]
+              - generic [ref=e161]: Focused commissions
+            - generic [ref=e162]: "1"
+            - paragraph [ref=e163]: Entries for the selected partner
+          - article [ref=e164]:
+            - generic [ref=e165]:
+              - img [ref=e167]
+              - generic [ref=e171]: Institutions and suppliers
+            - generic [ref=e172]: "13"
+            - paragraph [ref=e173]: Channel partners contributing to transactions
+        - generic [ref=e123]:
+          - button "Partner registry" [ref=e174] [cursor=pointer]
+          - button "Agreement desk" [ref=e175] [cursor=pointer]
+          - button "Commission ledger" [ref=e176] [cursor=pointer]
+        - generic [ref=e177]:
+          - generic [ref=e178]:
+            - generic [ref=e180]:
+              - generic [ref=e181]: Partner registry
+              - generic [ref=e182]: Everything needed to manage the organizations participating in the marketplace.
+            - generic [ref=e183]:
+              - generic [ref=e184]:
+                - generic [ref=e186]:
+                  - img [ref=e187]
+                  - textbox "Search partner, city, email, or type" [ref=e190]
+                - generic [ref=e191]: Showing 13 records
+              - table [ref=e193]:
+                - rowgroup [ref=e194]:
+                  - row "Partner Type City Commission Status Actions" [ref=e195]:
+                    - columnheader "Partner" [ref=e196] [cursor=pointer]:
+                      - generic [ref=e197]: Partner
+                    - columnheader "Type" [ref=e198] [cursor=pointer]:
+                      - generic [ref=e199]: Type
+                    - columnheader "City" [ref=e200] [cursor=pointer]:
+                      - generic [ref=e201]: City
+                    - columnheader "Commission" [ref=e202]:
+                      - generic [ref=e203]: Commission
+                    - columnheader "Status" [ref=e204]:
+                      - generic [ref=e205]: Status
+                    - columnheader "Actions" [ref=e206]:
+                      - generic [ref=e207]: Actions
+                - rowgroup [ref=e208]:
+                  - row "Smoke Partner 1774799890 Dealer Addis Ababa 3.20% Active Focus Remove" [ref=e209]:
+                    - cell "Smoke Partner 1774799890" [ref=e210]
+                    - cell "Dealer" [ref=e211]:
+                      - generic [ref=e212]: Dealer
+                    - cell "Addis Ababa" [ref=e214]
+                    - cell "3.20%" [ref=e215]
+                    - cell "Active" [ref=e216]:
+                      - generic [ref=e217]: Active
+                    - cell "Focus Remove" [ref=e219]:
+                      - generic [ref=e220]:
+                        - button "Focus" [ref=e221] [cursor=pointer]
+                        - button "Remove" [ref=e222] [cursor=pointer]
+                  - row "CBE Bancassurance Finance Addis Ababa 1.50% Active Focus Remove" [ref=e223]:
+                    - cell "CBE Bancassurance" [ref=e224]
+                    - cell "Finance" [ref=e225]:
+                      - generic [ref=e226]: Finance
+                    - cell "Addis Ababa" [ref=e228]
+                    - cell "1.50%" [ref=e229]
+                    - cell "Active" [ref=e230]:
+                      - generic [ref=e231]: Active
+                    - cell "Focus Remove" [ref=e233]:
+                      - generic [ref=e234]:
+                        - button "Focus" [ref=e235] [cursor=pointer]
+                        - button "Remove" [ref=e236] [cursor=pointer]
+                  - row "Ethio Insurance Insurance Addis Ababa 2.00% Active Focus Remove" [ref=e237]:
+                    - cell "Ethio Insurance" [ref=e238]
+                    - cell "Insurance" [ref=e239]:
+                      - generic [ref=e240]: Insurance
+                    - cell "Addis Ababa" [ref=e242]
+                    - cell "2.00%" [ref=e243]
+                    - cell "Active" [ref=e244]:
+                      - generic [ref=e245]: Active
+                    - cell "Focus Remove" [ref=e247]:
+                      - generic [ref=e248]:
+                        - button "Focus" [ref=e249] [cursor=pointer]
+                        - button "Remove" [ref=e250] [cursor=pointer]
+                  - row "Lifan Motors Dealer Addis Ababa 5.00% Active Focus Remove" [ref=e251]:
+                    - cell "Lifan Motors" [ref=e252]
+                    - cell "Dealer" [ref=e253]:
+                      - generic [ref=e254]: Dealer
+                    - cell "Addis Ababa" [ref=e256]
+                    - cell "5.00%" [ref=e257]
+                    - cell "Active" [ref=e258]:
+                      - generic [ref=e259]: Active
+                    - cell "Focus Remove" [ref=e261]:
+                      - generic [ref=e262]:
+                        - button "Focus" [ref=e263] [cursor=pointer]
+                        - button "Remove" [ref=e264] [cursor=pointer]
+                  - row "Moenco Dealer Addis Ababa 3.00% Active Focus Remove" [ref=e265]:
+                    - cell "Moenco" [ref=e266]
+                    - cell "Dealer" [ref=e267]:
+                      - generic [ref=e268]: Dealer
+                    - cell "Addis Ababa" [ref=e270]
+                    - cell "3.00%" [ref=e271]
+                    - cell "Active" [ref=e272]:
+                      - generic [ref=e273]: Active
+                    - cell "Focus Remove" [ref=e275]:
+                      - generic [ref=e276]:
+                        - button "Focus" [ref=e277] [cursor=pointer]
+                        - button "Remove" [ref=e278] [cursor=pointer]
+                  - row "Holland Car Dealer Addis Ababa 4.00% Active Focus Remove" [ref=e279]:
+                    - cell "Holland Car" [ref=e280]
+                    - cell "Dealer" [ref=e281]:
+                      - generic [ref=e282]: Dealer
+                    - cell "Addis Ababa" [ref=e284]
+                    - cell "4.00%" [ref=e285]
+                    - cell "Active" [ref=e286]:
+                      - generic [ref=e287]: Active
+                    - cell "Focus Remove" [ref=e289]:
+                      - generic [ref=e290]:
+                        - button "Focus" [ref=e291] [cursor=pointer]
+                        - button "Remove" [ref=e292] [cursor=pointer]
+                  - row "Nyala Motors Dealer Addis Ababa 3.50% Active Focus Remove" [ref=e293]:
+                    - cell "Nyala Motors" [ref=e294]
+                    - cell "Dealer" [ref=e295]:
+                      - generic [ref=e296]: Dealer
+                    - cell "Addis Ababa" [ref=e298]
+                    - cell "3.50%" [ref=e299]
+                    - cell "Active" [ref=e300]:
+                      - generic [ref=e301]: Active
+                    - cell "Focus Remove" [ref=e303]:
+                      - generic [ref=e304]:
+                        - button "Focus" [ref=e305] [cursor=pointer]
+                        - button "Remove" [ref=e306] [cursor=pointer]
+                  - row "CBE Bancassurance Finance Addis Ababa 1.50% Active Focus Remove" [ref=e307]:
+                    - cell "CBE Bancassurance" [ref=e308]
+                    - cell "Finance" [ref=e309]:
+                      - generic [ref=e310]: Finance
+                    - cell "Addis Ababa" [ref=e312]
+                    - cell "1.50%" [ref=e313]
+                    - cell "Active" [ref=e314]:
+                      - generic [ref=e315]: Active
+                    - cell "Focus Remove" [ref=e317]:
+                      - generic [ref=e318]:
+                        - button "Focus" [ref=e319] [cursor=pointer]
+                        - button "Remove" [ref=e320] [cursor=pointer]
+                  - row "Ethio Insurance Insurance Addis Ababa 2.00% Active Focus Remove" [ref=e321]:
+                    - cell "Ethio Insurance" [ref=e322]
+                    - cell "Insurance" [ref=e323]:
+                      - generic [ref=e324]: Insurance
+                    - cell "Addis Ababa" [ref=e326]
+                    - cell "2.00%" [ref=e327]
+                    - cell "Active" [ref=e328]:
+                      - generic [ref=e329]: Active
+                    - cell "Focus Remove" [ref=e331]:
+                      - generic [ref=e332]:
+                        - button "Focus" [ref=e333] [cursor=pointer]
+                        - button "Remove" [ref=e334] [cursor=pointer]
+                  - row "Lifan Motors Dealer Addis Ababa 5.00% Active Focus Remove" [ref=e335]:
+                    - cell "Lifan Motors" [ref=e336]
+                    - cell "Dealer" [ref=e337]:
+                      - generic [ref=e338]: Dealer
+                    - cell "Addis Ababa" [ref=e340]
+                    - cell "5.00%" [ref=e341]
+                    - cell "Active" [ref=e342]:
+                      - generic [ref=e343]: Active
+                    - cell "Focus Remove" [ref=e345]:
+                      - generic [ref=e346]:
+                        - button "Focus" [ref=e347] [cursor=pointer]
+                        - button "Remove" [ref=e348] [cursor=pointer]
+                  - row "Moenco Dealer Addis Ababa 3.00% Active Focus Remove" [ref=e349]:
+                    - cell "Moenco" [ref=e350]
+                    - cell "Dealer" [ref=e351]:
+                      - generic [ref=e352]: Dealer
+                    - cell "Addis Ababa" [ref=e354]
+                    - cell "3.00%" [ref=e355]
+                    - cell "Active" [ref=e356]:
+                      - generic [ref=e357]: Active
+                    - cell "Focus Remove" [ref=e359]:
+                      - generic [ref=e360]:
+                        - button "Focus" [ref=e361] [cursor=pointer]
+                        - button "Remove" [ref=e362] [cursor=pointer]
+                  - row "Holland Car Dealer Addis Ababa 4.00% Active Focus Remove" [ref=e363]:
+                    - cell "Holland Car" [ref=e364]
+                    - cell "Dealer" [ref=e365]:
+                      - generic [ref=e366]: Dealer
+                    - cell "Addis Ababa" [ref=e368]
+                    - cell "4.00%" [ref=e369]
+                    - cell "Active" [ref=e370]:
+                      - generic [ref=e371]: Active
+                    - cell "Focus Remove" [ref=e373]:
+                      - generic [ref=e374]:
+                        - button "Focus" [ref=e375] [cursor=pointer]
+                        - button "Remove" [ref=e376] [cursor=pointer]
+                  - row "Nyala Motors Dealer Addis Ababa 3.50% Active Focus Remove" [ref=e377]:
+                    - cell "Nyala Motors" [ref=e378]
+                    - cell "Dealer" [ref=e379]:
+                      - generic [ref=e380]: Dealer
+                    - cell "Addis Ababa" [ref=e382]
+                    - cell "3.50%" [ref=e383]
+                    - cell "Active" [ref=e384]:
+                      - generic [ref=e385]: Active
+                    - cell "Focus Remove" [ref=e387]:
+                      - generic [ref=e388]:
+                        - button "Focus" [ref=e389] [cursor=pointer]
+                        - button "Remove" [ref=e390] [cursor=pointer]
+          - generic [ref=e391]:
+            - generic [ref=e393]:
+              - generic [ref=e394]: Register a partner
+              - generic [ref=e395]: Focused on the partnership workflows that support transactions and revenue.
+            - generic [ref=e396]:
+              - generic [ref=e397]:
+                - generic [ref=e398]:
+                  - generic [ref=e399]: Name
+                  - textbox [ref=e400]
+                - generic [ref=e401]:
+                  - generic [ref=e402]: Type
+                  - combobox [ref=e403]:
+                    - option "Dealer" [selected]
+                    - option "Finance"
+                    - option "Insurance"
+                - generic [ref=e404]:
+                  - generic [ref=e405]: Email
+                  - textbox [ref=e406]
+                - generic [ref=e407]:
+                  - generic [ref=e408]: Phone
+                  - textbox [ref=e409]
+                - generic [ref=e410]:
+                  - generic [ref=e411]: City
+                  - textbox [ref=e412]
+                - generic [ref=e413]:
+                  - generic [ref=e414]: Commission rate
+                  - spinbutton [ref=e415]: "3"
+              - button "Add partner" [ref=e416] [cursor=pointer]:
+                - img [ref=e417]
+                - text: Add partner
+        - generic [ref=e420]:
+          - generic [ref=e422]:
+            - generic [ref=e423]: Focused partner
+            - generic [ref=e424]: Operational context for the currently selected partner.
+          - generic [ref=e425]:
+            - generic [ref=e426]:
+              - generic [ref=e427]:
+                - generic [ref=e428]:
+                  - generic [ref=e429]: Smoke Partner 1774799890
+                  - generic [ref=e430]: dealer · Addis Ababa
+                - generic [ref=e431]: Active
+              - paragraph [ref=e433]: partner.1774799890@example.com · +251933333333
+            - generic [ref=e434]:
+              - generic [ref=e435]: Commission picture
+              - paragraph [ref=e436]: 1 commission entries currently linked to this partner.

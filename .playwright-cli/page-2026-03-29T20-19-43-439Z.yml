@@ -1,0 +1,158 @@
+- generic [ref=e3]:
+  - complementary [ref=e4]:
+    - generic [ref=e5]:
+      - generic [ref=e7]: MM
+      - button "Expand sidebar" [ref=e325] [cursor=pointer]:
+        - img [ref=e326]
+    - generic [ref=e15]: MM
+    - navigation [ref=e19]:
+      - generic [ref=e20]:
+        - link "Dashboard" [ref=e328] [cursor=pointer]:
+          - /url: /dashboard
+          - img [ref=e24]
+        - link "Analytics" [ref=e329] [cursor=pointer]:
+          - /url: /analytics
+          - img [ref=e32]
+        - link "Platform health" [ref=e330] [cursor=pointer]:
+          - /url: /health
+          - img [ref=e37]
+      - generic [ref=e40]:
+        - link "Customer CRM" [ref=e331] [cursor=pointer]:
+          - /url: /customers
+          - img [ref=e44]
+        - link "Supplier portal" [ref=e332] [cursor=pointer]:
+          - /url: /vehicles
+          - img [ref=e51]
+        - link "Deal flow" [ref=e333] [cursor=pointer]:
+          - /url: /deals
+          - img [ref=e57]
+        - link "Finance portal" [ref=e334] [cursor=pointer]:
+          - /url: /finance
+          - img [ref=e63]
+      - generic [ref=e68]:
+        - link "Partnerships" [ref=e335] [cursor=pointer]:
+          - /url: /partners
+          - img [ref=e72]
+        - link "Marketing" [ref=e336] [cursor=pointer]:
+          - /url: /marketing
+          - img [ref=e80]
+        - link "Settings" [ref=e337] [cursor=pointer]:
+          - /url: /settings
+          - img [ref=e86]
+    - generic [ref=e93]: Workspace focus
+  - generic [ref=e96]:
+    - generic [ref=e147]:
+      - generic [ref=e148]:
+        - strong [ref=e149]: "Service warning:"
+        - text: Service unreachable. The workspace is still usable, but some records may be stale until connectivity is restored.
+      - button "Dismiss" [ref=e150] [cursor=pointer]
+    - banner [ref=e97]:
+      - generic [ref=e98]:
+        - button "Open navigation" [ref=e99] [cursor=pointer]:
+          - img [ref=e100]
+        - button "Expand sidebar" [active] [ref=e338] [cursor=pointer]:
+          - img [ref=e339]
+        - generic [ref=e104]:
+          - generic [ref=e105]:
+            - generic [ref=e106]: Merkato Motors workspace
+            - generic [ref=e108]: Operations
+          - heading "Operations console" [level=1] [ref=e109]
+          - paragraph [ref=e110]: Customer CRM · Registration, interests, loans
+      - generic [ref=e111]:
+        - generic [ref=e112]:
+          - img [ref=e113]
+          - textbox "Search customers, vehicles, deals" [ref=e116]
+        - button "Toggle theme" [ref=e117] [cursor=pointer]:
+          - img [ref=e118]
+        - button "Toggle notifications" [ref=e121] [cursor=pointer]:
+          - img [ref=e122]
+        - generic [ref=e125]:
+          - generic [ref=e126]: MM
+          - generic [ref=e127]:
+            - generic [ref=e128]: Admin User
+            - generic [ref=e129]: admin
+    - main [ref=e130]:
+      - generic [ref=e132]:
+        - generic [ref=e133]:
+          - generic [ref=e151]:
+            - heading "Customer management system" [level=1] [ref=e152]
+            - paragraph [ref=e153]: Register customers, capture vehicle intent, submit financing requests, upload documents, and track application progress.
+          - generic [ref=e154]:
+            - generic [ref=e155]: CRM
+            - generic [ref=e156]: Loan onboarding
+            - generic [ref=e157]: Document vault
+        - generic [ref=e136]:
+          - article [ref=e158]:
+            - generic [ref=e159]:
+              - img [ref=e161]
+              - generic [ref=e165]: Customer records
+            - generic [ref=e166]: "0"
+            - paragraph [ref=e167]: Registered active buyers
+          - article [ref=e168]:
+            - generic [ref=e169]:
+              - img [ref=e171]
+              - generic [ref=e175]: Loan applications
+            - generic [ref=e176]: "0"
+            - paragraph [ref=e177]: Submitted financing requests
+          - article [ref=e178]:
+            - generic [ref=e179]:
+              - img [ref=e181]
+              - generic [ref=e183]: Focused customer
+            - generic [ref=e184]: None
+            - paragraph [ref=e185]: Current document and application context
+          - article [ref=e186]:
+            - generic [ref=e187]:
+              - img [ref=e189]
+              - generic [ref=e194]: Documents uploaded
+            - generic [ref=e195]: "0"
+            - paragraph [ref=e196]: For the currently open document workspace
+        - generic [ref=e142]:
+          - button "Customer portfolio" [ref=e197] [cursor=pointer]
+          - button "Application tracker" [ref=e198] [cursor=pointer]
+        - generic [ref=e199]:
+          - generic [ref=e200]:
+            - generic [ref=e201]:
+              - generic [ref=e202]: Customer portfolio
+              - generic [ref=e203]: Operational tables with search, filtering, and direct actions.
+            - button "New customer workflow" [ref=e205] [cursor=pointer]:
+              - img [ref=e206]
+              - text: New customer workflow
+          - generic [ref=e209]:
+            - generic [ref=e211]:
+              - img [ref=e212]
+              - textbox "Search by customer name, email, phone, or city" [ref=e215]
+            - generic [ref=e216]: Showing 0 records
+          - table [ref=e218]:
+            - rowgroup [ref=e219]:
+              - row "Customer Phone City Status Actions" [ref=e220]:
+                - columnheader "Customer" [ref=e221] [cursor=pointer]:
+                  - generic [ref=e222]: Customer
+                - columnheader "Phone" [ref=e223] [cursor=pointer]:
+                  - generic [ref=e224]: Phone
+                - columnheader "City" [ref=e225] [cursor=pointer]:
+                  - generic [ref=e226]: City
+                - columnheader "Status" [ref=e227]:
+                  - generic [ref=e228]: Status
+                - columnheader "Actions" [ref=e229]:
+                  - generic [ref=e230]: Actions
+            - rowgroup [ref=e231]:
+              - row "No results found Try adjusting your search or filters." [ref=e232]:
+                - cell "No results found Try adjusting your search or filters." [ref=e233]:
+                  - generic [ref=e234]:
+                    - heading "No results found" [level=3] [ref=e235]
+                    - paragraph [ref=e236]: Try adjusting your search or filters.
+        - generic [ref=e237]:
+          - generic [ref=e238]:
+            - generic [ref=e240]:
+              - generic [ref=e241]: Focused customer
+              - generic [ref=e242]: Use this panel to quickly understand the current customer relationship and associated financing activity.
+            - generic [ref=e243]:
+              - heading "No customer selected" [level=3] [ref=e244]
+              - paragraph [ref=e245]: Choose a customer from the portfolio to inspect their working set.
+          - generic [ref=e246]:
+            - generic [ref=e248]:
+              - generic [ref=e249]: Recent application flow
+              - generic [ref=e250]: A compact tracker for underwriting movement and status updates.
+            - generic [ref=e252]:
+              - heading "No applications yet" [level=3] [ref=e253]
+              - paragraph [ref=e254]: Create one from the onboarding flow to start the financing pipeline.

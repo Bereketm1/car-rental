@@ -1,0 +1,252 @@
+- generic [ref=e3]:
+  - complementary [ref=e4]:
+    - generic [ref=e5]:
+      - generic [ref=e6]:
+        - generic [ref=e7]: MM
+        - generic [ref=e8]:
+          - paragraph [ref=e9]: Vehicle financing platform
+          - generic [ref=e10]: Merkato Motors
+      - button "Collapse sidebar" [ref=e11] [cursor=pointer]:
+        - img [ref=e12]
+    - generic [ref=e14]:
+      - generic [ref=e15]: MM
+      - generic [ref=e16]:
+        - generic [ref=e17]: Platform Admin
+        - generic [ref=e18]: Operations lead
+    - navigation [ref=e19]:
+      - generic [ref=e20]:
+        - generic [ref=e21]: Overview
+        - link "DashboardExecutive overview" [ref=e22] [cursor=pointer]:
+          - /url: /dashboard
+          - img [ref=e24]
+          - generic [ref=e29]: DashboardExecutive overview
+        - link "AnalyticsCommercial performance" [ref=e30] [cursor=pointer]:
+          - /url: /analytics
+          - img [ref=e32]
+          - generic [ref=e34]: AnalyticsCommercial performance
+        - link "Platform healthServices and audit trail" [ref=e35] [cursor=pointer]:
+          - /url: /health
+          - img [ref=e37]
+          - generic [ref=e39]: Platform healthServices and audit trail
+      - generic [ref=e40]:
+        - generic [ref=e41]: Operations
+        - link "Customer CRMRegistration, interests, loans" [ref=e42] [cursor=pointer]:
+          - /url: /customers
+          - img [ref=e44]
+          - generic [ref=e48]: Customer CRMRegistration, interests, loans
+        - link "Supplier portalInventory and supplier records" [ref=e49] [cursor=pointer]:
+          - /url: /vehicles
+          - img [ref=e51]
+          - generic [ref=e54]: Supplier portalInventory and supplier records
+        - link "Deal flowSelection through purchase" [ref=e55] [cursor=pointer]:
+          - /url: /deals
+          - img [ref=e57]
+          - generic [ref=e60]: Deal flowSelection through purchase
+        - link "Finance portalReviews and institutions" [ref=e61] [cursor=pointer]:
+          - /url: /finance
+          - img [ref=e63]
+          - generic [ref=e67]: Finance portalReviews and institutions
+      - generic [ref=e68]:
+        - generic [ref=e69]: Growth
+        - link "PartnershipsAgreements and commissions" [ref=e70] [cursor=pointer]:
+          - /url: /partners
+          - img [ref=e72]
+          - generic [ref=e77]: PartnershipsAgreements and commissions
+        - link "MarketingLeads, campaigns, referrals" [ref=e78] [cursor=pointer]:
+          - /url: /marketing
+          - img [ref=e80]
+          - generic [ref=e83]: MarketingLeads, campaigns, referrals
+        - link "SettingsWorkspace preferences and controls" [ref=e84] [cursor=pointer]:
+          - /url: /settings
+          - img [ref=e86]
+          - generic [ref=e89]: SettingsWorkspace preferences and controls
+    - generic [ref=e90]:
+      - generic [ref=e93]: Workspace focus
+      - generic [ref=e94]: "10"
+      - paragraph [ref=e95]: Customer CRM is active in the current operating view.
+  - generic [ref=e96]:
+    - generic [ref=e147]:
+      - generic [ref=e148]:
+        - strong [ref=e149]: "Service warning:"
+        - text: Service unreachable. The workspace is still usable, but some records may be stale until connectivity is restored.
+      - button "Dismiss" [ref=e150] [cursor=pointer]
+    - banner [ref=e97]:
+      - generic [ref=e98]:
+        - button "Open navigation" [ref=e99] [cursor=pointer]:
+          - img [ref=e100]
+        - button "Collapse sidebar" [ref=e101] [cursor=pointer]:
+          - img [ref=e102]
+        - generic [ref=e104]:
+          - generic [ref=e105]:
+            - generic [ref=e106]: Merkato Motors workspace
+            - generic [ref=e108]: Operations
+          - heading "Operations console" [level=1] [ref=e109]
+          - paragraph [ref=e110]: Customer CRM · Registration, interests, loans
+      - generic [ref=e111]:
+        - generic [ref=e112]:
+          - img [ref=e113]
+          - textbox "Search customers, vehicles, deals" [ref=e116]
+        - button "Toggle theme" [ref=e117] [cursor=pointer]:
+          - img [ref=e118]
+        - button "Toggle notifications" [ref=e121] [cursor=pointer]:
+          - img [ref=e122]
+        - generic [ref=e125]:
+          - generic [ref=e126]: MM
+          - generic [ref=e127]:
+            - generic [ref=e128]: Admin User
+            - generic [ref=e129]: admin
+    - main [ref=e130]:
+      - generic [ref=e132]:
+        - generic [ref=e133]:
+          - generic [ref=e151]:
+            - heading "Customer management system" [level=1] [ref=e152]
+            - paragraph [ref=e153]: Register customers, capture vehicle intent, submit financing requests, upload documents, and track application progress.
+          - generic [ref=e154]:
+            - generic [ref=e155]: CRM
+            - generic [ref=e156]: Loan onboarding
+            - generic [ref=e157]: Document vault
+        - generic [ref=e136]:
+          - article [ref=e158]:
+            - generic [ref=e159]:
+              - img [ref=e161]
+              - generic [ref=e165]: Customer records
+            - generic [ref=e166]: "0"
+            - paragraph [ref=e167]: Registered active buyers
+          - article [ref=e168]:
+            - generic [ref=e169]:
+              - img [ref=e171]
+              - generic [ref=e175]: Loan applications
+            - generic [ref=e176]: "0"
+            - paragraph [ref=e177]: Submitted financing requests
+          - article [ref=e178]:
+            - generic [ref=e179]:
+              - img [ref=e181]
+              - generic [ref=e183]: Focused customer
+            - generic [ref=e184]: None
+            - paragraph [ref=e185]: Current document and application context
+          - article [ref=e186]:
+            - generic [ref=e187]:
+              - img [ref=e189]
+              - generic [ref=e194]: Documents uploaded
+            - generic [ref=e195]: "0"
+            - paragraph [ref=e196]: For the currently open document workspace
+        - generic [ref=e142]:
+          - button "Customer portfolio" [ref=e197] [cursor=pointer]
+          - button "Application tracker" [ref=e198] [cursor=pointer]
+        - generic [ref=e199]:
+          - generic [ref=e200]:
+            - generic [ref=e201]:
+              - generic [ref=e202]: Customer portfolio
+              - generic [ref=e203]: Operational tables with search, filtering, and direct actions.
+            - button "New customer workflow" [active] [ref=e205] [cursor=pointer]:
+              - img [ref=e206]
+              - text: New customer workflow
+          - generic [ref=e209]:
+            - generic [ref=e211]:
+              - img [ref=e212]
+              - textbox "Search by customer name, email, phone, or city" [ref=e215]
+            - generic [ref=e216]: Showing 0 records
+          - table [ref=e218]:
+            - rowgroup [ref=e219]:
+              - row "Customer Phone City Status Actions" [ref=e220]:
+                - columnheader "Customer" [ref=e221] [cursor=pointer]:
+                  - generic [ref=e222]: Customer
+                - columnheader "Phone" [ref=e223] [cursor=pointer]:
+                  - generic [ref=e224]: Phone
+                - columnheader "City" [ref=e225] [cursor=pointer]:
+                  - generic [ref=e226]: City
+                - columnheader "Status" [ref=e227]:
+                  - generic [ref=e228]: Status
+                - columnheader "Actions" [ref=e229]:
+                  - generic [ref=e230]: Actions
+            - rowgroup [ref=e231]:
+              - row "No results found Try adjusting your search or filters." [ref=e232]:
+                - cell "No results found Try adjusting your search or filters." [ref=e233]:
+                  - generic [ref=e234]:
+                    - heading "No results found" [level=3] [ref=e235]
+                    - paragraph [ref=e236]: Try adjusting your search or filters.
+        - generic [ref=e237]:
+          - generic [ref=e238]:
+            - generic [ref=e240]:
+              - generic [ref=e241]: Focused customer
+              - generic [ref=e242]: Use this panel to quickly understand the current customer relationship and associated financing activity.
+            - generic [ref=e243]:
+              - heading "No customer selected" [level=3] [ref=e244]
+              - paragraph [ref=e245]: Choose a customer from the portfolio to inspect their working set.
+          - generic [ref=e246]:
+            - generic [ref=e248]:
+              - generic [ref=e249]: Recent application flow
+              - generic [ref=e250]: A compact tracker for underwriting movement and status updates.
+            - generic [ref=e252]:
+              - heading "No applications yet" [level=3] [ref=e253]
+              - paragraph [ref=e254]: Create one from the onboarding flow to start the financing pipeline.
+        - dialog "Customer onboarding workflow" [ref=e255]:
+          - generic [ref=e256]:
+            - generic [ref=e257]:
+              - generic [ref=e258]: Customer onboarding workflow
+              - generic [ref=e259]: Capture the customer record first, then optionally attach a vehicle interest and financing request in the same flow.
+            - button "Close" [ref=e260] [cursor=pointer]:
+              - img [ref=e261]
+              - text: Close
+          - generic [ref=e265]:
+            - generic [ref=e266]:
+              - generic [ref=e267]:
+                - generic [ref=e268]: First name
+                - textbox [ref=e269]
+              - generic [ref=e270]:
+                - generic [ref=e271]: Last name
+                - textbox [ref=e272]
+              - generic [ref=e273]:
+                - generic [ref=e274]: Email
+                - textbox [ref=e275]
+              - generic [ref=e276]:
+                - generic [ref=e277]: Phone
+                - textbox [ref=e278]
+              - generic [ref=e279]:
+                - generic [ref=e280]: City
+                - textbox [ref=e281]
+              - generic [ref=e282]:
+                - generic [ref=e283]: Address
+                - textbox [ref=e284]
+            - generic [ref=e285]:
+              - generic [ref=e286]:
+                - generic [ref=e287]:
+                  - generic [ref=e288]: Vehicle interest selection
+                  - generic [ref=e289]: Optional, but recommended for proper deal routing.
+                - generic [ref=e290]: Pending
+              - generic [ref=e292]:
+                - generic [ref=e293]:
+                  - generic [ref=e294]: Preferred vehicle
+                  - combobox [ref=e295]:
+                    - option "Select a vehicle" [selected]
+                - generic [ref=e296]:
+                  - generic [ref=e297]: Interest notes
+                  - textbox "Trim, color, urgency, or financing preference" [ref=e298]
+            - generic [ref=e299]:
+              - generic [ref=e300]:
+                - generic [ref=e301]:
+                  - generic [ref=e302]: Loan application submission
+                  - generic [ref=e303]: Completes the customer-to-bank handoff when vehicle preference is already known.
+                - generic [ref=e304]: Draft
+              - generic [ref=e306]:
+                - generic [ref=e307]:
+                  - generic [ref=e308]: Requested amount
+                  - spinbutton [ref=e309]
+                - generic [ref=e310]:
+                  - generic [ref=e311]: Term months
+                  - spinbutton [ref=e312]: "48"
+                - generic [ref=e313]:
+                  - generic [ref=e314]: Monthly income
+                  - spinbutton [ref=e315]
+                - generic [ref=e316]:
+                  - generic [ref=e317]: Employment status
+                  - combobox [ref=e318]:
+                    - option "Employed" [selected]
+                    - option "Self employed"
+                    - option "Business owner"
+                    - option "Contract"
+            - generic [ref=e319]:
+              - button "Cancel" [ref=e320] [cursor=pointer]
+              - button "Save customer workflow" [ref=e321] [cursor=pointer]:
+                - img [ref=e322]
+                - text: Save customer workflow

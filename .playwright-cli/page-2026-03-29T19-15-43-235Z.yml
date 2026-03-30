@@ -1,0 +1,667 @@
+- generic [ref=e3]:
+  - complementary [ref=e4]:
+    - generic [ref=e5]:
+      - generic [ref=e6]: M
+      - generic [ref=e7]:
+        - paragraph [ref=e8]: Vehicle Financing Platform
+        - generic [ref=e9]: MerkatoMotors
+    - generic [ref=e10]:
+      - generic [ref=e11]: AU
+      - generic [ref=e12]:
+        - generic [ref=e13]: Admin User
+        - generic [ref=e14]: admin
+    - navigation [ref=e15]:
+      - generic [ref=e16]:
+        - generic [ref=e17]: Overview
+        - link "Dashboard" [ref=e18] [cursor=pointer]:
+          - /url: /dashboard
+          - img [ref=e20]
+          - generic [ref=e25]: Dashboard
+        - link "Analytics" [ref=e26] [cursor=pointer]:
+          - /url: /analytics
+          - img [ref=e28]
+          - generic [ref=e30]: Analytics
+        - link "Platform health" [ref=e31] [cursor=pointer]:
+          - /url: /health
+          - img [ref=e33]
+          - generic [ref=e35]: Platform health
+      - generic [ref=e36]:
+        - generic [ref=e37]: Operations
+        - link "Customer CRM" [ref=e38] [cursor=pointer]:
+          - /url: /customers
+          - img [ref=e40]
+          - generic [ref=e44]: Customer CRM
+        - link "Supplier portal" [ref=e45] [cursor=pointer]:
+          - /url: /vehicles
+          - img [ref=e47]
+          - generic [ref=e50]: Supplier portal
+        - link "Deal flow" [ref=e51] [cursor=pointer]:
+          - /url: /deals
+          - img [ref=e53]
+          - generic [ref=e56]: Deal flow
+        - link "Finance portal" [ref=e57] [cursor=pointer]:
+          - /url: /finance
+          - img [ref=e59]
+          - generic [ref=e63]: Finance portal
+      - generic [ref=e64]:
+        - generic [ref=e65]: Growth
+        - link "Partnerships" [ref=e66] [cursor=pointer]:
+          - /url: /partners
+          - img [ref=e68]
+          - generic [ref=e73]: Partnerships
+        - link "Marketing" [ref=e74] [cursor=pointer]:
+          - /url: /marketing
+          - img [ref=e76]
+          - generic [ref=e79]: Marketing
+        - link "Settings" [ref=e80] [cursor=pointer]:
+          - /url: /settings
+          - img [ref=e82]
+          - generic [ref=e85]: Settings
+  - generic [ref=e86]:
+    - banner [ref=e87]:
+      - generic [ref=e88]:
+        - paragraph [ref=e89]: Vehicle Financing Operations
+        - heading "Supplier portal" [level=1] [ref=e90]
+        - paragraph [ref=e91]: Inventory and supplier records
+      - generic [ref=e92]:
+        - generic [ref=e93]:
+          - img [ref=e94]
+          - textbox "Search customers, vehicles, deals" [ref=e97]
+        - button "Toggle theme" [ref=e98] [cursor=pointer]:
+          - img [ref=e99]
+        - button "Toggle notifications" [ref=e102] [cursor=pointer]:
+          - img [ref=e103]
+        - generic [ref=e106]:
+          - generic [ref=e107]: AU
+          - generic [ref=e108]:
+            - generic [ref=e109]: Admin User
+            - generic [ref=e110]: admin
+    - main [ref=e111]:
+      - generic [ref=e113]:
+        - generic [ref=e114]:
+          - generic [ref=e128]:
+            - heading "Vehicle supplier portal" [level=1] [ref=e129]
+            - paragraph [ref=e130]: Register suppliers, maintain inventory quality, route matched buyer demand, and keep the marketplace stocked with finance-ready vehicles.
+          - generic [ref=e131]:
+            - generic [ref=e132]: Supplier onboarding
+            - generic [ref=e133]: Inventory management
+            - generic [ref=e134]: Lead routing
+        - generic [ref=e117]:
+          - article [ref=e135]:
+            - generic [ref=e136]:
+              - img [ref=e138]
+              - generic [ref=e141]: Vehicles listed
+            - generic [ref=e142]: "28"
+            - paragraph [ref=e143]: Across all active suppliers
+          - article [ref=e144]:
+            - generic [ref=e145]:
+              - img [ref=e147]
+              - generic [ref=e150]: Available stock
+            - generic [ref=e151]: "28"
+            - paragraph [ref=e152]: Units ready for customer matching
+          - article [ref=e153]:
+            - generic [ref=e154]:
+              - img [ref=e156]
+              - generic [ref=e160]: Supplier leads
+            - generic [ref=e161]: "12"
+            - paragraph [ref=e162]: Customer inquiries matched to supplier inventory
+          - article [ref=e163]:
+            - generic [ref=e164]:
+              - img [ref=e166]
+              - generic [ref=e170]: Suppliers
+            - generic [ref=e171]: "4"
+            - paragraph [ref=e172]: Partner businesses registered in the portal
+        - generic [ref=e123]:
+          - button "Inventory command" [ref=e173] [cursor=pointer]
+          - button "Supplier network" [ref=e174] [cursor=pointer]
+          - button "Lead desk" [ref=e175] [cursor=pointer]
+        - generic [ref=e176]:
+          - generic [ref=e177]:
+            - generic [ref=e179]:
+              - generic [ref=e180]: Vehicle inventory
+              - generic [ref=e181]: Searchable operational tables for ongoing marketplace supply management.
+            - generic [ref=e182]:
+              - generic [ref=e183]:
+                - generic [ref=e185]:
+                  - img [ref=e186]
+                  - textbox "Search makes, models, suppliers, or statuses" [ref=e189]
+                - generic [ref=e190]: Showing 28 records
+              - table [ref=e192]:
+                - rowgroup [ref=e193]:
+                  - row "Vehicle Supplier Condition Status Price Actions" [ref=e194]:
+                    - columnheader "Vehicle" [ref=e195] [cursor=pointer]:
+                      - generic [ref=e196]: Vehicle
+                    - columnheader "Supplier" [ref=e197] [cursor=pointer]:
+                      - generic [ref=e198]: Supplier
+                    - columnheader "Condition" [ref=e199]:
+                      - generic [ref=e200]: Condition
+                    - columnheader "Status" [ref=e201]:
+                      - generic [ref=e202]: Status
+                    - columnheader "Price" [ref=e203] [cursor=pointer]:
+                      - generic [ref=e204]: Price
+                    - columnheader "Actions" [ref=e205]:
+                      - generic [ref=e206]: Actions
+                - rowgroup [ref=e207]:
+                  - row "Toyota Corolla Demo 1774811124766 2024 � Petrol � Automatic Demo Supplier 1774811124766 New Available ETB 2,450,000 Delete" [ref=e208]:
+                    - cell "Toyota Corolla Demo 1774811124766 2024 � Petrol � Automatic" [ref=e209]:
+                      - generic [ref=e210]:
+                        - generic [ref=e211]: Toyota Corolla Demo 1774811124766
+                        - generic [ref=e212]: 2024 � Petrol � Automatic
+                    - cell "Demo Supplier 1774811124766" [ref=e213]
+                    - cell "New" [ref=e214]:
+                      - generic [ref=e215]: New
+                    - cell "Available" [ref=e217]:
+                      - generic [ref=e218]: Available
+                    - cell "ETB 2,450,000" [ref=e220]
+                    - cell "Delete" [ref=e221]:
+                      - button "Delete" [ref=e222] [cursor=pointer]:
+                        - img [ref=e223]
+                        - text: Delete
+                  - row "Toyota Corolla Demo 1774810965430 2024 � Petrol � Automatic Demo Supplier 1774810965430 New Available ETB 2,450,000 Delete" [ref=e226]:
+                    - cell "Toyota Corolla Demo 1774810965430 2024 � Petrol � Automatic" [ref=e227]:
+                      - generic [ref=e228]:
+                        - generic [ref=e229]: Toyota Corolla Demo 1774810965430
+                        - generic [ref=e230]: 2024 � Petrol � Automatic
+                    - cell "Demo Supplier 1774810965430" [ref=e231]
+                    - cell "New" [ref=e232]:
+                      - generic [ref=e233]: New
+                    - cell "Available" [ref=e235]:
+                      - generic [ref=e236]: Available
+                    - cell "ETB 2,450,000" [ref=e238]
+                    - cell "Delete" [ref=e239]:
+                      - button "Delete" [ref=e240] [cursor=pointer]:
+                        - img [ref=e241]
+                        - text: Delete
+                  - row "Toyota Corolla Demo 1774810846604 2024 � Petrol � Automatic Demo Supplier 1774810846604 New Available ETB 2,450,000 Delete" [ref=e244]:
+                    - cell "Toyota Corolla Demo 1774810846604 2024 � Petrol � Automatic" [ref=e245]:
+                      - generic [ref=e246]:
+                        - generic [ref=e247]: Toyota Corolla Demo 1774810846604
+                        - generic [ref=e248]: 2024 � Petrol � Automatic
+                    - cell "Demo Supplier 1774810846604" [ref=e249]
+                    - cell "New" [ref=e250]:
+                      - generic [ref=e251]: New
+                    - cell "Available" [ref=e253]:
+                      - generic [ref=e254]: Available
+                    - cell "ETB 2,450,000" [ref=e256]
+                    - cell "Delete" [ref=e257]:
+                      - button "Delete" [ref=e258] [cursor=pointer]:
+                        - img [ref=e259]
+                        - text: Delete
+                  - row "Toyota Corolla QA 1774799890 2024 � Petrol � Automatic Codex Autos 1774799890 New Available ETB 2,450,000 Delete" [ref=e262]:
+                    - cell "Toyota Corolla QA 1774799890 2024 � Petrol � Automatic" [ref=e263]:
+                      - generic [ref=e264]:
+                        - generic [ref=e265]: Toyota Corolla QA 1774799890
+                        - generic [ref=e266]: 2024 � Petrol � Automatic
+                    - cell "Codex Autos 1774799890" [ref=e267]
+                    - cell "New" [ref=e268]:
+                      - generic [ref=e269]: New
+                    - cell "Available" [ref=e271]:
+                      - generic [ref=e272]: Available
+                    - cell "ETB 2,450,000" [ref=e274]
+                    - cell "Delete" [ref=e275]:
+                      - button "Delete" [ref=e276] [cursor=pointer]:
+                        - img [ref=e277]
+                        - text: Delete
+                  - row "Chery Tiggo 7 2024 � Petrol � Automatic Lifan Motors New Available ETB 1,600,000 Delete" [ref=e280]:
+                    - cell "Chery Tiggo 7 2024 � Petrol � Automatic" [ref=e281]:
+                      - generic [ref=e282]:
+                        - generic [ref=e283]: Chery Tiggo 7
+                        - generic [ref=e284]: 2024 � Petrol � Automatic
+                    - cell "Lifan Motors" [ref=e285]
+                    - cell "New" [ref=e286]:
+                      - generic [ref=e287]: New
+                    - cell "Available" [ref=e289]:
+                      - generic [ref=e290]: Available
+                    - cell "ETB 1,600,000" [ref=e292]
+                    - cell "Delete" [ref=e293]:
+                      - button "Delete" [ref=e294] [cursor=pointer]:
+                        - img [ref=e295]
+                        - text: Delete
+                  - row "Mitsubishi L200 2024 � Diesel � Manual Moenco New Available ETB 2,900,000 Delete" [ref=e298]:
+                    - cell "Mitsubishi L200 2024 � Diesel � Manual" [ref=e299]:
+                      - generic [ref=e300]:
+                        - generic [ref=e301]: Mitsubishi L200
+                        - generic [ref=e302]: 2024 � Diesel � Manual
+                    - cell "Moenco" [ref=e303]
+                    - cell "New" [ref=e304]:
+                      - generic [ref=e305]: New
+                    - cell "Available" [ref=e307]:
+                      - generic [ref=e308]: Available
+                    - cell "ETB 2,900,000" [ref=e310]
+                    - cell "Delete" [ref=e311]:
+                      - button "Delete" [ref=e312] [cursor=pointer]:
+                        - img [ref=e313]
+                        - text: Delete
+                  - row "Toyota RAV4 2023 � Petrol � Automatic Nyala Motors Used Available ETB 3,200,000 Delete" [ref=e316]:
+                    - cell "Toyota RAV4 2023 � Petrol � Automatic" [ref=e317]:
+                      - generic [ref=e318]:
+                        - generic [ref=e319]: Toyota RAV4
+                        - generic [ref=e320]: 2023 � Petrol � Automatic
+                    - cell "Nyala Motors" [ref=e321]
+                    - cell "Used" [ref=e322]:
+                      - generic [ref=e323]: Used
+                    - cell "Available" [ref=e325]:
+                      - generic [ref=e326]: Available
+                    - cell "ETB 3,200,000" [ref=e328]
+                    - cell "Delete" [ref=e329]:
+                      - button "Delete" [ref=e330] [cursor=pointer]:
+                        - img [ref=e331]
+                        - text: Delete
+                  - row "Kia Sportage 2024 � Diesel � Automatic Moenco New Available ETB 3,800,000 Delete" [ref=e334]:
+                    - cell "Kia Sportage 2024 � Diesel � Automatic" [ref=e335]:
+                      - generic [ref=e336]:
+                        - generic [ref=e337]: Kia Sportage
+                        - generic [ref=e338]: 2024 � Diesel � Automatic
+                    - cell "Moenco" [ref=e339]
+                    - cell "New" [ref=e340]:
+                      - generic [ref=e341]: New
+                    - cell "Available" [ref=e343]:
+                      - generic [ref=e344]: Available
+                    - cell "ETB 3,800,000" [ref=e346]
+                    - cell "Delete" [ref=e347]:
+                      - button "Delete" [ref=e348] [cursor=pointer]:
+                        - img [ref=e349]
+                        - text: Delete
+                  - row "Toyota Yaris 2024 � Petrol � Manual Nyala Motors New Available ETB 1,200,000 Delete" [ref=e352]:
+                    - cell "Toyota Yaris 2024 � Petrol � Manual" [ref=e353]:
+                      - generic [ref=e354]:
+                        - generic [ref=e355]: Toyota Yaris
+                        - generic [ref=e356]: 2024 � Petrol � Manual
+                    - cell "Nyala Motors" [ref=e357]
+                    - cell "New" [ref=e358]:
+                      - generic [ref=e359]: New
+                    - cell "Available" [ref=e361]:
+                      - generic [ref=e362]: Available
+                    - cell "ETB 1,200,000" [ref=e364]
+                    - cell "Delete" [ref=e365]:
+                      - button "Delete" [ref=e366] [cursor=pointer]:
+                        - img [ref=e367]
+                        - text: Delete
+                  - row "Hyundai Creta 2024 � Petrol � Automatic Holland Car New Available ETB 2,100,000 Delete" [ref=e370]:
+                    - cell "Hyundai Creta 2024 � Petrol � Automatic" [ref=e371]:
+                      - generic [ref=e372]:
+                        - generic [ref=e373]: Hyundai Creta
+                        - generic [ref=e374]: 2024 � Petrol � Automatic
+                    - cell "Holland Car" [ref=e375]
+                    - cell "New" [ref=e376]:
+                      - generic [ref=e377]: New
+                    - cell "Available" [ref=e379]:
+                      - generic [ref=e380]: Available
+                    - cell "ETB 2,100,000" [ref=e382]
+                    - cell "Delete" [ref=e383]:
+                      - button "Delete" [ref=e384] [cursor=pointer]:
+                        - img [ref=e385]
+                        - text: Delete
+                  - row "Toyota Land Cruiser 2023 � Diesel � Automatic Moenco New Available ETB 8,500,000 Delete" [ref=e388]:
+                    - cell "Toyota Land Cruiser 2023 � Diesel � Automatic" [ref=e389]:
+                      - generic [ref=e390]:
+                        - generic [ref=e391]: Toyota Land Cruiser
+                        - generic [ref=e392]: 2023 � Diesel � Automatic
+                    - cell "Moenco" [ref=e393]
+                    - cell "New" [ref=e394]:
+                      - generic [ref=e395]: New
+                    - cell "Available" [ref=e397]:
+                      - generic [ref=e398]: Available
+                    - cell "ETB 8,500,000" [ref=e400]
+                    - cell "Delete" [ref=e401]:
+                      - button "Delete" [ref=e402] [cursor=pointer]:
+                        - img [ref=e403]
+                        - text: Delete
+                  - row "Nissan X-Trail 2024 � Hybrid � Automatic Nyala Motors New Available ETB 4,200,000 Delete" [ref=e406]:
+                    - cell "Nissan X-Trail 2024 � Hybrid � Automatic" [ref=e407]:
+                      - generic [ref=e408]:
+                        - generic [ref=e409]: Nissan X-Trail
+                        - generic [ref=e410]: 2024 � Hybrid � Automatic
+                    - cell "Nyala Motors" [ref=e411]
+                    - cell "New" [ref=e412]:
+                      - generic [ref=e413]: New
+                    - cell "Available" [ref=e415]:
+                      - generic [ref=e416]: Available
+                    - cell "ETB 4,200,000" [ref=e418]
+                    - cell "Delete" [ref=e419]:
+                      - button "Delete" [ref=e420] [cursor=pointer]:
+                        - img [ref=e421]
+                        - text: Delete
+                  - row "Suzuki Vitara 2023 � Petrol � Automatic Holland Car Certified Available ETB 2,200,000 Delete" [ref=e424]:
+                    - cell "Suzuki Vitara 2023 � Petrol � Automatic" [ref=e425]:
+                      - generic [ref=e426]:
+                        - generic [ref=e427]: Suzuki Vitara
+                        - generic [ref=e428]: 2023 � Petrol � Automatic
+                    - cell "Holland Car" [ref=e429]
+                    - cell "Certified" [ref=e430]:
+                      - generic [ref=e431]: Certified
+                    - cell "Available" [ref=e433]:
+                      - generic [ref=e434]: Available
+                    - cell "ETB 2,200,000" [ref=e436]
+                    - cell "Delete" [ref=e437]:
+                      - button "Delete" [ref=e438] [cursor=pointer]:
+                        - img [ref=e439]
+                        - text: Delete
+                  - row "Hyundai Tucson 2024 � Petrol � Automatic Holland Car New Available ETB 3,500,000 Delete" [ref=e442]:
+                    - cell "Hyundai Tucson 2024 � Petrol � Automatic" [ref=e443]:
+                      - generic [ref=e444]:
+                        - generic [ref=e445]: Hyundai Tucson
+                        - generic [ref=e446]: 2024 � Petrol � Automatic
+                    - cell "Holland Car" [ref=e447]
+                    - cell "New" [ref=e448]:
+                      - generic [ref=e449]: New
+                    - cell "Available" [ref=e451]:
+                      - generic [ref=e452]: Available
+                    - cell "ETB 3,500,000" [ref=e454]
+                    - cell "Delete" [ref=e455]:
+                      - button "Delete" [ref=e456] [cursor=pointer]:
+                        - img [ref=e457]
+                        - text: Delete
+                  - row "Toyota Hilux 2023 � Diesel � Manual Nyala Motors Used Available ETB 2,800,000 Delete" [ref=e460]:
+                    - cell "Toyota Hilux 2023 � Diesel � Manual" [ref=e461]:
+                      - generic [ref=e462]:
+                        - generic [ref=e463]: Toyota Hilux
+                        - generic [ref=e464]: 2023 � Diesel � Manual
+                    - cell "Nyala Motors" [ref=e465]
+                    - cell "Used" [ref=e466]:
+                      - generic [ref=e467]: Used
+                    - cell "Available" [ref=e469]:
+                      - generic [ref=e470]: Available
+                    - cell "ETB 2,800,000" [ref=e472]
+                    - cell "Delete" [ref=e473]:
+                      - button "Delete" [ref=e474] [cursor=pointer]:
+                        - img [ref=e475]
+                        - text: Delete
+                  - row "Toyota Corolla 2024 � Petrol � Automatic Nyala Motors New Available ETB 1,800,000 Delete" [ref=e478]:
+                    - cell "Toyota Corolla 2024 � Petrol � Automatic" [ref=e479]:
+                      - generic [ref=e480]:
+                        - generic [ref=e481]: Toyota Corolla
+                        - generic [ref=e482]: 2024 � Petrol � Automatic
+                    - cell "Nyala Motors" [ref=e483]
+                    - cell "New" [ref=e484]:
+                      - generic [ref=e485]: New
+                    - cell "Available" [ref=e487]:
+                      - generic [ref=e488]: Available
+                    - cell "ETB 1,800,000" [ref=e490]
+                    - cell "Delete" [ref=e491]:
+                      - button "Delete" [ref=e492] [cursor=pointer]:
+                        - img [ref=e493]
+                        - text: Delete
+                  - row "Chery Tiggo 7 2024 � Petrol � Automatic Lifan Motors New Available ETB 1,600,000 Delete" [ref=e496]:
+                    - cell "Chery Tiggo 7 2024 � Petrol � Automatic" [ref=e497]:
+                      - generic [ref=e498]:
+                        - generic [ref=e499]: Chery Tiggo 7
+                        - generic [ref=e500]: 2024 � Petrol � Automatic
+                    - cell "Lifan Motors" [ref=e501]
+                    - cell "New" [ref=e502]:
+                      - generic [ref=e503]: New
+                    - cell "Available" [ref=e505]:
+                      - generic [ref=e506]: Available
+                    - cell "ETB 1,600,000" [ref=e508]
+                    - cell "Delete" [ref=e509]:
+                      - button "Delete" [ref=e510] [cursor=pointer]:
+                        - img [ref=e511]
+                        - text: Delete
+                  - row "Mitsubishi L200 2024 � Diesel � Manual Moenco New Available ETB 2,900,000 Delete" [ref=e514]:
+                    - cell "Mitsubishi L200 2024 � Diesel � Manual" [ref=e515]:
+                      - generic [ref=e516]:
+                        - generic [ref=e517]: Mitsubishi L200
+                        - generic [ref=e518]: 2024 � Diesel � Manual
+                    - cell "Moenco" [ref=e519]
+                    - cell "New" [ref=e520]:
+                      - generic [ref=e521]: New
+                    - cell "Available" [ref=e523]:
+                      - generic [ref=e524]: Available
+                    - cell "ETB 2,900,000" [ref=e526]
+                    - cell "Delete" [ref=e527]:
+                      - button "Delete" [ref=e528] [cursor=pointer]:
+                        - img [ref=e529]
+                        - text: Delete
+                  - row "Toyota RAV4 2023 � Petrol � Automatic Nyala Motors Used Available ETB 3,200,000 Delete" [ref=e532]:
+                    - cell "Toyota RAV4 2023 � Petrol � Automatic" [ref=e533]:
+                      - generic [ref=e534]:
+                        - generic [ref=e535]: Toyota RAV4
+                        - generic [ref=e536]: 2023 � Petrol � Automatic
+                    - cell "Nyala Motors" [ref=e537]
+                    - cell "Used" [ref=e538]:
+                      - generic [ref=e539]: Used
+                    - cell "Available" [ref=e541]:
+                      - generic [ref=e542]: Available
+                    - cell "ETB 3,200,000" [ref=e544]
+                    - cell "Delete" [ref=e545]:
+                      - button "Delete" [ref=e546] [cursor=pointer]:
+                        - img [ref=e547]
+                        - text: Delete
+                  - row "Kia Sportage 2024 � Diesel � Automatic Moenco New Available ETB 3,800,000 Delete" [ref=e550]:
+                    - cell "Kia Sportage 2024 � Diesel � Automatic" [ref=e551]:
+                      - generic [ref=e552]:
+                        - generic [ref=e553]: Kia Sportage
+                        - generic [ref=e554]: 2024 � Diesel � Automatic
+                    - cell "Moenco" [ref=e555]
+                    - cell "New" [ref=e556]:
+                      - generic [ref=e557]: New
+                    - cell "Available" [ref=e559]:
+                      - generic [ref=e560]: Available
+                    - cell "ETB 3,800,000" [ref=e562]
+                    - cell "Delete" [ref=e563]:
+                      - button "Delete" [ref=e564] [cursor=pointer]:
+                        - img [ref=e565]
+                        - text: Delete
+                  - row "Toyota Yaris 2024 � Petrol � Manual Nyala Motors New Available ETB 1,200,000 Delete" [ref=e568]:
+                    - cell "Toyota Yaris 2024 � Petrol � Manual" [ref=e569]:
+                      - generic [ref=e570]:
+                        - generic [ref=e571]: Toyota Yaris
+                        - generic [ref=e572]: 2024 � Petrol � Manual
+                    - cell "Nyala Motors" [ref=e573]
+                    - cell "New" [ref=e574]:
+                      - generic [ref=e575]: New
+                    - cell "Available" [ref=e577]:
+                      - generic [ref=e578]: Available
+                    - cell "ETB 1,200,000" [ref=e580]
+                    - cell "Delete" [ref=e581]:
+                      - button "Delete" [ref=e582] [cursor=pointer]:
+                        - img [ref=e583]
+                        - text: Delete
+                  - row "Hyundai Creta 2024 � Petrol � Automatic Holland Car New Available ETB 2,100,000 Delete" [ref=e586]:
+                    - cell "Hyundai Creta 2024 � Petrol � Automatic" [ref=e587]:
+                      - generic [ref=e588]:
+                        - generic [ref=e589]: Hyundai Creta
+                        - generic [ref=e590]: 2024 � Petrol � Automatic
+                    - cell "Holland Car" [ref=e591]
+                    - cell "New" [ref=e592]:
+                      - generic [ref=e593]: New
+                    - cell "Available" [ref=e595]:
+                      - generic [ref=e596]: Available
+                    - cell "ETB 2,100,000" [ref=e598]
+                    - cell "Delete" [ref=e599]:
+                      - button "Delete" [ref=e600] [cursor=pointer]:
+                        - img [ref=e601]
+                        - text: Delete
+                  - row "Toyota Land Cruiser 2023 � Diesel � Automatic Moenco New Available ETB 8,500,000 Delete" [ref=e604]:
+                    - cell "Toyota Land Cruiser 2023 � Diesel � Automatic" [ref=e605]:
+                      - generic [ref=e606]:
+                        - generic [ref=e607]: Toyota Land Cruiser
+                        - generic [ref=e608]: 2023 � Diesel � Automatic
+                    - cell "Moenco" [ref=e609]
+                    - cell "New" [ref=e610]:
+                      - generic [ref=e611]: New
+                    - cell "Available" [ref=e613]:
+                      - generic [ref=e614]: Available
+                    - cell "ETB 8,500,000" [ref=e616]
+                    - cell "Delete" [ref=e617]:
+                      - button "Delete" [ref=e618] [cursor=pointer]:
+                        - img [ref=e619]
+                        - text: Delete
+                  - row "Nissan X-Trail 2024 � Hybrid � Automatic Nyala Motors New Available ETB 4,200,000 Delete" [ref=e622]:
+                    - cell "Nissan X-Trail 2024 � Hybrid � Automatic" [ref=e623]:
+                      - generic [ref=e624]:
+                        - generic [ref=e625]: Nissan X-Trail
+                        - generic [ref=e626]: 2024 � Hybrid � Automatic
+                    - cell "Nyala Motors" [ref=e627]
+                    - cell "New" [ref=e628]:
+                      - generic [ref=e629]: New
+                    - cell "Available" [ref=e631]:
+                      - generic [ref=e632]: Available
+                    - cell "ETB 4,200,000" [ref=e634]
+                    - cell "Delete" [ref=e635]:
+                      - button "Delete" [ref=e636] [cursor=pointer]:
+                        - img [ref=e637]
+                        - text: Delete
+                  - row "Suzuki Vitara 2023 � Petrol � Automatic Holland Car Certified Available ETB 2,200,000 Delete" [ref=e640]:
+                    - cell "Suzuki Vitara 2023 � Petrol � Automatic" [ref=e641]:
+                      - generic [ref=e642]:
+                        - generic [ref=e643]: Suzuki Vitara
+                        - generic [ref=e644]: 2023 � Petrol � Automatic
+                    - cell "Holland Car" [ref=e645]
+                    - cell "Certified" [ref=e646]:
+                      - generic [ref=e647]: Certified
+                    - cell "Available" [ref=e649]:
+                      - generic [ref=e650]: Available
+                    - cell "ETB 2,200,000" [ref=e652]
+                    - cell "Delete" [ref=e653]:
+                      - button "Delete" [ref=e654] [cursor=pointer]:
+                        - img [ref=e655]
+                        - text: Delete
+                  - row "Hyundai Tucson 2024 � Petrol � Automatic Holland Car New Available ETB 3,500,000 Delete" [ref=e658]:
+                    - cell "Hyundai Tucson 2024 � Petrol � Automatic" [ref=e659]:
+                      - generic [ref=e660]:
+                        - generic [ref=e661]: Hyundai Tucson
+                        - generic [ref=e662]: 2024 � Petrol � Automatic
+                    - cell "Holland Car" [ref=e663]
+                    - cell "New" [ref=e664]:
+                      - generic [ref=e665]: New
+                    - cell "Available" [ref=e667]:
+                      - generic [ref=e668]: Available
+                    - cell "ETB 3,500,000" [ref=e670]
+                    - cell "Delete" [ref=e671]:
+                      - button "Delete" [ref=e672] [cursor=pointer]:
+                        - img [ref=e673]
+                        - text: Delete
+                  - row "Toyota Hilux 2023 � Diesel � Manual Nyala Motors Used Available ETB 2,800,000 Delete" [ref=e676]:
+                    - cell "Toyota Hilux 2023 � Diesel � Manual" [ref=e677]:
+                      - generic [ref=e678]:
+                        - generic [ref=e679]: Toyota Hilux
+                        - generic [ref=e680]: 2023 � Diesel � Manual
+                    - cell "Nyala Motors" [ref=e681]
+                    - cell "Used" [ref=e682]:
+                      - generic [ref=e683]: Used
+                    - cell "Available" [ref=e685]:
+                      - generic [ref=e686]: Available
+                    - cell "ETB 2,800,000" [ref=e688]
+                    - cell "Delete" [ref=e689]:
+                      - button "Delete" [ref=e690] [cursor=pointer]:
+                        - img [ref=e691]
+                        - text: Delete
+                  - row "Toyota Corolla 2024 � Petrol � Automatic Nyala Motors New Available ETB 1,800,000 Delete" [ref=e694]:
+                    - cell "Toyota Corolla 2024 � Petrol � Automatic" [ref=e695]:
+                      - generic [ref=e696]:
+                        - generic [ref=e697]: Toyota Corolla
+                        - generic [ref=e698]: 2024 � Petrol � Automatic
+                    - cell "Nyala Motors" [ref=e699]
+                    - cell "New" [ref=e700]:
+                      - generic [ref=e701]: New
+                    - cell "Available" [ref=e703]:
+                      - generic [ref=e704]: Available
+                    - cell "ETB 1,800,000" [ref=e706]
+                    - cell "Delete" [ref=e707]:
+                      - button "Delete" [ref=e708] [cursor=pointer]:
+                        - img [ref=e709]
+                        - text: Delete
+          - generic [ref=e712]:
+            - generic [ref=e714]:
+              - generic [ref=e715]: Register a new vehicle
+              - generic [ref=e716]: Built for live intake rather than static spreadsheets.
+            - generic [ref=e717]:
+              - generic [ref=e718]:
+                - generic [ref=e719]:
+                  - generic [ref=e720]: Make
+                  - textbox [ref=e721]
+                - generic [ref=e722]:
+                  - generic [ref=e723]: Model
+                  - textbox [ref=e724]
+                - generic [ref=e725]:
+                  - generic [ref=e726]: Year
+                  - spinbutton [ref=e727]: "2026"
+                - generic [ref=e728]:
+                  - generic [ref=e729]: Price
+                  - spinbutton [ref=e730]
+                - generic [ref=e731]:
+                  - generic [ref=e732]: Condition
+                  - combobox [ref=e733]:
+                    - option "New" [selected]
+                    - option "Used"
+                    - option "Certified"
+                - generic [ref=e734]:
+                  - generic [ref=e735]: Status
+                  - combobox [ref=e736]:
+                    - option "Available" [selected]
+                    - option "Reserved"
+                    - option "Sold"
+                - generic [ref=e737]:
+                  - generic [ref=e738]: Fuel type
+                  - textbox [ref=e739]: Petrol
+                - generic [ref=e740]:
+                  - generic [ref=e741]: Transmission
+                  - textbox [ref=e742]: Automatic
+                - generic [ref=e743]:
+                  - generic [ref=e744]: Mileage
+                  - spinbutton [ref=e745]: "0"
+                - generic [ref=e746]:
+                  - generic [ref=e747]: Supplier name
+                  - textbox "Match the supplier company name" [ref=e748]
+                - generic [ref=e749]:
+                  - generic [ref=e750]: Color
+                  - textbox [ref=e751]: White
+                - generic [ref=e752]:
+                  - generic [ref=e753]: Description
+                  - textbox [ref=e754]
+              - button "Add vehicle to inventory" [ref=e755] [cursor=pointer]:
+                - img [ref=e756]
+                - text: Add vehicle to inventory
+        - generic [ref=e760]:
+          - generic [ref=e761]:
+            - generic [ref=e763]:
+              - generic [ref=e764]: Inventory composition
+              - generic [ref=e765]: Top makes currently available in the catalog.
+            - generic [ref=e766]:
+              - generic [ref=e767]:
+                - generic [ref=e768]:
+                  - generic [ref=e769]: Toyota
+                  - generic [ref=e770]: Available
+                - generic [ref=e772]: 14 vehicles currently listed
+              - generic [ref=e773]:
+                - generic [ref=e774]:
+                  - generic [ref=e775]: Hyundai
+                  - generic [ref=e776]: Available
+                - generic [ref=e778]: 4 vehicles currently listed
+              - generic [ref=e779]:
+                - generic [ref=e780]:
+                  - generic [ref=e781]: Kia
+                  - generic [ref=e782]: Available
+                - generic [ref=e784]: 2 vehicles currently listed
+              - generic [ref=e785]:
+                - generic [ref=e786]:
+                  - generic [ref=e787]: Suzuki
+                  - generic [ref=e788]: Available
+                - generic [ref=e790]: 2 vehicles currently listed
+          - generic [ref=e791]:
+            - generic [ref=e793]:
+              - generic [ref=e794]: Supplier highlights
+              - generic [ref=e795]: Quick read on the most visible partners in the portal.
+            - generic [ref=e796]:
+              - generic [ref=e797]:
+                - generic [ref=e798]:
+                  - generic [ref=e799]:
+                    - generic [ref=e800]: Demo Supplier 1774811124766
+                    - generic [ref=e801]: Demo Operator � Addis Ababa
+                  - generic [ref=e802]: Active
+                - generic [ref=e804]: "Inventory mapped: 1 vehicle(s)"
+              - generic [ref=e805]:
+                - generic [ref=e806]:
+                  - generic [ref=e807]:
+                    - generic [ref=e808]: Demo Supplier 1774810965430
+                    - generic [ref=e809]: Demo Operator � Addis Ababa
+                  - generic [ref=e810]: Active
+                - generic [ref=e812]: "Inventory mapped: 1 vehicle(s)"
+              - generic [ref=e813]:
+                - generic [ref=e814]:
+                  - generic [ref=e815]:
+                    - generic [ref=e816]: Demo Supplier 1774810846604
+                    - generic [ref=e817]: Demo Operator � Addis Ababa
+                  - generic [ref=e818]: Active
+                - generic [ref=e820]: "Inventory mapped: 1 vehicle(s)"

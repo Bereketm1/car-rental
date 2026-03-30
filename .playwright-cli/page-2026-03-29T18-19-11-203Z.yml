@@ -1,0 +1,295 @@
+- generic [ref=e3]:
+  - complementary [ref=e4]:
+    - generic [ref=e5]:
+      - generic [ref=e6]: M
+      - generic [ref=e7]:
+        - paragraph [ref=e8]: Vehicle Financing Platform
+        - generic [ref=e9]: MerkatoMotors
+    - generic [ref=e10]:
+      - generic [ref=e11]: AU
+      - generic [ref=e12]:
+        - generic [ref=e13]: Admin User
+        - generic [ref=e14]: admin
+    - navigation [ref=e15]:
+      - generic [ref=e16]:
+        - generic [ref=e17]: Overview
+        - link "Dashboard" [ref=e18] [cursor=pointer]:
+          - /url: /dashboard
+          - img [ref=e20]
+          - generic [ref=e25]: Dashboard
+        - link "Analytics" [ref=e26] [cursor=pointer]:
+          - /url: /analytics
+          - img [ref=e28]
+          - generic [ref=e30]: Analytics
+        - link "Platform health" [ref=e31] [cursor=pointer]:
+          - /url: /health
+          - img [ref=e33]
+          - generic [ref=e35]: Platform health
+      - generic [ref=e36]:
+        - generic [ref=e37]: Operations
+        - link "Customer CRM" [ref=e38] [cursor=pointer]:
+          - /url: /customers
+          - img [ref=e40]
+          - generic [ref=e44]: Customer CRM
+        - link "Supplier portal" [ref=e45] [cursor=pointer]:
+          - /url: /vehicles
+          - img [ref=e47]
+          - generic [ref=e50]: Supplier portal
+        - link "Deal flow" [ref=e51] [cursor=pointer]:
+          - /url: /deals
+          - img [ref=e53]
+          - generic [ref=e56]: Deal flow
+        - link "Finance portal" [ref=e57] [cursor=pointer]:
+          - /url: /finance
+          - img [ref=e59]
+          - generic [ref=e63]: Finance portal
+      - generic [ref=e64]:
+        - generic [ref=e65]: Growth
+        - link "Partnerships" [ref=e66] [cursor=pointer]:
+          - /url: /partners
+          - img [ref=e68]
+          - generic [ref=e73]: Partnerships
+        - link "Marketing" [ref=e74] [cursor=pointer]:
+          - /url: /marketing
+          - img [ref=e76]
+          - generic [ref=e79]: Marketing
+        - link "Settings" [ref=e80] [cursor=pointer]:
+          - /url: /settings
+          - img [ref=e82]
+          - generic [ref=e85]: Settings
+  - generic [ref=e86]:
+    - banner [ref=e87]:
+      - generic [ref=e88]:
+        - paragraph [ref=e89]: Vehicle Financing Operations
+        - heading "Finance portal" [level=1] [ref=e90]
+        - paragraph [ref=e91]: Reviews and institutions
+      - generic [ref=e92]:
+        - generic [ref=e93]:
+          - img [ref=e94]
+          - textbox "Search customers, vehicles, deals" [ref=e97]
+        - button "Toggle theme" [ref=e98] [cursor=pointer]:
+          - img [ref=e99]
+        - button "Toggle notifications" [ref=e102] [cursor=pointer]:
+          - img [ref=e103]
+        - generic [ref=e106]:
+          - generic [ref=e107]: AU
+          - generic [ref=e108]:
+            - generic [ref=e109]: Admin User
+            - generic [ref=e110]: admin
+    - main [ref=e111]:
+      - generic [ref=e113]:
+        - generic [ref=e114]:
+          - generic [ref=e115]:
+            - heading "Financial institution portal" [level=1] [ref=e116]
+            - paragraph [ref=e117]: Review loan files, coordinate supporting documents, register lending partners, and monitor the financing pipeline.
+          - generic [ref=e118]:
+            - generic [ref=e119]: Loan reviews
+            - generic [ref=e120]: Lender network
+            - generic [ref=e121]: Document requests
+        - generic [ref=e122]:
+          - article [ref=e123]:
+            - generic [ref=e124]:
+              - img [ref=e126]
+              - generic [ref=e130]: Reviews
+            - generic [ref=e131]: "11"
+            - paragraph [ref=e132]: Total financing files
+          - article [ref=e133]:
+            - generic [ref=e134]:
+              - img [ref=e136]
+              - generic [ref=e139]: Approved
+            - generic [ref=e140]: "0"
+            - paragraph [ref=e141]: Files cleared for financing
+          - article [ref=e142]:
+            - generic [ref=e143]:
+              - img [ref=e145]
+              - generic [ref=e148]: Rejected
+            - generic [ref=e149]: "0"
+            - paragraph [ref=e150]: Files declined by institutions
+          - article [ref=e151]:
+            - generic [ref=e152]:
+              - img [ref=e154]
+              - generic [ref=e158]: Institutions
+            - generic [ref=e159]: "9"
+            - paragraph [ref=e160]: Active lenders in the marketplace
+        - generic [ref=e161]:
+          - button "Review desk" [ref=e162] [cursor=pointer]
+          - button "Institution registry" [ref=e163] [cursor=pointer]
+          - button "Document requests" [ref=e164] [cursor=pointer]
+        - generic [ref=e165]:
+          - generic [ref=e166]:
+            - generic [ref=e168]:
+              - generic [ref=e169]: Active reviews
+              - generic [ref=e170]: Everything needed to keep financing decisions moving without leaving the workspace.
+            - generic [ref=e171]:
+              - generic [ref=e172]:
+                - generic [ref=e174]:
+                  - img [ref=e175]
+                  - textbox "Search by customer, vehicle, institution, or status" [ref=e178]
+                - generic [ref=e179]: Showing 11 records
+              - table [ref=e181]:
+                - rowgroup [ref=e182]:
+                  - row "Customer Vehicle Requested Institution Status Actions" [ref=e183]:
+                    - columnheader "Customer" [ref=e184] [cursor=pointer]:
+                      - generic [ref=e185]: Customer
+                    - columnheader "Vehicle" [ref=e186] [cursor=pointer]:
+                      - generic [ref=e187]: Vehicle
+                    - columnheader "Requested" [ref=e188] [cursor=pointer]:
+                      - generic [ref=e189]: Requested
+                    - columnheader "Institution" [ref=e190] [cursor=pointer]:
+                      - generic [ref=e191]: Institution
+                    - columnheader "Status" [ref=e192]:
+                      - generic [ref=e193]: Status
+                    - columnheader "Actions" [ref=e194]:
+                      - generic [ref=e195]: Actions
+                - rowgroup [ref=e196]:
+                  - row "Selam Smoke1774799890 Toyota Corolla QA 1774799890 2024 ETB 1,800,000 Awash Bank Pending Approve Reject" [ref=e197]:
+                    - cell "Selam Smoke1774799890" [ref=e198]
+                    - cell "Toyota Corolla QA 1774799890 2024" [ref=e199]
+                    - cell "ETB 1,800,000" [ref=e200]
+                    - cell "Awash Bank" [ref=e201]
+                    - cell "Pending" [ref=e202]:
+                      - generic [ref=e203]: Pending
+                    - cell "Approve Reject" [ref=e205]:
+                      - generic [ref=e206]:
+                        - button "Approve" [ref=e207] [cursor=pointer]
+                        - button "Reject" [ref=e208] [cursor=pointer]
+                  - row "Hana Desta Toyota Land Cruiser ETB 6,000,000 CBE Pending Approve Reject" [ref=e209]:
+                    - cell "Hana Desta" [ref=e210]
+                    - cell "Toyota Land Cruiser" [ref=e211]
+                    - cell "ETB 6,000,000" [ref=e212]
+                    - cell "CBE" [ref=e213]
+                    - cell "Pending" [ref=e214]:
+                      - generic [ref=e215]: Pending
+                    - cell "Approve Reject" [ref=e217]:
+                      - generic [ref=e218]:
+                        - button "Approve" [ref=e219] [cursor=pointer]
+                        - button "Reject" [ref=e220] [cursor=pointer]
+                  - row "Mekdes Tadesse Suzuki Vitara 2023 ETB 1,800,000 Abyssinia Bank Pending Approve Reject" [ref=e221]:
+                    - cell "Mekdes Tadesse" [ref=e222]
+                    - cell "Suzuki Vitara 2023" [ref=e223]
+                    - cell "ETB 1,800,000" [ref=e224]
+                    - cell "Abyssinia Bank" [ref=e225]
+                    - cell "Pending" [ref=e226]:
+                      - generic [ref=e227]: Pending
+                    - cell "Approve Reject" [ref=e229]:
+                      - generic [ref=e230]:
+                        - button "Approve" [ref=e231] [cursor=pointer]
+                        - button "Reject" [ref=e232] [cursor=pointer]
+                  - row "Dawit Tesfaye Toyota Hilux 2023 ETB 2,000,000 Dashen Bank Pending Approve Reject" [ref=e233]:
+                    - cell "Dawit Tesfaye" [ref=e234]
+                    - cell "Toyota Hilux 2023" [ref=e235]
+                    - cell "ETB 2,000,000" [ref=e236]
+                    - cell "Dashen Bank" [ref=e237]
+                    - cell "Pending" [ref=e238]:
+                      - generic [ref=e239]: Pending
+                    - cell "Approve Reject" [ref=e241]:
+                      - generic [ref=e242]:
+                        - button "Approve" [ref=e243] [cursor=pointer]
+                        - button "Reject" [ref=e244] [cursor=pointer]
+                  - row "Tigist Haile Hyundai Tucson 2024 ETB 3,200,000 Awash Bank Pending Approve Reject" [ref=e245]:
+                    - cell "Tigist Haile" [ref=e246]
+                    - cell "Hyundai Tucson 2024" [ref=e247]
+                    - cell "ETB 3,200,000" [ref=e248]
+                    - cell "Awash Bank" [ref=e249]
+                    - cell "Pending" [ref=e250]:
+                      - generic [ref=e251]: Pending
+                    - cell "Approve Reject" [ref=e253]:
+                      - generic [ref=e254]:
+                        - button "Approve" [ref=e255] [cursor=pointer]
+                        - button "Reject" [ref=e256] [cursor=pointer]
+                  - row "Abebe Kebede Toyota Corolla 2024 ETB 1,500,000 Commercial Bank of Ethiopia Pending Approve Reject" [ref=e257]:
+                    - cell "Abebe Kebede" [ref=e258]
+                    - cell "Toyota Corolla 2024" [ref=e259]
+                    - cell "ETB 1,500,000" [ref=e260]
+                    - cell "Commercial Bank of Ethiopia" [ref=e261]
+                    - cell "Pending" [ref=e262]:
+                      - generic [ref=e263]: Pending
+                    - cell "Approve Reject" [ref=e265]:
+                      - generic [ref=e266]:
+                        - button "Approve" [ref=e267] [cursor=pointer]
+                        - button "Reject" [ref=e268] [cursor=pointer]
+                  - row "Hana Desta Toyota Land Cruiser ETB 6,000,000 CBE Pending Approve Reject" [ref=e269]:
+                    - cell "Hana Desta" [ref=e270]
+                    - cell "Toyota Land Cruiser" [ref=e271]
+                    - cell "ETB 6,000,000" [ref=e272]
+                    - cell "CBE" [ref=e273]
+                    - cell "Pending" [ref=e274]:
+                      - generic [ref=e275]: Pending
+                    - cell "Approve Reject" [ref=e277]:
+                      - generic [ref=e278]:
+                        - button "Approve" [ref=e279] [cursor=pointer]
+                        - button "Reject" [ref=e280] [cursor=pointer]
+                  - row "Mekdes Tadesse Suzuki Vitara 2023 ETB 1,800,000 Abyssinia Bank Pending Approve Reject" [ref=e281]:
+                    - cell "Mekdes Tadesse" [ref=e282]
+                    - cell "Suzuki Vitara 2023" [ref=e283]
+                    - cell "ETB 1,800,000" [ref=e284]
+                    - cell "Abyssinia Bank" [ref=e285]
+                    - cell "Pending" [ref=e286]:
+                      - generic [ref=e287]: Pending
+                    - cell "Approve Reject" [ref=e289]:
+                      - generic [ref=e290]:
+                        - button "Approve" [ref=e291] [cursor=pointer]
+                        - button "Reject" [ref=e292] [cursor=pointer]
+                  - row "Dawit Tesfaye Toyota Hilux 2023 ETB 2,000,000 Dashen Bank Pending Approve Reject" [ref=e293]:
+                    - cell "Dawit Tesfaye" [ref=e294]
+                    - cell "Toyota Hilux 2023" [ref=e295]
+                    - cell "ETB 2,000,000" [ref=e296]
+                    - cell "Dashen Bank" [ref=e297]
+                    - cell "Pending" [ref=e298]:
+                      - generic [ref=e299]: Pending
+                    - cell "Approve Reject" [ref=e301]:
+                      - generic [ref=e302]:
+                        - button "Approve" [ref=e303] [cursor=pointer]
+                        - button "Reject" [ref=e304] [cursor=pointer]
+                  - row "Tigist Haile Hyundai Tucson 2024 ETB 3,200,000 Awash Bank Pending Approve Reject" [ref=e305]:
+                    - cell "Tigist Haile" [ref=e306]
+                    - cell "Hyundai Tucson 2024" [ref=e307]
+                    - cell "ETB 3,200,000" [ref=e308]
+                    - cell "Awash Bank" [ref=e309]
+                    - cell "Pending" [ref=e310]:
+                      - generic [ref=e311]: Pending
+                    - cell "Approve Reject" [ref=e313]:
+                      - generic [ref=e314]:
+                        - button "Approve" [ref=e315] [cursor=pointer]
+                        - button "Reject" [ref=e316] [cursor=pointer]
+                  - row "Abebe Kebede Toyota Corolla 2024 ETB 1,500,000 Commercial Bank of Ethiopia Pending Approve Reject" [ref=e317]:
+                    - cell "Abebe Kebede" [ref=e318]
+                    - cell "Toyota Corolla 2024" [ref=e319]
+                    - cell "ETB 1,500,000" [ref=e320]
+                    - cell "Commercial Bank of Ethiopia" [ref=e321]
+                    - cell "Pending" [ref=e322]:
+                      - generic [ref=e323]: Pending
+                    - cell "Approve Reject" [ref=e325]:
+                      - generic [ref=e326]:
+                        - button "Approve" [ref=e327] [cursor=pointer]
+                        - button "Reject" [ref=e328] [cursor=pointer]
+          - generic [ref=e329]:
+            - generic [ref=e331]:
+              - generic [ref=e332]: Open a new loan review
+              - generic [ref=e333]: Operate the portal without context switching to another tool.
+            - generic [ref=e334]:
+              - generic [ref=e335]:
+                - generic [ref=e336]:
+                  - generic [ref=e337]: Customer name
+                  - textbox [ref=e338]
+                - generic [ref=e339]:
+                  - generic [ref=e340]: Vehicle description
+                  - textbox [ref=e341]
+                - generic [ref=e342]:
+                  - generic [ref=e343]: Requested amount
+                  - spinbutton [ref=e344]
+                - generic [ref=e345]:
+                  - generic [ref=e346]: Term months
+                  - spinbutton [ref=e347]: "48"
+                - generic [ref=e348]:
+                  - generic [ref=e349]: Interest rate
+                  - spinbutton [ref=e350]: "12.5"
+                - generic [ref=e351]:
+                  - generic [ref=e352]: Institution
+                  - textbox [ref=e353]
+                - generic [ref=e354]:
+                  - generic [ref=e355]: Notes
+                  - textbox [ref=e356]
+              - button "Create review" [ref=e357] [cursor=pointer]:
+                - img [ref=e358]
+                - text: Create review

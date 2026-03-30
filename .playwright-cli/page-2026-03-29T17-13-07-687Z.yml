@@ -1,0 +1,53 @@
+- generic [ref=e4]:
+  - generic [ref=e5]:
+    - paragraph [ref=e6]:
+      - img [ref=e7]
+      - text: Ethiopian vehicle financing platform
+    - heading "A focused workspace for vehicle financing, partner coordination, and transaction oversight." [level=1] [ref=e11]
+    - paragraph [ref=e12]: Manage customer onboarding, supplier inventory, financing reviews, partner agreements, deal progression, and reporting from one professional platform built for the Ethiopian market.
+    - generic [ref=e13]:
+      - generic [ref=e14]:
+        - img [ref=e15]
+        - strong [ref=e19]: Registration to approval
+        - paragraph [ref=e20]: Customer operations
+      - generic [ref=e21]:
+        - img [ref=e22]
+        - strong [ref=e25]: Supplier and vehicle records
+        - paragraph [ref=e26]: Inventory control
+      - generic [ref=e27]:
+        - img [ref=e28]
+        - strong [ref=e32]: Reviews and institutions
+        - paragraph [ref=e33]: Finance management
+      - generic [ref=e34]:
+        - img [ref=e35]
+        - strong [ref=e40]: Agreements and commissions
+        - paragraph [ref=e41]: Partner oversight
+    - generic [ref=e43]:
+      - generic [ref=e44]:
+        - generic [ref=e45]:
+          - generic [ref=e46]: Operational scope
+          - generic [ref=e47]: From customer registration to financing decision and purchase completion.
+        - img [ref=e48]
+      - paragraph [ref=e51]: The interface is structured as a clear executive workspace. Each module supports a defined business process without unnecessary visual noise.
+  - generic [ref=e52]:
+    - generic [ref=e53]: M
+    - paragraph [ref=e54]: Workspace access
+    - heading "Sign in" [level=2] [ref=e55]
+    - paragraph [ref=e56]: Use one of the seeded demo identities below or enter your own credentials if you changed them in the API.
+    - generic [ref=e57]:
+      - button "Administrator admin@merkatomotors.com · admin123" [ref=e58] [cursor=pointer]:
+        - generic [ref=e59]: Administrator
+        - generic [ref=e60]: admin@merkatomotors.com · admin123
+      - button "Supplier portal demo supplier@merkatomotors.com · vendor123" [ref=e61] [cursor=pointer]:
+        - generic [ref=e62]: Supplier portal demo
+        - generic [ref=e63]: supplier@merkatomotors.com · vendor123
+    - generic [ref=e64]:
+      - generic [ref=e65]:
+        - generic [ref=e66]: Email address
+        - textbox [ref=e67]: admin@merkatomotors.com
+      - generic [ref=e68]:
+        - generic [ref=e69]: Password
+        - textbox [ref=e70]: admin123
+      - button "Enter workspace" [ref=e71] [cursor=pointer]:
+        - text: Enter workspace
+        - img [ref=e72]
