@@ -1,0 +1,7 @@
+npm error Lifecycle script `preview` failed with error:
+npm error code 4294967295
+npm error path C:\Users\SaremTadele\Downloads\car rental\apps\web
+npm error workspace web@1.0.0
+npm error location C:\Users\SaremTadele\Downloads\car rental\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vite preview --host 127.0.0.1 --port 4173

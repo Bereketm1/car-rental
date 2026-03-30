@@ -1,0 +1,106 @@
+[    3164ms] [ERROR] Access to fetch at 'http://localhost:3000/api/notifications' from origin 'http://127.0.0.1:4173' has been blocked by CORS policy: Response to preflight request doesn't pass access control check: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://127.0.0.1:4173/customers:0
+[    3170ms] [ERROR] Failed to load resource: net::ERR_FAILED @ http://localhost:3000/api/notifications:0
+[    3174ms] [ERROR] Failed to fetch notifications Error: Failed to fetch
+    at To (http://127.0.0.1:4173/assets/index-j8zzhg4j.js:337:5431)
+    at async a (http://127.0.0.1:4173/assets/index-j8zzhg4j.js:337:10734) @ http://127.0.0.1:4173/assets/index-j8zzhg4j.js:336
+[    3190ms] [ERROR] Access to fetch at 'http://localhost:3000/api/customers' from origin 'http://127.0.0.1:4173' has been blocked by CORS policy: Response to preflight request doesn't pass access control check: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://127.0.0.1:4173/customers:0
+[    3191ms] [ERROR] Failed to load resource: net::ERR_FAILED @ http://localhost:3000/api/customers:0
+[    3193ms] [ERROR] Access to fetch at 'http://localhost:3000/api/customers/loan-applications/all' from origin 'http://127.0.0.1:4173' has been blocked by CORS policy: Response to preflight request doesn't pass access control check: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://127.0.0.1:4173/customers:0
+[    3194ms] [ERROR] Failed to load resource: net::ERR_FAILED @ http://localhost:3000/api/customers/loan-applications/all:0
+[    3195ms] [ERROR] Access to fetch at 'http://localhost:3000/api/vehicles' from origin 'http://127.0.0.1:4173' has been blocked by CORS policy: Response to preflight request doesn't pass access control check: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://127.0.0.1:4173/customers:0
+[    3195ms] [ERROR] Failed to load resource: net::ERR_FAILED @ http://localhost:3000/api/vehicles:0
+[   32991ms] [ERROR] Access to fetch at 'http://localhost:3000/api/notifications' from origin 'http://127.0.0.1:4173' has been blocked by CORS policy: Response to preflight request doesn't pass access control check: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://127.0.0.1:4173/customers:0
+[   32991ms] [ERROR] Failed to load resource: net::ERR_FAILED @ http://localhost:3000/api/notifications:0
+[   33003ms] [ERROR] Failed to fetch notifications Error: Failed to fetch
+    at To (http://127.0.0.1:4173/assets/index-j8zzhg4j.js:337:5431)
+    at async a (http://127.0.0.1:4173/assets/index-j8zzhg4j.js:337:10734) @ http://127.0.0.1:4173/assets/index-j8zzhg4j.js:336
+[   62972ms] [ERROR] Access to fetch at 'http://localhost:3000/api/notifications' from origin 'http://127.0.0.1:4173' has been blocked by CORS policy: Response to preflight request doesn't pass access control check: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://127.0.0.1:4173/customers:0
+[   62975ms] [ERROR] Failed to load resource: net::ERR_FAILED @ http://localhost:3000/api/notifications:0
+[   62977ms] [ERROR] Failed to fetch notifications Error: Failed to fetch
+    at To (http://127.0.0.1:4173/assets/index-j8zzhg4j.js:337:5431)
+    at async a (http://127.0.0.1:4173/assets/index-j8zzhg4j.js:337:10734) @ http://127.0.0.1:4173/assets/index-j8zzhg4j.js:336
+[   93077ms] [ERROR] Access to fetch at 'http://localhost:3000/api/notifications' from origin 'http://127.0.0.1:4173' has been blocked by CORS policy: Response to preflight request doesn't pass access control check: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://127.0.0.1:4173/customers:0
+[   93083ms] [ERROR] Failed to load resource: net::ERR_FAILED @ http://localhost:3000/api/notifications:0
+[   93088ms] [ERROR] Failed to fetch notifications Error: Failed to fetch
+    at To (http://127.0.0.1:4173/assets/index-j8zzhg4j.js:337:5431)
+    at async a (http://127.0.0.1:4173/assets/index-j8zzhg4j.js:337:10734) @ http://127.0.0.1:4173/assets/index-j8zzhg4j.js:336
+[  123138ms] [ERROR] Access to fetch at 'http://localhost:3000/api/notifications' from origin 'http://127.0.0.1:4173' has been blocked by CORS policy: Response to preflight request doesn't pass access control check: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://127.0.0.1:4173/customers:0
+[  123141ms] [ERROR] Failed to load resource: net::ERR_FAILED @ http://localhost:3000/api/notifications:0
+[  123146ms] [ERROR] Failed to fetch notifications Error: Failed to fetch
+    at To (http://127.0.0.1:4173/assets/index-j8zzhg4j.js:337:5431)
+    at async a (http://127.0.0.1:4173/assets/index-j8zzhg4j.js:337:10734) @ http://127.0.0.1:4173/assets/index-j8zzhg4j.js:336
+[  153589ms] [ERROR] Access to fetch at 'http://localhost:3000/api/notifications' from origin 'http://127.0.0.1:4173' has been blocked by CORS policy: Response to preflight request doesn't pass access control check: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://127.0.0.1:4173/customers:0
+[  153597ms] [ERROR] Failed to load resource: net::ERR_FAILED @ http://localhost:3000/api/notifications:0
+[  153606ms] [ERROR] Failed to fetch notifications Error: Failed to fetch
+    at To (http://127.0.0.1:4173/assets/index-j8zzhg4j.js:337:5431)
+    at async a (http://127.0.0.1:4173/assets/index-j8zzhg4j.js:337:10734) @ http://127.0.0.1:4173/assets/index-j8zzhg4j.js:336
+[  182957ms] [ERROR] Access to fetch at 'http://localhost:3000/api/notifications' from origin 'http://127.0.0.1:4173' has been blocked by CORS policy: Response to preflight request doesn't pass access control check: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://127.0.0.1:4173/customers:0
+[  182958ms] [ERROR] Failed to load resource: net::ERR_FAILED @ http://localhost:3000/api/notifications:0
+[  182959ms] [ERROR] Failed to fetch notifications Error: Failed to fetch
+    at To (http://127.0.0.1:4173/assets/index-j8zzhg4j.js:337:5431)
+    at async a (http://127.0.0.1:4173/assets/index-j8zzhg4j.js:337:10734) @ http://127.0.0.1:4173/assets/index-j8zzhg4j.js:336
+[  212975ms] [ERROR] Access to fetch at 'http://localhost:3000/api/notifications' from origin 'http://127.0.0.1:4173' has been blocked by CORS policy: Response to preflight request doesn't pass access control check: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://127.0.0.1:4173/customers:0
+[  212975ms] [ERROR] Failed to load resource: net::ERR_FAILED @ http://localhost:3000/api/notifications:0
+[  212976ms] [ERROR] Failed to fetch notifications Error: Failed to fetch
+    at To (http://127.0.0.1:4173/assets/index-j8zzhg4j.js:337:5431)
+    at async a (http://127.0.0.1:4173/assets/index-j8zzhg4j.js:337:10734) @ http://127.0.0.1:4173/assets/index-j8zzhg4j.js:336
+[  243016ms] [ERROR] Access to fetch at 'http://localhost:3000/api/notifications' from origin 'http://127.0.0.1:4173' has been blocked by CORS policy: Response to preflight request doesn't pass access control check: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://127.0.0.1:4173/customers:0
+[  243018ms] [ERROR] Failed to load resource: net::ERR_FAILED @ http://localhost:3000/api/notifications:0
+[  243022ms] [ERROR] Failed to fetch notifications Error: Failed to fetch
+    at To (http://127.0.0.1:4173/assets/index-j8zzhg4j.js:337:5431)
+    at async a (http://127.0.0.1:4173/assets/index-j8zzhg4j.js:337:10734) @ http://127.0.0.1:4173/assets/index-j8zzhg4j.js:336
+[  273049ms] [ERROR] Access to fetch at 'http://localhost:3000/api/notifications' from origin 'http://127.0.0.1:4173' has been blocked by CORS policy: Response to preflight request doesn't pass access control check: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://127.0.0.1:4173/customers:0
+[  273093ms] [ERROR] Failed to load resource: net::ERR_FAILED @ http://localhost:3000/api/notifications:0
+[  273145ms] [ERROR] Failed to fetch notifications Error: Failed to fetch
+    at To (http://127.0.0.1:4173/assets/index-j8zzhg4j.js:337:5431)
+    at async a (http://127.0.0.1:4173/assets/index-j8zzhg4j.js:337:10734) @ http://127.0.0.1:4173/assets/index-j8zzhg4j.js:336
+[  303132ms] [ERROR] Access to fetch at 'http://localhost:3000/api/notifications' from origin 'http://127.0.0.1:4173' has been blocked by CORS policy: Response to preflight request doesn't pass access control check: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://127.0.0.1:4173/customers:0
+[  303138ms] [ERROR] Failed to load resource: net::ERR_FAILED @ http://localhost:3000/api/notifications:0
+[  303145ms] [ERROR] Failed to fetch notifications Error: Failed to fetch
+    at To (http://127.0.0.1:4173/assets/index-j8zzhg4j.js:337:5431)
+    at async a (http://127.0.0.1:4173/assets/index-j8zzhg4j.js:337:10734) @ http://127.0.0.1:4173/assets/index-j8zzhg4j.js:336
+[  333083ms] [ERROR] Access to fetch at 'http://localhost:3000/api/notifications' from origin 'http://127.0.0.1:4173' has been blocked by CORS policy: Response to preflight request doesn't pass access control check: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://127.0.0.1:4173/customers:0
+[  333095ms] [ERROR] Failed to load resource: net::ERR_FAILED @ http://localhost:3000/api/notifications:0
+[  333099ms] [ERROR] Failed to fetch notifications Error: Failed to fetch
+    at To (http://127.0.0.1:4173/assets/index-j8zzhg4j.js:337:5431)
+    at async a (http://127.0.0.1:4173/assets/index-j8zzhg4j.js:337:10734) @ http://127.0.0.1:4173/assets/index-j8zzhg4j.js:336
+[  362996ms] [ERROR] Access to fetch at 'http://localhost:3000/api/notifications' from origin 'http://127.0.0.1:4173' has been blocked by CORS policy: Response to preflight request doesn't pass access control check: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://127.0.0.1:4173/customers:0
+[  362997ms] [ERROR] Failed to load resource: net::ERR_FAILED @ http://localhost:3000/api/notifications:0
+[  363001ms] [ERROR] Failed to fetch notifications Error: Failed to fetch
+    at To (http://127.0.0.1:4173/assets/index-j8zzhg4j.js:337:5431)
+    at async a (http://127.0.0.1:4173/assets/index-j8zzhg4j.js:337:10734) @ http://127.0.0.1:4173/assets/index-j8zzhg4j.js:336
+[  392974ms] [ERROR] Access to fetch at 'http://localhost:3000/api/notifications' from origin 'http://127.0.0.1:4173' has been blocked by CORS policy: Response to preflight request doesn't pass access control check: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://127.0.0.1:4173/customers:0
+[  392975ms] [ERROR] Failed to load resource: net::ERR_FAILED @ http://localhost:3000/api/notifications:0
+[  392976ms] [ERROR] Failed to fetch notifications Error: Failed to fetch
+    at To (http://127.0.0.1:4173/assets/index-j8zzhg4j.js:337:5431)
+    at async a (http://127.0.0.1:4173/assets/index-j8zzhg4j.js:337:10734) @ http://127.0.0.1:4173/assets/index-j8zzhg4j.js:336
+[  422977ms] [ERROR] Access to fetch at 'http://localhost:3000/api/notifications' from origin 'http://127.0.0.1:4173' has been blocked by CORS policy: Response to preflight request doesn't pass access control check: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://127.0.0.1:4173/customers:0
+[  422978ms] [ERROR] Failed to load resource: net::ERR_FAILED @ http://localhost:3000/api/notifications:0
+[  422980ms] [ERROR] Failed to fetch notifications Error: Failed to fetch
+    at To (http://127.0.0.1:4173/assets/index-j8zzhg4j.js:337:5431)
+    at async a (http://127.0.0.1:4173/assets/index-j8zzhg4j.js:337:10734) @ http://127.0.0.1:4173/assets/index-j8zzhg4j.js:336
+[  452962ms] [ERROR] Access to fetch at 'http://localhost:3000/api/notifications' from origin 'http://127.0.0.1:4173' has been blocked by CORS policy: Response to preflight request doesn't pass access control check: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://127.0.0.1:4173/customers:0
+[  452962ms] [ERROR] Failed to load resource: net::ERR_FAILED @ http://localhost:3000/api/notifications:0
+[  452963ms] [ERROR] Failed to fetch notifications Error: Failed to fetch
+    at To (http://127.0.0.1:4173/assets/index-j8zzhg4j.js:337:5431)
+    at async a (http://127.0.0.1:4173/assets/index-j8zzhg4j.js:337:10734) @ http://127.0.0.1:4173/assets/index-j8zzhg4j.js:336
+[  482977ms] [ERROR] Access to fetch at 'http://localhost:3000/api/notifications' from origin 'http://127.0.0.1:4173' has been blocked by CORS policy: Response to preflight request doesn't pass access control check: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://127.0.0.1:4173/customers:0
+[  482978ms] [ERROR] Failed to load resource: net::ERR_FAILED @ http://localhost:3000/api/notifications:0
+[  482980ms] [ERROR] Failed to fetch notifications Error: Failed to fetch
+    at To (http://127.0.0.1:4173/assets/index-j8zzhg4j.js:337:5431)
+    at async a (http://127.0.0.1:4173/assets/index-j8zzhg4j.js:337:10734) @ http://127.0.0.1:4173/assets/index-j8zzhg4j.js:336
+[  513017ms] [ERROR] Access to fetch at 'http://localhost:3000/api/notifications' from origin 'http://127.0.0.1:4173' has been blocked by CORS policy: Response to preflight request doesn't pass access control check: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://127.0.0.1:4173/customers:0
+[  513019ms] [ERROR] Failed to load resource: net::ERR_FAILED @ http://localhost:3000/api/notifications:0
+[  513021ms] [ERROR] Failed to fetch notifications Error: Failed to fetch
+    at To (http://127.0.0.1:4173/assets/index-j8zzhg4j.js:337:5431)
+    at async a (http://127.0.0.1:4173/assets/index-j8zzhg4j.js:337:10734) @ http://127.0.0.1:4173/assets/index-j8zzhg4j.js:336
+[  542962ms] [ERROR] Access to fetch at 'http://localhost:3000/api/notifications' from origin 'http://127.0.0.1:4173' has been blocked by CORS policy: Response to preflight request doesn't pass access control check: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://127.0.0.1:4173/customers:0
+[  542963ms] [ERROR] Failed to load resource: net::ERR_FAILED @ http://localhost:3000/api/notifications:0
+[  542976ms] [ERROR] Failed to fetch notifications Error: Failed to fetch
+    at To (http://127.0.0.1:4173/assets/index-j8zzhg4j.js:337:5431)
+    at async a (http://127.0.0.1:4173/assets/index-j8zzhg4j.js:337:10734) @ http://127.0.0.1:4173/assets/index-j8zzhg4j.js:336
+[  573080ms] [ERROR] Access to fetch at 'http://localhost:3000/api/notifications' from origin 'http://127.0.0.1:4173' has been blocked by CORS policy: Response to preflight request doesn't pass access control check: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://127.0.0.1:4173/customers:0
+[  573085ms] [ERROR] Failed to load resource: net::ERR_FAILED @ http://localhost:3000/api/notifications:0
+[  573100ms] [ERROR] Failed to fetch notifications Error: Failed to fetch
+    at To (http://127.0.0.1:4173/assets/index-j8zzhg4j.js:337:5431)
+    at async a (http://127.0.0.1:4173/assets/index-j8zzhg4j.js:337:10734) @ http://127.0.0.1:4173/assets/index-j8zzhg4j.js:336

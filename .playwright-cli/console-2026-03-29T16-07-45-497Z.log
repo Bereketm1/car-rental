@@ -1,0 +1,6 @@
+Total messages: 4 (Errors: 1, Warnings: 0)
+Returning 1 messages for level "error"
+
+[ERROR] Failed to fetch notifications Error: Failed to fetch
+    at request (http://localhost:5173/src/api.js?t=1774793257123:36:11)
+    at async fetchNotifications (http://localhost:5173/src/components/NotificationBell.jsx?t=1774793257123:44:24) @ http://localhost:5173/src/components/NotificationBell.jsx?t=1774793257123:46

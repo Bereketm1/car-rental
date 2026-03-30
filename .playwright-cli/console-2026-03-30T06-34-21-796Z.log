@@ -1,0 +1,4 @@
+[    3788ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://localhost:3000/api/notifications:0
+[    3790ms] [ERROR] Failed to fetch notifications Error: Failed to fetch
+    at To (http://localhost:5173/assets/index-BN8Rp7fZ.js:337:5630)
+    at async a (http://localhost:5173/assets/index-BN8Rp7fZ.js:337:10933) @ http://localhost:5173/assets/index-BN8Rp7fZ.js:336

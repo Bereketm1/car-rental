@@ -1,0 +1,16 @@
+[ 2026574ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:5173/src/components/DataTable.jsx?t=1774813249759:0
+[ 2026581ms] [ERROR] [hmr] Failed to reload /src/components/DataTable.jsx. This could be due to syntax errors or importing non-existent modules. (see errors above) @ http://localhost:5173/@vite/client:175
+[ 2054409ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:5173/src/App.jsx?t=1774813277818:0
+[ 2054411ms] [ERROR] [hmr] Failed to reload /src/App.jsx. This could be due to syntax errors or importing non-existent modules. (see errors above) @ http://localhost:5173/@vite/client:175
+[ 2128878ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:5173/src/pages/Customers.jsx?t=1774813352203:0
+[ 2128880ms] [ERROR] [hmr] Failed to reload /src/pages/Customers.jsx. This could be due to syntax errors or importing non-existent modules. (see errors above) @ http://localhost:5173/@vite/client:175
+[ 2292340ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:5173/src/pages/Vehicles.jsx?t=1774813514931:0
+[ 2292349ms] [ERROR] [hmr] Failed to reload /src/pages/Vehicles.jsx. This could be due to syntax errors or importing non-existent modules. (see errors above) @ http://localhost:5173/@vite/client:175
+[ 2402811ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:5173/src/pages/Finance.jsx?t=1774813626184:0
+[ 2402813ms] [ERROR] [hmr] Failed to reload /src/pages/Finance.jsx. This could be due to syntax errors or importing non-existent modules. (see errors above) @ http://localhost:5173/@vite/client:175
+[ 2501451ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:5173/src/pages/Marketing.jsx?t=1774813724816:0
+[ 2501452ms] [ERROR] [hmr] Failed to reload /src/pages/Marketing.jsx. This could be due to syntax errors or importing non-existent modules. (see errors above) @ http://localhost:5173/@vite/client:175
+[ 2596870ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:5173/src/pages/Partners.jsx?t=1774813820272:0
+[ 2596876ms] [ERROR] [hmr] Failed to reload /src/pages/Partners.jsx. This could be due to syntax errors or importing non-existent modules. (see errors above) @ http://localhost:5173/@vite/client:175
+[ 2688330ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:5173/src/pages/Deals.jsx?t=1774813911649:0
+[ 2688336ms] [ERROR] [hmr] Failed to reload /src/pages/Deals.jsx. This could be due to syntax errors or importing non-existent modules. (see errors above) @ http://localhost:5173/@vite/client:175

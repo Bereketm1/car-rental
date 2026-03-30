@@ -1,0 +1,142 @@
+[    1962ms] [WARNING] ⚠️ React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition. @ http://localhost:5173/node_modules/.vite/deps/react-router-dom.js?v=e56e6e77:4433
+[    1964ms] [WARNING] ⚠️ React Router Future Flag Warning: Relative route resolution within Splat routes is changing in v7. You can use the `v7_relativeSplatPath` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_relativesplatpath. @ http://localhost:5173/node_modules/.vite/deps/react-router-dom.js?v=e56e6e77:4433
+[  111071ms] [WARNING] ⚠️ React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition. @ http://localhost:5173/node_modules/.vite/deps/react-router-dom.js?v=e56e6e77:4433
+[  111072ms] [WARNING] ⚠️ React Router Future Flag Warning: Relative route resolution within Splat routes is changing in v7. You can use the `v7_relativeSplatPath` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_relativesplatpath. @ http://localhost:5173/node_modules/.vite/deps/react-router-dom.js?v=e56e6e77:4433
+[  246715ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/api/finance/reviews:0
+[  247625ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/api/audit:0
+[  247724ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/api/audit:0
+[  248077ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/api/finance/reviews:0
+[  455566ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://localhost:3000/api/notifications:0
+[  455651ms] [ERROR] Failed to fetch notifications Error: Service crm unavailable
+    at request (http://localhost:5173/src/api.js?t=1774793257123:53:11)
+    at async fetchNotifications (http://localhost:5173/src/components/NotificationBell.jsx?t=1774793257123:44:24) @ http://localhost:5173/src/components/NotificationBell.jsx?t=1774793257123:46
+[  545243ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://localhost:3000/api/notifications:0
+[  545289ms] [ERROR] Failed to fetch notifications Error: Service crm unavailable
+    at request (http://localhost:5173/src/api.js?t=1774793257123:53:11)
+    at async fetchNotifications (http://localhost:5173/src/components/NotificationBell.jsx?t=1774793257123:44:24) @ http://localhost:5173/src/components/NotificationBell.jsx?t=1774793257123:46
+[  608817ms] [WARNING] ⚠️ React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition. @ http://localhost:5173/node_modules/.vite/deps/react-router-dom.js?v=e56e6e77:4433
+[  608819ms] [WARNING] ⚠️ React Router Future Flag Warning: Relative route resolution within Splat routes is changing in v7. You can use the `v7_relativeSplatPath` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_relativesplatpath. @ http://localhost:5173/node_modules/.vite/deps/react-router-dom.js?v=e56e6e77:4433
+[ 4721868ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://localhost:3000/api/notifications:0
+[ 4722161ms] [ERROR] Failed to fetch notifications Error: Failed to fetch
+    at request (http://localhost:5173/src/api.js?t=1774793257123:36:11)
+    at async fetchNotifications (http://localhost:5173/src/components/NotificationBell.jsx?t=1774793257123:44:24) @ http://localhost:5173/src/components/NotificationBell.jsx?t=1774793257123:46
+[ 4759515ms] [ERROR] Failed to fetch notifications Error: Request timed out. Check that the gateway and services are running.
+    at request (http://localhost:5173/src/api.js?t=1774793257123:34:13)
+    at async fetchNotifications (http://localhost:5173/src/components/NotificationBell.jsx?t=1774793257123:44:24) @ http://localhost:5173/src/components/NotificationBell.jsx?t=1774793257123:46
+[ 4781324ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://localhost:3000/api/notifications:0
+[ 4781352ms] [ERROR] Failed to fetch notifications Error: Failed to fetch
+    at request (http://localhost:5173/src/api.js?t=1774793257123:36:11)
+    at async fetchNotifications (http://localhost:5173/src/components/NotificationBell.jsx?t=1774793257123:44:24) @ http://localhost:5173/src/components/NotificationBell.jsx?t=1774793257123:46
+[ 4841483ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://localhost:3000/api/notifications:0
+[ 4841523ms] [ERROR] Failed to fetch notifications Error: Failed to fetch
+    at request (http://localhost:5173/src/api.js?t=1774793257123:36:11)
+    at async fetchNotifications (http://localhost:5173/src/components/NotificationBell.jsx?t=1774793257123:44:24) @ http://localhost:5173/src/components/NotificationBell.jsx?t=1774793257123:46
+[ 8409038ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:5173/src/index.css?t=1774803697564:0
+[ 8409057ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:5173/src/index.css?t=1774803697700:0
+[ 8409058ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:5173/src/index.css?t=1774803697464:0
+[ 8409108ms] [ERROR] [hmr] Failed to reload /src/index.css. This could be due to syntax errors or importing non-existent modules. (see errors above) @ http://localhost:5173/@vite/client:175
+[ 8409120ms] [ERROR] [hmr] Failed to reload /src/index.css. This could be due to syntax errors or importing non-existent modules. (see errors above) @ http://localhost:5173/@vite/client:175
+[ 8409121ms] [ERROR] [hmr] Failed to reload /src/index.css. This could be due to syntax errors or importing non-existent modules. (see errors above) @ http://localhost:5173/@vite/client:175
+[ 8873469ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://localhost:3000/api/notifications:0
+[ 8873568ms] [ERROR] Failed to fetch notifications Error: Failed to fetch
+    at request (http://localhost:5173/src/api.js?t=1774793257123:36:11)
+    at async fetchNotifications (http://localhost:5173/src/components/NotificationBell.jsx?t=1774793257123:44:24) @ http://localhost:5173/src/components/NotificationBell.jsx?t=1774793257123:46
+[ 8911086ms] [ERROR] Failed to fetch notifications Error: Request timed out. Check that the gateway and services are running.
+    at request (http://localhost:5173/src/api.js?t=1774793257123:34:13)
+    at async fetchNotifications (http://localhost:5173/src/components/NotificationBell.jsx?t=1774793257123:44:24) @ http://localhost:5173/src/components/NotificationBell.jsx?t=1774793257123:46
+[ 8963452ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://localhost:3000/api/notifications:0
+[ 8963486ms] [ERROR] Failed to fetch notifications Error: Failed to fetch
+    at request (http://localhost:5173/src/api.js?t=1774793257123:36:11)
+    at async fetchNotifications (http://localhost:5173/src/components/NotificationBell.jsx?t=1774793257123:44:24) @ http://localhost:5173/src/components/NotificationBell.jsx?t=1774793257123:46
+[10557645ms] ReferenceError: Router is not defined
+    at App (http://localhost:5173/src/App.jsx?t=1774805846115:520:182)
+    at renderWithHooks (http://localhost:5173/node_modules/.vite/deps/chunk-UIJWJSMV.js?v=e56e6e77:11546:26)
+    at updateFunctionComponent (http://localhost:5173/node_modules/.vite/deps/chunk-UIJWJSMV.js?v=e56e6e77:14580:28)
+    at beginWork (http://localhost:5173/node_modules/.vite/deps/chunk-UIJWJSMV.js?v=e56e6e77:15922:22)
+    at HTMLUnknownElement.callCallback2 (http://localhost:5173/node_modules/.vite/deps/chunk-UIJWJSMV.js?v=e56e6e77:3672:22)
+    at Object.invokeGuardedCallbackDev (http://localhost:5173/node_modules/.vite/deps/chunk-UIJWJSMV.js?v=e56e6e77:3697:24)
+    at invokeGuardedCallback (http://localhost:5173/node_modules/.vite/deps/chunk-UIJWJSMV.js?v=e56e6e77:3731:39)
+    at beginWork$1 (http://localhost:5173/node_modules/.vite/deps/chunk-UIJWJSMV.js?v=e56e6e77:19763:15)
+    at performUnitOfWork (http://localhost:5173/node_modules/.vite/deps/chunk-UIJWJSMV.js?v=e56e6e77:19196:20)
+    at workLoopSync (http://localhost:5173/node_modules/.vite/deps/chunk-UIJWJSMV.js?v=e56e6e77:19135:13)
+[10557675ms] ReferenceError: Router is not defined
+    at App (http://localhost:5173/src/App.jsx?t=1774805846115:520:182)
+    at renderWithHooks (http://localhost:5173/node_modules/.vite/deps/chunk-UIJWJSMV.js?v=e56e6e77:11546:26)
+    at updateFunctionComponent (http://localhost:5173/node_modules/.vite/deps/chunk-UIJWJSMV.js?v=e56e6e77:14580:28)
+    at beginWork (http://localhost:5173/node_modules/.vite/deps/chunk-UIJWJSMV.js?v=e56e6e77:15922:22)
+    at HTMLUnknownElement.callCallback2 (http://localhost:5173/node_modules/.vite/deps/chunk-UIJWJSMV.js?v=e56e6e77:3672:22)
+    at Object.invokeGuardedCallbackDev (http://localhost:5173/node_modules/.vite/deps/chunk-UIJWJSMV.js?v=e56e6e77:3697:24)
+    at invokeGuardedCallback (http://localhost:5173/node_modules/.vite/deps/chunk-UIJWJSMV.js?v=e56e6e77:3731:39)
+    at beginWork$1 (http://localhost:5173/node_modules/.vite/deps/chunk-UIJWJSMV.js?v=e56e6e77:19763:15)
+    at performUnitOfWork (http://localhost:5173/node_modules/.vite/deps/chunk-UIJWJSMV.js?v=e56e6e77:19196:20)
+    at workLoopSync (http://localhost:5173/node_modules/.vite/deps/chunk-UIJWJSMV.js?v=e56e6e77:19135:13)
+[10557654ms] [ERROR] The above error occurred in the <App> component:
+
+    at App (http://localhost:5173/src/App.jsx?t=1774805846115:519:39)
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries. @ http://localhost:5173/node_modules/.vite/deps/chunk-UIJWJSMV.js?v=e56e6e77:14029
+[10557792ms] ReferenceError: Router is not defined
+    at App (http://localhost:5173/src/App.jsx?t=1774805846115:520:182)
+    at renderWithHooks (http://localhost:5173/node_modules/.vite/deps/chunk-UIJWJSMV.js?v=e56e6e77:11546:26)
+    at updateFunctionComponent (http://localhost:5173/node_modules/.vite/deps/chunk-UIJWJSMV.js?v=e56e6e77:14580:28)
+    at beginWork (http://localhost:5173/node_modules/.vite/deps/chunk-UIJWJSMV.js?v=e56e6e77:15922:22)
+    at beginWork$1 (http://localhost:5173/node_modules/.vite/deps/chunk-UIJWJSMV.js?v=e56e6e77:19751:22)
+    at performUnitOfWork (http://localhost:5173/node_modules/.vite/deps/chunk-UIJWJSMV.js?v=e56e6e77:19196:20)
+    at workLoopSync (http://localhost:5173/node_modules/.vite/deps/chunk-UIJWJSMV.js?v=e56e6e77:19135:13)
+    at renderRootSync (http://localhost:5173/node_modules/.vite/deps/chunk-UIJWJSMV.js?v=e56e6e77:19114:15)
+    at recoverFromConcurrentError (http://localhost:5173/node_modules/.vite/deps/chunk-UIJWJSMV.js?v=e56e6e77:18734:28)
+    at performSyncWorkOnRoot (http://localhost:5173/node_modules/.vite/deps/chunk-UIJWJSMV.js?v=e56e6e77:18877:28)
+[12521861ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://localhost:3000/api/notifications:0
+[12521973ms] [ERROR] Failed to fetch notifications Error: Failed to fetch
+    at request (http://localhost:5173/src/api.js?t=1774793257123:36:11)
+    at async fetchNotifications (http://localhost:5173/src/components/NotificationBell.jsx?t=1774793257123:44:24) @ http://localhost:5173/src/components/NotificationBell.jsx?t=1774793257123:46
+[12559213ms] [ERROR] Failed to fetch notifications Error: Request timed out. Check that the gateway and services are running.
+    at request (http://localhost:5173/src/api.js?t=1774793257123:34:13)
+    at async fetchNotifications (http://localhost:5173/src/components/NotificationBell.jsx?t=1774793257123:44:24) @ http://localhost:5173/src/components/NotificationBell.jsx?t=1774793257123:46
+[15789199ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://localhost:3000/api/notifications:0
+[15789210ms] [ERROR] Failed to fetch notifications Error: Service crm unavailable
+    at request (http://localhost:5173/src/api.js?t=1774793257123:53:11)
+    at async fetchNotifications (http://localhost:5173/src/components/NotificationBell.jsx?t=1774793257123:44:24) @ http://localhost:5173/src/components/NotificationBell.jsx?t=1774793257123:46
+[16120109ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://localhost:3000/api/notifications:0
+[16120157ms] [ERROR] Failed to fetch notifications Error: Service crm unavailable
+    at request (http://localhost:5173/src/api.js?t=1774793257123:53:11)
+    at async fetchNotifications (http://localhost:5173/src/components/NotificationBell.jsx?t=1774793257123:44:24) @ http://localhost:5173/src/components/NotificationBell.jsx?t=1774793257123:46
+[16182528ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://localhost:3000/api/notifications:0
+[16182790ms] [ERROR] Failed to fetch notifications Error: Service crm unavailable
+    at request (http://localhost:5173/src/api.js?t=1774793257123:53:11)
+    at async fetchNotifications (http://localhost:5173/src/components/NotificationBell.jsx?t=1774793257123:44:24) @ http://localhost:5173/src/components/NotificationBell.jsx?t=1774793257123:46
+[16209932ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://localhost:3000/api/notifications:0
+[16209952ms] [ERROR] Failed to fetch notifications Error: Service crm unavailable
+    at request (http://localhost:5173/src/api.js?t=1774793257123:53:11)
+    at async fetchNotifications (http://localhost:5173/src/components/NotificationBell.jsx?t=1774793257123:44:24) @ http://localhost:5173/src/components/NotificationBell.jsx?t=1774793257123:46
+[17960511ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:5173/src/components/DataTable.jsx?t=1774813249759:0
+[17960526ms] [ERROR] [hmr] Failed to reload /src/components/DataTable.jsx. This could be due to syntax errors or importing non-existent modules. (see errors above) @ http://localhost:5173/@vite/client:175
+[17988384ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:5173/src/App.jsx?t=1774813277818:0
+[17988386ms] [ERROR] [hmr] Failed to reload /src/App.jsx. This could be due to syntax errors or importing non-existent modules. (see errors above) @ http://localhost:5173/@vite/client:175
+[18061910ms] [ERROR] Failed to fetch notifications Error: Request timed out. Check that the gateway and services are running.
+    at request (http://localhost:5173/src/api.js?t=1774793257123:34:13)
+    at async fetchNotifications (http://localhost:5173/src/components/NotificationBell.jsx?t=1774793257123:44:24) @ http://localhost:5173/src/components/NotificationBell.jsx?t=1774793257123:46
+[18061942ms] [ERROR] Failed to fetch notifications Error: Request timed out. Check that the gateway and services are running.
+    at request (http://localhost:5173/src/api.js?t=1774793257123:34:13)
+    at async fetchNotifications (http://localhost:5173/src/components/NotificationBell.jsx?t=1774793257123:44:24) @ http://localhost:5173/src/components/NotificationBell.jsx?t=1774793257123:46
+[18062826ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:5173/src/pages/Customers.jsx?t=1774813352203:0
+[18062827ms] [ERROR] [hmr] Failed to reload /src/pages/Customers.jsx. This could be due to syntax errors or importing non-existent modules. (see errors above) @ http://localhost:5173/@vite/client:175
+[18226324ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:5173/src/pages/Vehicles.jsx?t=1774813514931:0
+[18226331ms] [ERROR] [hmr] Failed to reload /src/pages/Vehicles.jsx. This could be due to syntax errors or importing non-existent modules. (see errors above) @ http://localhost:5173/@vite/client:175
+[18336789ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:5173/src/pages/Finance.jsx?t=1774813626184:0
+[18336791ms] [ERROR] [hmr] Failed to reload /src/pages/Finance.jsx. This could be due to syntax errors or importing non-existent modules. (see errors above) @ http://localhost:5173/@vite/client:175
+[18435433ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:5173/src/pages/Marketing.jsx?t=1774813724816:0
+[18435434ms] [ERROR] [hmr] Failed to reload /src/pages/Marketing.jsx. This could be due to syntax errors or importing non-existent modules. (see errors above) @ http://localhost:5173/@vite/client:175
+[18530838ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:5173/src/pages/Partners.jsx?t=1774813820272:0
+[18530841ms] [ERROR] [hmr] Failed to reload /src/pages/Partners.jsx. This could be due to syntax errors or importing non-existent modules. (see errors above) @ http://localhost:5173/@vite/client:175
+[18622259ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:5173/src/pages/Deals.jsx?t=1774813911649:0
+[18622295ms] [ERROR] [hmr] Failed to reload /src/pages/Deals.jsx. This could be due to syntax errors or importing non-existent modules. (see errors above) @ http://localhost:5173/@vite/client:175
+[19733681ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://localhost:3000/api/notifications:0
+[19733851ms] [ERROR] Failed to fetch notifications Error: Service crm unavailable
+    at request (http://localhost:5173/src/api.js?t=1774793257123:53:11)
+    at async fetchNotifications (http://localhost:5173/src/components/NotificationBell.jsx?t=1774793257123:44:24) @ http://localhost:5173/src/components/NotificationBell.jsx?t=1774793257123:46
+[19794963ms] [ERROR] Failed to load resource: the server responded with a status of 503 (Service Unavailable) @ http://localhost:3000/api/notifications:0
+[19794977ms] [ERROR] Failed to fetch notifications Error: Service crm unavailable
+    at request (http://localhost:5173/src/api.js?t=1774793257123:53:11)
+    at async fetchNotifications (http://localhost:5173/src/components/NotificationBell.jsx?t=1774793257123:44:24) @ http://localhost:5173/src/components/NotificationBell.jsx?t=1774793257123:46
