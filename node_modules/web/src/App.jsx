@@ -9,6 +9,7 @@ import {
   ChevronRight,
   HeartHandshake,
   LayoutDashboard,
+  LogOut,
   Megaphone,
   Menu,
   MoonStar,
@@ -19,7 +20,7 @@ import {
 } from 'lucide-react';
 
 import { ToastProvider } from './components/Toast';
-import { I18nProvider, useI18n } from './context/i18nContext';
+import { I18nProvider } from './context/i18nContext';
 import { ThemeProvider, useTheme } from './context/ThemeContext';
 import GlobalSearch from './components/GlobalSearch';
 import NotificationBell from './components/NotificationBell';
@@ -45,34 +46,32 @@ const navigationSections = [
     title: 'Overview',
     items: [
       { path: '/dashboard', label: 'Dashboard', icon: LayoutDashboard, description: 'Executive overview' },
-      { path: '/analytics', label: 'Analytics', icon: BarChart3, description: 'Commercial performance' },
-      { path: '/health', label: 'Platform health', icon: Activity, description: 'Services and audit trail' },
+      { path: '/analytics', label: 'Analytics', icon: BarChart3, description: 'Sales & performance' },
+      { path: '/health', label: 'System Health', icon: Activity, description: 'Services & audit trail' },
     ],
   },
   {
     title: 'Operations',
     items: [
-      { path: '/customers', label: 'Customer CRM', icon: UsersRound, description: 'Registration, interests, loans' },
-      { path: '/vehicles', label: 'Supplier portal', icon: CarFront, description: 'Inventory and supplier records' },
-      { path: '/deals', label: 'Deal flow', icon: ArrowLeftRight, description: 'Selection through purchase' },
-      { path: '/finance', label: 'Finance portal', icon: WalletCards, description: 'Reviews and institutions' },
+      { path: '/customers', label: 'Customers', icon: UsersRound, description: 'CRM & loan applications' },
+      { path: '/vehicles', label: 'Vehicles', icon: CarFront, description: 'Inventory & suppliers' },
+      { path: '/deals', label: 'Deal Flow', icon: ArrowLeftRight, description: 'Transaction lifecycle' },
+      { path: '/finance', label: 'Finance Portal', icon: WalletCards, description: 'Reviews & approvals' },
     ],
   },
   {
     title: 'Growth',
     items: [
-      { path: '/partners', label: 'Partnerships', icon: HeartHandshake, description: 'Agreements and commissions' },
-      { path: '/marketing', label: 'Marketing', icon: Megaphone, description: 'Leads, campaigns, referrals' },
-      { path: '/settings', label: 'Settings', icon: Settings2, description: 'Workspace preferences and controls' },
+      { path: '/partners', label: 'Partnerships', icon: HeartHandshake, description: 'Agreements & commissions' },
+      { path: '/marketing', label: 'Marketing', icon: Megaphone, description: 'Leads & campaigns' },
+      { path: '/settings', label: 'Settings', icon: Settings2, description: 'Preferences & configuration' },
     ],
   },
 ];
 
-const allNavigationItems = navigationSections.flatMap((section) =>
-  section.items.map((item) => ({ ...item, sectionTitle: section.title })),
-);
+const allNavItems = navigationSections.flatMap((s) => s.items.map((i) => ({ ...i, sectionTitle: s.title })));
 
-const sidebarStorageKey = 'merkatomotors_sidebar_collapsed';
+const sidebarStorageKey = 'merkato_sidebar_collapsed';
 
 function getCurrentUser() {
   try {
@@ -82,56 +81,52 @@ function getCurrentUser() {
   }
 }
 
-function getNavigationLabel(item, t) {
-  return item.path === '/dashboard' ? t('dashboard') : item.label;
-}
-
 function Sidebar({ collapsed, mobileOpen, onClose, onToggleCollapse }) {
-  const { t } = useI18n();
-  const location = useLocation();
   const user = getCurrentUser();
 
-  const activeItem = useMemo(
-    () => allNavigationItems.find((item) => item.path === location.pathname) || allNavigationItems[0],
-    [location.pathname],
-  );
+  function handleLogout() {
+    localStorage.removeItem('token');
+    localStorage.removeItem('user');
+    window.location.href = '/login';
+  }
 
   return (
     <aside className={`sidebar-shell ${collapsed ? 'collapsed' : ''} ${mobileOpen ? 'mobile-open' : ''}`}>
+      {/* Brand */}
       <div className="sidebar-header">
         <div className="brand-block">
           <div className="brand-mark">MM</div>
           <div className="sidebar-copy">
-            <p className="eyebrow">Vehicle financing platform</p>
+            <span className="eyebrow">Vehicle Financing</span>
             <div className="brand-name">Merkato Motors</div>
           </div>
         </div>
-
         <button
           className="sidebar-toggle-btn"
           type="button"
           onClick={onToggleCollapse}
           aria-label={collapsed ? 'Expand sidebar' : 'Collapse sidebar'}
         >
-          {collapsed ? <ChevronRight size={16} /> : <ChevronLeft size={16} />}
+          {collapsed ? <ChevronRight size={14} /> : <ChevronLeft size={14} />}
         </button>
       </div>
 
+      {/* User profile */}
       <div className="sidebar-profile">
-        <div className="sidebar-profile-avatar">{getInitials(user?.name || 'Merkato Motors')}</div>
+        <div className="sidebar-profile-avatar">{getInitials(user?.name || 'MM')}</div>
         <div className="sidebar-profile-copy">
           <div className="sidebar-profile-name">{user?.name || 'Platform Admin'}</div>
-          <div className="sidebar-profile-meta">{user?.role || 'Operations lead'}</div>
+          <div className="sidebar-profile-meta">{user?.role || 'Administrator'}</div>
         </div>
       </div>
 
+      {/* Navigation */}
       <nav className="sidebar-nav">
         {navigationSections.map((section) => (
           <div key={section.title} className="sidebar-group">
             <div className="sidebar-group-title">{section.title}</div>
             {section.items.map((item) => {
               const Icon = item.icon;
-
               return (
                 <NavLink
                   key={item.path}
@@ -141,27 +136,35 @@ function Sidebar({ collapsed, mobileOpen, onClose, onToggleCollapse }) {
                   className={({ isActive }) => `sidebar-link ${isActive ? 'active' : ''}`}
                 >
                   <span className="sidebar-link-icon">
-                    <Icon size={18} strokeWidth={2.1} />
+                    <Icon size={17} strokeWidth={2.1} />
                   </span>
                   <span className="sidebar-link-copy">
-                    <span className="sidebar-link-label">{getNavigationLabel(item, t)}</span>
-                    <small className="sidebar-link-desc">{item.description}</small>
+                    <span className="sidebar-link-label">{item.label}</span>
+                    <span className="sidebar-link-desc">{item.description}</span>
                   </span>
                 </NavLink>
               );
             })}
           </div>
         ))}
-      </nav>
 
-      <div className="sidebar-footer-card">
-        <div className="sidebar-footer-head">
-          <span className="sidebar-status-dot" />
-          <span>Workspace focus</span>
+        {/* Logout at bottom of nav */}
+        <div className="sidebar-group" style={{ marginTop: 'auto' }}>
+          <button
+            className="sidebar-link"
+            type="button"
+            onClick={handleLogout}
+            style={{ width: '100%', textAlign: 'left' }}
+          >
+            <span className="sidebar-link-icon">
+              <LogOut size={17} strokeWidth={2.1} />
+            </span>
+            <span className="sidebar-link-copy">
+              <span className="sidebar-link-label">Sign Out</span>
+            </span>
+          </button>
         </div>
-        <div className="sidebar-footer-metric">{allNavigationItems.length}</div>
-        <p>{activeItem.label} is active in the current operating view.</p>
-      </div>
+      </nav>
     </aside>
   );
 }
@@ -170,7 +173,7 @@ function ServiceBanner() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    const handler = (event) => setError(event.detail || 'A platform service is unavailable');
+    const handler = (event) => setError(event.detail || 'A service is currently unavailable');
     window.addEventListener('api-error', handler);
     return () => window.removeEventListener('api-error', handler);
   }, []);
@@ -179,69 +182,60 @@ function ServiceBanner() {
 
   return (
     <div className="service-banner">
-      <div>
-        <strong>Service warning:</strong> {error}. The workspace is still usable, but some records may be stale until connectivity is restored.
-      </div>
-      <button className="btn btn-secondary" type="button" onClick={() => setError(null)}>
+      <span><strong>Service warning:</strong> {error}. Some data may be stale until connectivity is restored.</span>
+      <button className="btn btn-sm btn-secondary" type="button" onClick={() => setError(null)}>
         Dismiss
       </button>
     </div>
   );
 }
 
-function Header({ isSidebarCollapsed, onToggleSidebar, onOpenMobileNav }) {
+function Header({ onToggleSidebar, onOpenMobileNav }) {
   const { theme, toggleTheme } = useTheme();
   const location = useLocation();
   const currentUser = getCurrentUser();
 
   const routeMeta = useMemo(() => {
-    const current = allNavigationItems.find((item) => item.path === location.pathname);
-
-    return (
-      current || {
-        label: 'Search',
-        description: 'Cross-platform search and result curation',
-        sectionTitle: 'Workspace',
-      }
-    );
+    return allNavItems.find((item) => item.path === location.pathname) || {
+      label: 'Search',
+      sectionTitle: 'Workspace',
+    };
   }, [location.pathname]);
 
   return (
     <header className="topbar">
       <div className="topbar-leading">
         <button className="header-icon-btn topbar-mobile-toggle" type="button" onClick={onOpenMobileNav} aria-label="Open navigation">
-          <Menu size={18} strokeWidth={2.2} />
+          <Menu size={17} strokeWidth={2.2} />
         </button>
         <button
           className="header-icon-btn topbar-sidebar-toggle"
           type="button"
           onClick={onToggleSidebar}
-          aria-label={isSidebarCollapsed ? 'Expand sidebar' : 'Collapse sidebar'}
+          aria-label="Toggle sidebar"
         >
-          {isSidebarCollapsed ? <ChevronRight size={18} strokeWidth={2.2} /> : <ChevronLeft size={18} strokeWidth={2.2} />}
+          <Menu size={17} strokeWidth={2.2} />
         </button>
-
         <div className="topbar-heading">
           <div className="topbar-route-meta">
-            <span className="eyebrow">Merkato Motors workspace</span>
+            <span className="eyebrow">Merkato Motors</span>
             <span className="topbar-route-dot" />
             <span>{routeMeta.sectionTitle}</span>
           </div>
-          <h1>Operations console</h1>
-          <p>{routeMeta.label} · {routeMeta.description}</p>
+          <h1>{routeMeta.label}</h1>
         </div>
       </div>
 
       <div className="topbar-actions">
         <GlobalSearch />
-        <button className="header-icon-btn" type="button" onClick={toggleTheme} aria-label="Toggle theme">
-          {theme === 'dark' ? <SunMedium size={18} strokeWidth={2.2} /> : <MoonStar size={18} strokeWidth={2.2} />}
+        <button className="header-icon-btn" type="button" onClick={toggleTheme} aria-label="Toggle theme" title="Toggle dark mode">
+          {theme === 'dark' ? <SunMedium size={17} strokeWidth={2.2} /> : <MoonStar size={17} strokeWidth={2.2} />}
         </button>
         <NotificationBell />
         <div className="header-user-chip">
-          <div className="header-avatar">{getInitials(currentUser?.name || 'Merkato Motors')}</div>
+          <div className="header-avatar">{getInitials(currentUser?.name || 'MM')}</div>
           <div>
-            <div className="header-user-name">{currentUser?.name || 'Admin User'}</div>
+            <div className="header-user-name">{currentUser?.name || 'Admin'}</div>
             <div className="header-user-role">{currentUser?.role || 'admin'}</div>
           </div>
         </div>
@@ -252,7 +246,9 @@ function Header({ isSidebarCollapsed, onToggleSidebar, onOpenMobileNav }) {
 
 function AppLayout() {
   const location = useLocation();
-  const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(() => localStorage.getItem(sidebarStorageKey) === 'true');
+  const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(
+    () => localStorage.getItem(sidebarStorageKey) === 'true',
+  );
   const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
 
   useEffect(() => {
@@ -265,22 +261,26 @@ function AppLayout() {
 
   return (
     <div className={`app-shell ${isSidebarCollapsed ? 'sidebar-collapsed' : ''} ${isMobileNavOpen ? 'sidebar-mobile-open' : ''}`}>
-      {isMobileNavOpen ? (
-        <button className="sidebar-backdrop" type="button" aria-label="Close navigation" onClick={() => setIsMobileNavOpen(false)} />
-      ) : null}
+      {isMobileNavOpen && (
+        <button
+          className="sidebar-backdrop"
+          type="button"
+          aria-label="Close navigation"
+          onClick={() => setIsMobileNavOpen(false)}
+        />
+      )}
 
       <Sidebar
         collapsed={isSidebarCollapsed}
         mobileOpen={isMobileNavOpen}
         onClose={() => setIsMobileNavOpen(false)}
-        onToggleCollapse={() => setIsSidebarCollapsed((current) => !current)}
+        onToggleCollapse={() => setIsSidebarCollapsed((c) => !c)}
       />
 
       <div className="workspace-shell">
         <ServiceBanner />
         <Header
-          isSidebarCollapsed={isSidebarCollapsed}
-          onToggleSidebar={() => setIsSidebarCollapsed((current) => !current)}
+          onToggleSidebar={() => setIsSidebarCollapsed((c) => !c)}
           onOpenMobileNav={() => setIsMobileNavOpen(true)}
         />
 
@@ -306,6 +306,7 @@ function AppLayout() {
 
       <CommandPalette />
 
+      {/* Mobile bottom navigation */}
       <nav className="mobile-bottom-nav">
         {[
           { path: '/dashboard', icon: LayoutDashboard },
@@ -317,7 +318,7 @@ function AppLayout() {
           const Icon = item.icon;
           return (
             <NavLink key={item.path} to={item.path} className={({ isActive }) => (isActive ? 'active' : '')}>
-              <Icon size={19} strokeWidth={2.3} />
+              <Icon size={20} strokeWidth={2.2} />
             </NavLink>
           );
         })}
