@@ -69,8 +69,9 @@ export class FinanceService {
         await firstValueFrom(
           this.httpService.put(`${dealUrl}/deals/${review.dealId}/stage`, { stage: 'approved' })
         );
-      } catch (e) {
-        console.error('Failed to auto-update deal stage', e.message);
+      } catch (e: unknown) {
+        const message = e instanceof Error ? e.message : String(e);
+        console.error('Failed to auto-update deal stage', message);
       }
     }
     return res;

@@ -1,398 +1,265 @@
 import React, { useEffect, useMemo, useState } from 'react';
+import { Button } from '@mui/material';
 import {
-  Activity,
-  BarChart3,
-  CarFront,
-  HeartHandshake,
-  Megaphone,
+  Briefcase,
+  Car,
+  CircleDollarSign,
   RefreshCw,
   TrendingUp,
-  UsersRound,
-  WalletCards,
+  Users,
 } from 'lucide-react';
 import {
-  Area, AreaChart, Bar, BarChart, CartesianGrid,
-  ResponsiveContainer, Tooltip, XAxis, YAxis,
+  Bar,
+  BarChart,
+  CartesianGrid,
+  Cell,
+  Pie,
+  PieChart,
+  ResponsiveContainer,
+  Tooltip as RechartsTooltip,
+  XAxis,
+  YAxis,
 } from 'recharts';
+import {
+  CategoryScale,
+  Chart as ChartJS,
+  Filler,
+  Legend,
+  LineElement,
+  LinearScale,
+  PointElement,
+  Tooltip,
+} from 'chart.js';
+import { Line } from 'react-chartjs-2';
 import api from '../api';
 import MetricCard from '../components/MetricCard';
-import Skeleton from '../components/Skeleton';
 import StatusBadge from '../components/StatusBadge';
-import { formatCompactNumber, formatCurrency, formatDateTime, formatPercent, safeArray, sumBy, toTitleCase } from '../utils/format';
+import { formatCompactNumber, formatCurrency, formatPercent, safeArray } from '../utils/format';
 
-const moduleBlueprint = [
-  { key: 'crm',       label: 'Customer CRM',    description: 'Customer intake, documents & loans', icon: UsersRound },
-  { key: 'supplier',  label: 'Supplier Portal',  description: 'Vehicle inventory & supplier records', icon: CarFront },
-  { key: 'finance',   label: 'Finance Portal',   description: 'Reviews, documents & approvals', icon: WalletCards },
-  { key: 'deal',      label: 'Deal Flow',        description: 'Selection through completed purchase', icon: Activity },
-  { key: 'partner',   label: 'Partnerships',     description: 'Agreements, commissions & partners', icon: HeartHandshake },
-  { key: 'marketing', label: 'Lead Generation',  description: 'Campaigns, referrals & conversion', icon: Megaphone },
-  { key: 'analytics', label: 'Reporting',        description: 'Revenue, volume & performance', icon: BarChart3 },
-];
+ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Tooltip, Legend, Filler);
+
+const stageLabels = {
+  inquiry: 'Inquiry',
+  vehicle_selected: 'Vehicle Selected',
+  loan_applied: 'Loan Applied',
+  under_review: 'Under Review',
+  approved: 'Approved',
+  contract_signed: 'Contract Signed',
+  completed: 'Completed',
+  cancelled: 'Cancelled',
+};
+
+const pieColors = ['#2F8E75', '#CA8B18', '#2F73C9', '#CF3B35', '#5D7A86'];
 
 export default function Dashboard() {
   const [loading, setLoading] = useState(true);
-  const [data, setData] = useState({
-    customers: [], vehicles: [], deals: [], leads: [],
-    partners: [], reviews: [], trends: [], activity: [],
+  const [state, setState] = useState({
+    customers: [],
+    vehicles: [],
+    deals: [],
+    leads: [],
+    reviews: [],
+    partners: [],
+    trends: [],
   });
 
-  useEffect(() => { loadData(); }, []);
+  useEffect(() => {
+    load();
+  }, []);
 
-  async function loadData() {
+  async function load() {
     setLoading(true);
     try {
-      const [customers, vehicles, deals, leads, partners, reviews, trends, activity] = await Promise.all([
+      const [customers, vehicles, deals, leads, reviews, partners, trends] = await Promise.all([
         api.get('/customers').catch(() => []),
         api.get('/vehicles').catch(() => []),
         api.get('/deals').catch(() => []),
         api.get('/leads').catch(() => []),
-        api.get('/partners').catch(() => []),
         api.get('/finance/reviews').catch(() => []),
+        api.get('/partners').catch(() => []),
         api.get('/analytics/trends').catch(() => []),
-        api.get('/audit').catch(() => []),
       ]);
-      setData({
+
+      setState({
         customers: safeArray(customers),
         vehicles: safeArray(vehicles),
         deals: safeArray(deals),
         leads: safeArray(leads),
-        partners: safeArray(partners),
         reviews: safeArray(reviews),
+        partners: safeArray(partners),
         trends: safeArray(trends),
-        activity: safeArray(activity),
       });
     } finally {
       setLoading(false);
     }
   }
 
-  const totalRevenue = useMemo(
-    () => sumBy(data.deals.filter((d) => d.stage === 'completed'), (d) => d.amount || d.totalAmount),
-    [data.deals],
-  );
-  const openPipeline = useMemo(
-    () => sumBy(data.deals.filter((d) => d.stage !== 'completed' && d.stage !== 'cancelled'), (d) => d.amount || d.totalAmount),
-    [data.deals],
-  );
-  const approvalRate = data.reviews.length
-    ? (data.reviews.filter((r) => r.status === 'approved').length / data.reviews.length) * 100
-    : 0;
-  const conversionRate = data.leads.length
-    ? (data.leads.filter((l) => l.status === 'converted').length / data.leads.length) * 100
-    : 0;
-  const availableVehicles = data.vehicles.filter((v) => v.status === 'available').length;
+  const kpis = useMemo(() => {
+    const closedRevenue = state.deals
+      .filter((deal) => deal.stage === 'completed')
+      .reduce((sum, deal) => sum + Number(deal.amount || deal.totalAmount || 0), 0);
 
-  const stageSummary = [
-    { stage: 'Selected',    count: data.deals.filter((d) => ['inquiry', 'vehicle_selected'].includes(d.stage)).length },
-    { stage: 'Applied',     count: data.deals.filter((d) => ['loan_applied', 'documentation'].includes(d.stage)).length },
-    { stage: 'Under Review',count: data.deals.filter((d) => ['under_review', 'financing'].includes(d.stage)).length },
-    { stage: 'Approved',    count: data.deals.filter((d) => ['approved', 'approval'].includes(d.stage)).length },
-    { stage: 'Completed',   count: data.deals.filter((d) => d.stage === 'completed').length },
-  ];
+    const openPipeline = state.deals
+      .filter((deal) => !['completed', 'cancelled'].includes(deal.stage))
+      .reduce((sum, deal) => sum + Number(deal.amount || deal.totalAmount || 0), 0);
 
-  const attentionItems = [
-    {
-      label: 'Pending finance reviews',
-      value: data.reviews.filter((r) => ['pending', 'under_review', 'in_review'].includes(r.status)).length,
-      tone: 'warning',
-      note: 'Finance teams should process these first.',
-    },
-    {
-      label: 'Reserved vehicles',
-      value: data.vehicles.filter((v) => v.status === 'reserved').length,
-      tone: 'info',
-      note: 'Vehicles tied to active deals.',
-    },
-    {
-      label: 'New leads awaiting contact',
-      value: data.leads.filter((l) => l.status === 'new').length,
-      tone: 'danger',
-      note: 'Leads waiting for first follow-up.',
-    },
-  ];
+    const approvals = state.reviews.filter((review) => review.status === 'approved').length;
+    const approvalRate = state.reviews.length ? (approvals / state.reviews.length) * 100 : 0;
 
-  const moduleCoverage = [
-    { key: 'crm',       count: data.customers.length,      health: data.customers.length ? 'active' : 'pending' },
-    { key: 'supplier',  count: availableVehicles,           health: availableVehicles ? 'active' : 'pending' },
-    { key: 'finance',   count: data.reviews.length,         health: data.reviews.length ? 'active' : 'pending' },
-    { key: 'deal',      count: data.deals.length,           health: data.deals.length ? 'active' : 'pending' },
-    { key: 'partner',   count: data.partners.length,        health: data.partners.length ? 'active' : 'pending' },
-    { key: 'marketing', count: data.leads.length,           health: data.leads.length ? 'active' : 'pending' },
-    { key: 'analytics', count: data.trends.length,          health: data.trends.length ? 'active' : 'pending' },
-  ];
+    return {
+      closedRevenue,
+      openPipeline,
+      approvalRate,
+      activeDeals: state.deals.filter((deal) => !['completed', 'cancelled'].includes(deal.stage)).length,
+    };
+  }, [state.deals, state.reviews]);
 
-  if (loading) {
-    return (
-      <div className="page-shell">
-        <div className="page-header">
-          <Skeleton style={{ width: '240px', height: '28px' }} />
-        </div>
-        <div className="stats-grid">
-          {[1, 2, 3, 4].map((i) => <Skeleton key={i} style={{ height: '110px', borderRadius: '12px' }} />)}
-        </div>
-        <div className="split-layout">
-          {[1, 2].map((i) => <Skeleton key={i} style={{ height: '260px', borderRadius: '12px' }} />)}
-        </div>
-        <div className="section-grid">
-          {[1, 2].map((i) => <Skeleton key={i} style={{ height: '320px', borderRadius: '12px' }} />)}
-        </div>
-      </div>
-    );
-  }
+  const trendChartData = useMemo(() => ({
+    labels: state.trends.map((row) => row.month || 'N/A'),
+    datasets: [
+      {
+        label: 'Revenue',
+        data: state.trends.map((row) => Number(row.revenue || 0)),
+        borderColor: '#0E5F4B',
+        backgroundColor: 'rgba(14, 95, 75, 0.12)',
+        fill: true,
+        borderWidth: 2,
+        tension: 0.36,
+      },
+      {
+        label: 'Leads',
+        data: state.trends.map((row) => Number(row.leads || 0)),
+        borderColor: '#C88211',
+        backgroundColor: 'rgba(200, 130, 17, 0.08)',
+        fill: true,
+        borderWidth: 2,
+        tension: 0.36,
+      },
+    ],
+  }), [state.trends]);
+
+  const stageData = useMemo(() => {
+    const map = {};
+    for (const deal of state.deals) {
+      const key = deal.stage || 'inquiry';
+      map[key] = (map[key] || 0) + 1;
+    }
+
+    return Object.entries(map).map(([stage, count]) => ({
+      stage,
+      label: stageLabels[stage] || stage,
+      count,
+    }));
+  }, [state.deals]);
+
+  const leadSourceData = useMemo(() => {
+    const map = {};
+    for (const lead of state.leads) {
+      const source = lead.source || 'unspecified';
+      map[source] = (map[source] || 0) + 1;
+    }
+    return Object.entries(map)
+      .map(([source, value]) => ({ name: source, value }))
+      .sort((left, right) => right.value - left.value);
+  }, [state.leads]);
 
   return (
     <div className="page-shell">
-      {/* Header */}
-      <div className="page-header">
+      <div className="page-header row-between">
         <div>
-          <h1>Operations Dashboard</h1>
-          <p>Monitor customer intake, inventory, financing, deal progress, and lead generation from one workspace.</p>
+          <h1>Executive command center</h1>
+          <p>Single-pane operations for customer funnel, inventory movement, financing flow, and revenue momentum.</p>
         </div>
-        <button className="btn btn-secondary" type="button" onClick={loadData}>
-          <RefreshCw size={14} strokeWidth={2.2} /> Refresh
-        </button>
+        <Button variant="outlined" onClick={load} startIcon={<RefreshCw size={16} />} disabled={loading}>
+          Refresh snapshot
+        </Button>
       </div>
 
-      {/* KPI cards */}
       <div className="stats-grid">
-        <MetricCard
-          icon={UsersRound}
-          label="Customers"
-          value={formatCompactNumber(data.customers.length)}
-          detail="Registered records"
-          tone="accent"
-        />
-        <MetricCard
-          icon={CarFront}
-          label="Available Vehicles"
-          value={formatCompactNumber(availableVehicles)}
-          detail={`${data.vehicles.length} total listed`}
-          tone="success"
-        />
-        <MetricCard
-          icon={WalletCards}
-          label="Loan Approval Rate"
-          value={formatPercent(approvalRate)}
-          detail={`${data.reviews.length} finance reviews`}
-          tone="warning"
-        />
-        <MetricCard
-          icon={Megaphone}
-          label="Lead Conversion"
-          value={formatPercent(conversionRate)}
-          detail={`${data.leads.length} captured leads`}
-          tone="info"
-        />
+        <MetricCard icon={Users} label="Customers" value={formatCompactNumber(state.customers.length)} detail="Registered in CRM" tone="accent" />
+        <MetricCard icon={Car} label="Available vehicles" value={formatCompactNumber(state.vehicles.filter((vehicle) => vehicle.status === 'available').length)} detail={`${state.vehicles.length} total inventory`} tone="success" />
+        <MetricCard icon={TrendingUp} label="Approval rate" value={formatPercent(kpis.approvalRate)} detail={`${state.reviews.length} financing reviews`} tone="warning" />
+        <MetricCard icon={Briefcase} label="Active deals" value={kpis.activeDeals} detail="Transactions in progress" tone="info" />
+        <MetricCard icon={CircleDollarSign} label="Closed revenue" value={formatCurrency(kpis.closedRevenue, { compact: true, maximumFractionDigits: 1 })} detail={`Pipeline ${formatCurrency(kpis.openPipeline, { compact: true, maximumFractionDigits: 1 })}`} tone="accent" />
       </div>
 
-      {/* Revenue summary + Priority items */}
-      <div className="split-layout dashboard-overview">
-        <div className="card dashboard-summary-card">
-          <div className="card-header">
+      <div className="section-grid two-up">
+        <div className="card chart-card">
+          <div className="card-header compact">
             <div>
-              <div className="card-title">Revenue Summary</div>
-              <div className="card-subtitle">Core commercial metrics across all transactions.</div>
-            </div>
-            <TrendingUp size={16} color="var(--text-muted)" strokeWidth={2} />
-          </div>
-          <div className="summary-kpi-grid">
-            <div className="summary-kpi">
-              <span className="summary-kpi-label">Closed Revenue</span>
-              <strong>{formatCurrency(totalRevenue, { compact: true, maximumFractionDigits: 1 })}</strong>
-              <p>Completed transactions</p>
-            </div>
-            <div className="summary-kpi">
-              <span className="summary-kpi-label">Open Pipeline</span>
-              <strong>{formatCurrency(openPipeline, { compact: true, maximumFractionDigits: 1 })}</strong>
-              <p>Deals in progress</p>
-            </div>
-            <div className="summary-kpi">
-              <span className="summary-kpi-label">Approval Rate</span>
-              <strong>{formatPercent(approvalRate)}</strong>
-              <p>{data.reviews.length} reviews on record</p>
-            </div>
-          </div>
-        </div>
-
-        <div className="card">
-          <div className="card-header">
-            <div>
-              <div className="card-title">Priority Items</div>
-              <div className="card-subtitle">Queues that need attention to keep transactions moving.</div>
-            </div>
-          </div>
-          <div className="list-stack">
-            {attentionItems.map((item) => (
-              <div key={item.label} className="list-row compact-row">
-                <div className="list-row-head">
-                  <div>
-                    <div className="list-row-title">{item.label}</div>
-                    <div className="list-row-meta">{item.note}</div>
-                  </div>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                    <span style={{ fontSize: '20px', fontWeight: 700, color: 'var(--text-primary)' }}>
-                      {formatCompactNumber(item.value)}
-                    </span>
-                    <StatusBadge value={item.tone === 'warning' ? 'pending' : item.tone === 'danger' ? 'new' : 'active'} compact />
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      {/* Charts */}
-      <div className="section-grid">
-        <div className="card">
-          <div className="card-header">
-            <div>
-              <div className="card-title">Marketplace Trend</div>
-              <div className="card-subtitle">Monthly revenue and lead generation movement.</div>
+              <div className="card-title">Revenue and lead momentum</div>
+              <div className="card-subtitle">Chart.js trendline for month-over-month throughput.</div>
             </div>
           </div>
           <div className="chart-shell">
-            <ResponsiveContainer width="100%" height="100%">
-              <AreaChart data={data.trends} margin={{ top: 4, right: 4, left: -16, bottom: 0 }}>
-                <defs>
-                  <linearGradient id="revenueGrad" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="5%" stopColor="#1B5631" stopOpacity={0.18} />
-                    <stop offset="95%" stopColor="#1B5631" stopOpacity={0} />
-                  </linearGradient>
-                  <linearGradient id="leadsGrad" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="5%" stopColor="#C49820" stopOpacity={0.18} />
-                    <stop offset="95%" stopColor="#C49820" stopOpacity={0} />
-                  </linearGradient>
-                </defs>
-                <CartesianGrid strokeDasharray="3 3" stroke="var(--border-color)" vertical={false} />
-                <XAxis dataKey="month" tickLine={false} axisLine={false} tick={{ fontSize: 11, fill: 'var(--text-faint)' }} />
-                <YAxis tickLine={false} axisLine={false} tick={{ fontSize: 11, fill: 'var(--text-faint)' }} />
-                <Tooltip
-                  contentStyle={{
-                    background: 'var(--bg-surface)',
-                    border: '1px solid var(--border-color)',
-                    borderRadius: '10px',
-                    fontSize: '12px',
-                  }}
-                />
-                <Area type="monotone" dataKey="revenue" stroke="#1B5631" fill="url(#revenueGrad)" strokeWidth={2} name="Revenue" />
-                <Area type="monotone" dataKey="leads" stroke="#C49820" fill="url(#leadsGrad)" strokeWidth={2} name="Leads" />
-              </AreaChart>
-            </ResponsiveContainer>
+            <Line
+              data={trendChartData}
+              options={{
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: { legend: { position: 'top' } },
+                scales: { y: { beginAtZero: true } },
+              }}
+            />
           </div>
         </div>
 
-        <div className="card">
-          <div className="card-header">
+        <div className="card chart-card">
+          <div className="card-header compact">
             <div>
-              <div className="card-title">Transaction Stages</div>
-              <div className="card-subtitle">Deal distribution from selection to completion.</div>
+              <div className="card-title">Lead source mix</div>
+              <div className="card-subtitle">Recharts distribution of inbound marketing channels.</div>
             </div>
           </div>
           <div className="chart-shell">
-            <ResponsiveContainer width="100%" height="100%">
-              <BarChart data={stageSummary} margin={{ top: 4, right: 4, left: -16, bottom: 0 }}>
-                <CartesianGrid strokeDasharray="3 3" stroke="var(--border-color)" vertical={false} />
-                <XAxis dataKey="stage" tickLine={false} axisLine={false} tick={{ fontSize: 10, fill: 'var(--text-faint)' }} />
-                <YAxis tickLine={false} axisLine={false} tick={{ fontSize: 11, fill: 'var(--text-faint)' }} allowDecimals={false} />
-                <Tooltip
-                  formatter={(v) => [v, 'Deals']}
-                  contentStyle={{
-                    background: 'var(--bg-surface)',
-                    border: '1px solid var(--border-color)',
-                    borderRadius: '10px',
-                    fontSize: '12px',
-                  }}
-                />
-                <Bar dataKey="count" fill="#1B5631" radius={[6, 6, 0, 0]} />
-              </BarChart>
-            </ResponsiveContainer>
-          </div>
-        </div>
-      </div>
-
-      {/* Module coverage + Activity */}
-      <div className="section-grid">
-        <div className="card">
-          <div className="card-header">
-            <div>
-              <div className="card-title">Module Coverage</div>
-              <div className="card-subtitle">All 7 business functions are live and connected.</div>
-            </div>
-          </div>
-          <div className="list-stack">
-            {moduleBlueprint.map((module) => {
-              const coverage = moduleCoverage.find((c) => c.key === module.key);
-              const Icon = module.icon;
-              return (
-                <div key={module.key} className="list-row compact-row">
-                  <div className="list-row-head">
-                    <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
-                      <div className="metric-icon-wrap tone-accent" style={{ width: '30px', height: '30px' }}>
-                        <Icon size={14} strokeWidth={2.2} />
-                      </div>
-                      <div>
-                        <div className="list-row-title">{module.label}</div>
-                        <div className="list-row-meta">{module.description}</div>
-                      </div>
-                    </div>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                      <span style={{ fontSize: '13px', fontWeight: 600, color: 'var(--text-muted)' }}>
-                        {formatCompactNumber(coverage?.count || 0)}
-                      </span>
-                      <StatusBadge value={coverage?.health || 'pending'} compact />
-                    </div>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-
-        <div className="card">
-          <div className="card-header">
-            <div>
-              <div className="card-title">Recent Activity</div>
-              <div className="card-subtitle">Latest operational events from the audit trail.</div>
-            </div>
-          </div>
-          <div className="timeline">
-            {data.activity.length ? (
-              data.activity.slice(0, 6).map((log) => (
-                <div key={log.id} className="timeline-item">
-                  <div className="timeline-marker"><span /></div>
-                  <div style={{ flex: 1, minWidth: 0 }}>
-                    <div className="timeline-item-head">
-                      <div className="list-row-title" style={{ fontSize: '13px' }}>
-                        {toTitleCase(log.resource)} · {log.action}
-                      </div>
-                    </div>
-                    <div className="timeline-copy">{formatDateTime(log.timestamp)}</div>
-                  </div>
-                </div>
-              ))
+            {leadSourceData.length ? (
+              <ResponsiveContainer width="100%" height="100%">
+                <PieChart>
+                  <Pie data={leadSourceData} dataKey="value" nameKey="name" innerRadius={58} outerRadius={92} paddingAngle={2}>
+                    {leadSourceData.map((entry, index) => (
+                      <Cell key={`${entry.name}-${index}`} fill={pieColors[index % pieColors.length]} />
+                    ))}
+                  </Pie>
+                  <RechartsTooltip />
+                </PieChart>
+              </ResponsiveContainer>
             ) : (
-              <div className="empty-state" style={{ minHeight: '200px' }}>
-                <h3>No activity yet</h3>
-                <p>Events will appear here as operators use the platform.</p>
-              </div>
+              <div className="empty-state compact"><h3>No lead data</h3><p>Capture leads to generate channel mix analytics.</p></div>
             )}
           </div>
         </div>
       </div>
 
-      {/* Recent deals + Lead queue */}
-      <div className="section-grid">
-        <div className="table-shell">
-          <div className="card-header table-shell-header">
+      <div className="section-grid two-up">
+        <div className="card chart-card">
+          <div className="card-header compact">
             <div>
-              <div className="card-title">Recent Deals</div>
-              <div className="card-subtitle">Latest transactions across the sales workflow.</div>
+              <div className="card-title">Deal stage distribution</div>
+              <div className="card-subtitle">Pipeline load by lifecycle stage.</div>
             </div>
           </div>
-          <div className="table-container">
-            <table>
+          <div className="chart-shell">
+            <ResponsiveContainer width="100%" height="100%">
+              <BarChart data={stageData} margin={{ top: 10, right: 10, left: 0, bottom: 8 }}>
+                <CartesianGrid strokeDasharray="4 4" stroke="#D6E3E8" />
+                <XAxis dataKey="label" tick={{ fontSize: 12 }} interval={0} angle={-16} textAnchor="end" height={56} />
+                <YAxis allowDecimals={false} tick={{ fontSize: 12 }} />
+                <RechartsTooltip />
+                <Bar dataKey="count" fill="#2F8E75" radius={[7, 7, 0, 0]} />
+              </BarChart>
+            </ResponsiveContainer>
+          </div>
+        </div>
+
+        <div className="card">
+          <div className="card-header compact">
+            <div>
+              <div className="card-title">Recent deals</div>
+              <div className="card-subtitle">Latest transactions moving through the platform.</div>
+            </div>
+          </div>
+          <div className="table-container table-responsive">
+            <table className="table table-sm align-middle mb-0">
               <thead>
                 <tr>
                   <th>Customer</th>
@@ -402,57 +269,44 @@ export default function Dashboard() {
                 </tr>
               </thead>
               <tbody>
-                {data.deals.slice(0, 6).map((deal) => (
+                {safeArray(state.deals).slice(0, 6).map((deal) => (
                   <tr key={deal.id}>
-                    <td style={{ fontWeight: 500, color: 'var(--text-primary)' }}>{deal.customerName || '—'}</td>
-                    <td>{deal.vehicleDescription || '—'}</td>
-                    <td style={{ fontWeight: 600 }}>{formatCurrency(deal.amount || deal.totalAmount)}</td>
-                    <td><StatusBadge value={deal.stage} compact /></td>
+                    <td>{deal.customerName || 'Unknown customer'}</td>
+                    <td>{deal.vehicleDescription || 'Vehicle not linked'}</td>
+                    <td>{formatCurrency(deal.amount || deal.totalAmount || 0)}</td>
+                    <td><StatusBadge value={deal.stage || 'inquiry'} compact /></td>
                   </tr>
                 ))}
-                {!data.deals.length && (
+                {!state.deals.length ? (
                   <tr>
-                    <td colSpan={4}>
-                      <div className="empty-state" style={{ minHeight: '160px' }}>
-                        <h3>No deals yet</h3>
-                        <p>Start by creating a customer and selecting a vehicle.</p>
-                      </div>
-                    </td>
+                    <td colSpan={4}><div className="empty-state compact"><h3>No deals yet</h3><p>Create a deal record to start transaction tracking.</p></div></td>
                   </tr>
-                )}
+                ) : null}
               </tbody>
             </table>
           </div>
         </div>
+      </div>
 
-        <div className="card">
-          <div className="card-header">
-            <div>
-              <div className="card-title">Lead Queue</div>
-              <div className="card-subtitle">Latest captured leads and buyer intent signals.</div>
-            </div>
+      <div className="card">
+        <div className="card-header compact">
+          <div>
+            <div className="card-title">Marketplace readiness pulse</div>
+            <div className="card-subtitle">Partners and institutions ready to process demand.</div>
           </div>
-          <div className="list-stack">
-            {data.leads.slice(0, 6).map((lead) => (
-              <div key={lead.id} className="list-row compact-row">
-                <div className="list-row-head">
-                  <div>
-                    <div className="list-row-title">{lead.name || `${lead.firstName || ''} ${lead.lastName || ''}`.trim() || 'Unknown'}</div>
-                    <div className="list-row-meta">
-                      {lead.source} · {lead.vehicleInterest || 'No vehicle specified'}
-                    </div>
-                  </div>
-                  <StatusBadge value={lead.status} compact />
-                </div>
-                <div className="list-row-meta">{lead.email || lead.phone}</div>
-              </div>
-            ))}
-            {!data.leads.length && (
-              <div className="empty-state" style={{ minHeight: '160px' }}>
-                <h3>No leads yet</h3>
-                <p>Capture leads from marketing campaigns and referrals.</p>
-              </div>
-            )}
+        </div>
+        <div className="row metric-row">
+          <div className="metric-inline">
+            <span className="metric-inline-label">Partners onboarded</span>
+            <span className="metric-inline-value">{state.partners.length}</span>
+          </div>
+          <div className="metric-inline">
+            <span className="metric-inline-label">Leads captured</span>
+            <span className="metric-inline-value">{state.leads.length}</span>
+          </div>
+          <div className="metric-inline">
+            <span className="metric-inline-label">Reviews awaiting action</span>
+            <span className="metric-inline-value">{state.reviews.filter((review) => ['pending', 'in_review'].includes(review.status)).length}</span>
           </div>
         </div>
       </div>
