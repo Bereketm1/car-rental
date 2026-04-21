@@ -23,7 +23,7 @@ function AppThemeBridge() {
     theme === "dark"
       ? "0 14px 28px rgba(0, 0, 0, 0.32)"
       : "0 10px 20px rgba(21, 38, 73, 0.07)";
-  const inputBackground = theme === "dark" ? "#16213F" : "#FFFFFF";
+  const inputBackground = theme === "dark" ? "#0b0e14" : "#FFFFFF";
 
   const muiTheme = React.useMemo(
     () =>
@@ -39,8 +39,8 @@ function AppThemeBridge() {
             main: "#1E7A6B",
           },
           background: {
-            default: theme === "dark" ? "#0E152C" : "#EEF2F8",
-            paper: theme === "dark" ? "#161F3D" : "#FFFFFF",
+            default: theme === "dark" ? "#0b0e14" : "#EEF2F8",
+            paper: theme === "dark" ? "#181c25" : "#FFFFFF",
           },
           success: {
             main: "#1F9D66",

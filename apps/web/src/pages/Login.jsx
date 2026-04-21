@@ -7,13 +7,8 @@ import { useToast } from "../components/Toast";
 const demoAccounts = [
   {
     role: "Marketplace Admin",
-    email: "admin@merkatomotors.com",
+    email: "admin@merkato.com",
     password: "admin123",
-  },
-  {
-    role: "Supplier Operator",
-    email: "supplier@merkatomotors.com",
-    password: "vendor123",
   },
 ];
 
@@ -30,14 +25,15 @@ export default function Login({ onLogin }) {
 
     try {
       const response = await api.post("/auth/login", { email, password });
-      if (!response?.access_token) {
+      const token = response?.token || response?.access_token;
+      if (!token) {
         throw new Error("Login response is missing access token.");
       }
 
-      localStorage.setItem("token", response.access_token);
+      localStorage.setItem("token", token);
       localStorage.setItem("user", JSON.stringify(response.user || {}));
       onLogin(response.user || {});
-      toast.success("Signed in successfully", "Welcome back");
+      toast.success("Signed in successfully");
       navigate("/dashboard");
     } catch (error) {
       toast.error(

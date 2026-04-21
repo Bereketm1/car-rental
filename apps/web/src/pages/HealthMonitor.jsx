@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useState } from "react";
-import { Database, ShieldCheck, TimerReset, Wifi } from "lucide-react";
+import { Database, ShieldCheck, TimerReset, Wifi, Cpu, Activity } from "lucide-react";
 import api from "../api";
 import DataTable from "../components/DataTable";
 import MetricCard from "../components/MetricCard";
@@ -54,6 +54,7 @@ export default function HealthMonitor() {
   const [loading, setLoading] = useState(true);
   const [logs, setLogs] = useState([]);
   const [services, setServices] = useState([]);
+  const [gatewayHealth, setGatewayHealth] = useState(null);
   const [lastRefresh, setLastRefresh] = useState(null);
 
   useEffect(() => {
@@ -63,8 +64,9 @@ export default function HealthMonitor() {
   async function loadData() {
     setLoading(true);
     try {
-      const [auditResponse, healthChecks] = await Promise.all([
+      const [auditResponse, gatewayHealthResponse, healthChecks] = await Promise.all([
         api.get("/audit").catch(() => []),
+        api.get("/health").catch(() => null),
         Promise.all(
           serviceTargets.map(async (service) => {
             const startedAt = performance.now();
@@ -88,6 +90,9 @@ export default function HealthMonitor() {
       ]);
 
       setLogs(safeArray(auditResponse));
+      if (gatewayHealthResponse && gatewayHealthResponse.data) {
+        setGatewayHealth(gatewayHealthResponse.data);
+      }
       setServices(healthChecks);
       setLastRefresh(new Date());
     } finally {
@@ -154,37 +159,33 @@ export default function HealthMonitor() {
         </div>
       </div>
 
-      <div className="stats-grid">
+      <div className="stats-grid" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))' }}>
         <MetricCard
           icon={Wifi}
           label="Services online"
           value={`${onlineCount}/${services.length}`}
-          detail="Current reachability from the frontend workspace"
+          detail="Reachability from frontend"
           tone="accent"
         />
         <MetricCard
           icon={ShieldCheck}
           label="Audit entries"
           value={logs.length}
-          detail="Tracked operational events available for review"
+          detail="Tracked operational events"
           tone="success"
         />
         <MetricCard
-          icon={Database}
-          label="Gateway posture"
-          value={degradedCount === 0 ? "Healthy" : "Degraded"}
-          detail={
-            degradedCount === 0
-              ? "All platform modules are responding."
-              : `${degradedCount} module(s) need attention.`
-          }
-          tone={degradedCount === 0 ? "success" : "warning"}
+          icon={Activity}
+          label="Gateway Memory"
+          value={gatewayHealth?.memory?.heapUsed ? `${gatewayHealth.memory.heapUsed} MB` : "N/A"}
+          detail={`Out of ${gatewayHealth?.memory?.heapTotal || 0} MB heap allocation`}
+          tone="warning"
         />
         <MetricCard
-          icon={TimerReset}
-          label="Last refresh"
-          value={lastRefresh ? lastRefresh.toLocaleTimeString() : "Pending"}
-          detail="Snapshot time for this operational view"
+          icon={Cpu}
+          label="Gateway Uptime"
+          value={gatewayHealth?.uptimeSeconds ? `${Math.floor(gatewayHealth.uptimeSeconds / 60)} min` : "N/A"}
+          detail="Time since last gateway restart"
           tone="info"
         />
       </div>

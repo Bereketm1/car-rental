@@ -310,7 +310,7 @@ const operations = [
     checks: [
       "Turbo completes successfully",
       "Web bundle builds",
-      "All Nest services compile",
+      "All Express microservices compile/start",
     ],
   },
   {
@@ -328,7 +328,7 @@ const operations = [
     id: "storage",
     title: "Data Storage Model",
     summary:
-      "Services persist locally using embedded SQLite via sql.js auto-save files.",
+      "Services persist locally using better-sqlite3 and dedicated SQLite files per service.",
     commands: ["*.sqlite files are created in service working directories"],
     checks: [
       "No Postgres dependency for local development",
