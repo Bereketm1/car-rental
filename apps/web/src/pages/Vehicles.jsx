@@ -5,6 +5,7 @@ import api from '../api';
 import DataTable from '../components/DataTable';
 import MetricCard from '../components/MetricCard';
 import Modal from '../components/Modal';
+import ConfirmModal from '../components/ConfirmModal';
 import StatusBadge from '../components/StatusBadge';
 import { useToast } from '../components/Toast';
 import { formatCurrency, formatDateTime, safeArray } from '../utils/format';
@@ -23,6 +24,7 @@ const emptyVehicleForm = {
   transmission: 'Automatic',
   status: 'available',
   description: '',
+  imageUrl: '',
 };
 
 const emptySupplierForm = {
@@ -44,6 +46,8 @@ export default function Vehicles() {
   const [loading, setLoading] = useState(true);
   const [tab, setTab] = useState('inventory');
   const [activeModal, setActiveModal] = useState(null);
+  const [vehicleToDelete, setVehicleToDelete] = useState(null);
+  const [activeImage, setActiveImage] = useState(null);
 
   const [vehicles, setVehicles] = useState([]);
   const [suppliers, setSuppliers] = useState([]);
@@ -117,14 +121,12 @@ export default function Vehicles() {
     }
   }
 
-  async function deleteVehicle(vehicleId) {
-    if (!window.confirm('Delete this vehicle from inventory?')) {
-      return;
-    }
-
+  async function confirmDeleteVehicle() {
+    if (!vehicleToDelete) return;
     try {
-      await api.delete(`/vehicles/${vehicleId}`);
+      await api.delete(`/vehicles/${vehicleToDelete.id}`);
       toast.success('Vehicle removed from inventory');
+      setVehicleToDelete(null);
       await loadData();
     } catch (error) {
       toast.error(error.message || 'Unable to delete vehicle.');
@@ -177,10 +179,24 @@ export default function Vehicles() {
       key: 'vehicle',
       label: 'Vehicle',
       sortable: true,
-      render: (_, vehicle) => (
-        <div>
-          <div className="list-row-title">{vehicle.make} {vehicle.model}</div>
-          <div className="list-row-meta">{vehicle.year} • {vehicle.color || 'Color n/a'} • {vehicle.mileage || 0} km</div>
+      render: (value, vehicle) => (
+        <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+          {vehicle.imageUrl ? (
+            <img 
+              src={vehicle.imageUrl} 
+              alt={value} 
+              style={{ width: '48px', height: '36px', objectFit: 'cover', borderRadius: '4px', cursor: 'pointer', border: '1px solid var(--border-color)' }} 
+              onClick={() => setActiveImage(vehicle.imageUrl)}
+            />
+          ) : (
+            <div style={{ width: '48px', height: '36px', borderRadius: '4px', backgroundColor: 'var(--bg-surface-hover)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              <CarFront size={16} color="var(--text-muted)" />
+            </div>
+          )}
+          <div>
+            <div className="list-row-title">{vehicle.make} {vehicle.model}</div>
+            <div className="list-row-meta">{vehicle.year} • {vehicle.color || 'Color n/a'} • {vehicle.mileage || 0} km</div>
+          </div>
         </div>
       ),
     },
@@ -193,10 +209,12 @@ export default function Vehicles() {
       label: 'Actions',
       render: (_, vehicle) => (
         <div className="toolbar-cluster wrap">
-          <button className="btn btn-sm btn-outline-primary" type="button" onClick={() => updateVehicleStatus(vehicle, 'available')}>Available</button>
-          <button className="btn btn-sm btn-outline-warning" type="button" onClick={() => updateVehicleStatus(vehicle, 'reserved')}>Reserve</button>
-          <button className="btn btn-sm btn-outline-success" type="button" onClick={() => updateVehicleStatus(vehicle, 'sold')}>Sold</button>
-          <button className="btn btn-sm btn-outline-danger" type="button" onClick={() => deleteVehicle(vehicle.id)}>Delete</button>
+          {vehicle.status === 'available' ? (
+            <button className="btn btn-sm btn-outline-primary" type="button" onClick={() => updateVehicleStatus(vehicle, 'reserved')}>Reserve</button>
+          ) : vehicle.status === 'reserved' ? (
+            <button className="btn btn-sm btn-outline-success" type="button" onClick={() => updateVehicleStatus(vehicle, 'sold')}>Mark sold</button>
+          ) : null}
+          <button className="btn btn-sm btn-outline-danger" type="button" onClick={() => setVehicleToDelete(vehicle)}>Delete</button>
         </div>
       ),
     },
@@ -410,12 +428,32 @@ export default function Vehicles() {
           <div className="form-group"><label>Fuel type</label><input value={vehicleForm.fuelType} onChange={(event) => setVehicleForm({ ...vehicleForm, fuelType: event.target.value })} /></div>
           <div className="form-group"><label>Mileage</label><input type="number" value={vehicleForm.mileage} onChange={(event) => setVehicleForm({ ...vehicleForm, mileage: event.target.value })} /></div>
           <div className="form-group"><label>Color</label><input value={vehicleForm.color} onChange={(event) => setVehicleForm({ ...vehicleForm, color: event.target.value })} /></div>
+          <div className="form-group" style={{ gridColumn: '1 / -1' }}>
+            <label>Image URL</label>
+            <input className="search-input" value={vehicleForm.imageUrl} onChange={(e) => setVehicleForm({ ...vehicleForm, imageUrl: e.target.value })} placeholder="https://..." />
+          </div>
           <div className="form-group" style={{ gridColumn: '1 / -1' }}><label>Description</label><textarea value={vehicleForm.description} onChange={(event) => setVehicleForm({ ...vehicleForm, description: event.target.value })} /></div>
           <div className="modal-actions" style={{ gridColumn: '1 / -1' }}>
             <button className="btn btn-secondary" type="button" onClick={() => setActiveModal(null)}>Cancel</button>
             <button className="btn btn-primary" type="submit"><CarFront size={15} /> Add vehicle</button>
           </div>
         </form>
+      </Modal>
+
+      <ConfirmModal
+        open={!!vehicleToDelete}
+        onClose={() => setVehicleToDelete(null)}
+        onConfirm={confirmDeleteVehicle}
+        title="Delete Vehicle"
+        message={`Are you sure you want to delete ${vehicleToDelete?.make} ${vehicleToDelete?.model}? This action cannot be undone.`}
+        confirmText="Delete Vehicle"
+        isDestructive={true}
+      />
+
+      <Modal open={!!activeImage} onClose={() => setActiveImage(null)} title="Vehicle Image" width="600px">
+        <div style={{ display: 'flex', justifyContent: 'center', padding: '16px', background: '#000', borderRadius: '8px', marginTop: '16px' }}>
+          <img src={activeImage} alt="Vehicle" style={{ maxWidth: '100%', maxHeight: '70vh', objectFit: 'contain', borderRadius: '4px' }} />
+        </div>
       </Modal>
     </div>
   );

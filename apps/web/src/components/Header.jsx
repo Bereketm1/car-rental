@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   AppBar,
   Avatar,
@@ -42,7 +42,31 @@ export default function Header({ onToggleSidebar, user, onLogout }) {
   const location = useLocation();
   const navigate = useNavigate();
   const { theme, toggleTheme } = useWorkspaceTheme();
-  const [search, setSearch] = useState("");
+  
+  const searchParams = new URLSearchParams(location.search);
+  const qParam = searchParams.get("q") || "";
+  const [search, setSearch] = useState(qParam);
+
+  useEffect(() => {
+    if (location.pathname === "/search") {
+      setSearch(qParam);
+    } else {
+      setSearch("");
+    }
+  }, [location.pathname, qParam]);
+
+  useEffect(() => {
+    const handler = setTimeout(() => {
+      const safeSearch = search || "";
+      if (safeSearch.trim() !== qParam.trim() && safeSearch.trim() !== "") {
+        navigate(`/search?q=${encodeURIComponent(safeSearch.trim())}`);
+      } else if (safeSearch.trim() === "" && location.pathname === "/search" && qParam !== "") {
+        navigate("/search");
+      }
+    }, 400);
+    return () => clearTimeout(handler);
+  }, [search, navigate, qParam, location.pathname]);
+
   const isDark = muiTheme.palette.mode === "dark";
 
   const page = pageMap[location.pathname] || {
@@ -59,13 +83,18 @@ export default function Header({ onToggleSidebar, user, onLogout }) {
     height: 38,
   };
 
-  function submitSearch(event) {
-    if (event.key !== "Enter") {
-      return;
-    }
+  function handleSearchChange(e) {
+    setSearch(e.target.value);
+  }
 
-    const query = search.trim();
-    navigate(query ? `/search?q=${encodeURIComponent(query)}` : "/search");
+  function submitSearch(event) {
+    if (event.key === "Enter") {
+      event.preventDefault();
+      const safeSearch = search || "";
+      if (safeSearch.trim()) {
+        navigate(`/search?q=${encodeURIComponent(safeSearch.trim())}`);
+      }
+    }
   }
 
   return (
@@ -150,7 +179,7 @@ export default function Header({ onToggleSidebar, user, onLogout }) {
           <TextField
             size="small"
             value={search}
-            onChange={(event) => setSearch(event.target.value)}
+            onChange={handleSearchChange}
             onKeyDown={submitSearch}
             placeholder="Search by customer, vehicle, deal..."
             sx={{

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { X } from 'lucide-react';
 
 export default function Modal({ open, onClose, title, subtitle, size = 'medium', children }) {
@@ -26,19 +26,13 @@ export default function Modal({ open, onClose, title, subtitle, size = 'medium',
     return () => document.removeEventListener('keydown', handleEsc);
   }, [open, onClose]);
 
-  function handleOverlayClick(event) {
-    if (event.target === overlayRef.current) {
-      onClose?.();
-    }
-  }
-
   if (!open) return null;
 
   const sizeClass = size === 'large' ? 'modal-lg' : size === 'small' ? 'modal-sm' : '';
 
   return (
-    <div className="modal-overlay" ref={overlayRef} onClick={handleOverlayClick}>
-      <div className={`modal-dialog ${sizeClass}`} ref={contentRef} role="dialog" aria-modal="true">
+    <div className="modal-overlay" ref={overlayRef} onMouseDown={(e) => { if (e.target === e.currentTarget) onClose?.() }}>
+      <div className={`modal-dialog ${sizeClass}`} ref={contentRef} role="dialog" aria-modal="true" onMouseDown={(e) => e.stopPropagation()}>
         <div className="modal-header">
           <div>
             {title ? <h2 className="modal-title">{title}</h2> : null}

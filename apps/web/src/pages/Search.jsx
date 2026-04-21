@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import { Search as SearchIcon, Users, CarFront, ArrowLeftRight, HeartHandshake, Megaphone } from 'lucide-react';
 import api from '../api';
 import StatusBadge from '../components/StatusBadge';
@@ -21,24 +22,42 @@ const typeLabels = {
 };
 
 export default function Search() {
-  const [query, setQuery] = useState('');
+  const location = useLocation();
+  const searchParams = new URLSearchParams(location.search);
+  const qParam = searchParams.get('q') || '';
+
+  const [query, setQuery] = useState(qParam);
   const [results, setResults] = useState([]);
   const [loading, setLoading] = useState(false);
   const [searched, setSearched] = useState(false);
 
-  async function handleSearch(event) {
-    event.preventDefault();
-    if (!query.trim()) return;
+  useEffect(() => {
+    setQuery(qParam);
+    if (qParam.trim()) {
+      executeSearch(qParam.trim());
+    } else {
+      setResults([]);
+      setSearched(false);
+    }
+  }, [qParam]);
+
+  async function executeSearch(searchQuery) {
     setLoading(true);
     setSearched(true);
     try {
-      const data = await api.get(`/search?q=${encodeURIComponent(query.trim())}`);
+      const data = await api.get(`/search?q=${encodeURIComponent(searchQuery)}`);
       setResults(Array.isArray(data) ? data : []);
     } catch {
       setResults([]);
     } finally {
       setLoading(false);
     }
+  }
+
+  function handleSearch(event) {
+    event.preventDefault();
+    if (!query.trim()) return;
+    executeSearch(query.trim());
   }
 
   function renderResult(item, index) {

@@ -37,18 +37,16 @@ ChartJS.register(
   Filler,
 );
 
-const periodOptions = [
-  { value: "week", label: "Last week" },
-  { value: "month", label: "Last month" },
-  { value: "quarter", label: "Last quarter" },
-  { value: "year", label: "Last year" },
-];
-
 const financePalette = ["#2F8E75", "#2F73C9", "#C88211", "#CF3B35"];
 
 export default function Analytics() {
   const [loading, setLoading] = useState(true);
-  const [period, setPeriod] = useState("month");
+  const [dateFrom, setDateFrom] = useState(() => {
+    const d = new Date();
+    d.setMonth(d.getMonth() - 1);
+    return d.toISOString().split('T')[0];
+  });
+  const [dateTo, setDateTo] = useState(() => new Date().toISOString().split('T')[0]);
   const [data, setData] = useState({
     summary: {},
     sales: {},
@@ -58,18 +56,19 @@ export default function Analytics() {
   });
 
   useEffect(() => {
-    loadData(period);
-  }, [period]);
+    loadData();
+  }, []);
 
-  async function loadData(selectedPeriod) {
+  async function loadData() {
     setLoading(true);
     try {
+      const query = `?startDate=${dateFrom}&endDate=${dateTo}`;
       const [summary, sales, financing, partners, revenue] = await Promise.all([
-        api.get("/analytics/summary").catch(() => ({})),
-        api.get(`/analytics/sales?period=${selectedPeriod}`).catch(() => ({})),
-        api.get("/analytics/financing").catch(() => ({})),
-        api.get("/analytics/partners").catch(() => ({})),
-        api.get("/analytics/revenue").catch(() => ({})),
+        api.get(`/analytics/summary${query}`).catch(() => ({})),
+        api.get(`/analytics/sales${query}`).catch(() => ({})),
+        api.get(`/analytics/financing${query}`).catch(() => ({})),
+        api.get(`/analytics/partners${query}`).catch(() => ({})),
+        api.get(`/analytics/revenue${query}`).catch(() => ({})),
       ]);
 
       setData({
@@ -163,17 +162,26 @@ export default function Analytics() {
             contribution, and marketplace revenue.
           </p>
         </div>
-        <div className="tabs inline">
-          {periodOptions.map((option) => (
-            <button
-              key={option.value}
-              className={`tab ${period === option.value ? "active" : ""}`}
-              type="button"
-              onClick={() => setPeriod(option.value)}
-            >
-              {option.label}
-            </button>
-          ))}
+        <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
+          <span style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>From:</span>
+          <input 
+            type="date" 
+            className="search-input" 
+            value={dateFrom} 
+            onChange={(e) => setDateFrom(e.target.value)} 
+            style={{ padding: '6px 10px', fontSize: '0.85rem' }} 
+          />
+          <span style={{ fontSize: '0.85rem', color: 'var(--text-muted)', marginLeft: '4px' }}>To:</span>
+          <input 
+            type="date" 
+            className="search-input" 
+            value={dateTo} 
+            onChange={(e) => setDateTo(e.target.value)} 
+            style={{ padding: '6px 10px', fontSize: '0.85rem' }} 
+          />
+          <button className="btn btn-primary btn-sm" onClick={() => loadData()} style={{ padding: '6px 16px', marginLeft: '4px' }}>
+            Apply
+          </button>
         </div>
       </div>
 
@@ -279,27 +287,33 @@ export default function Analytics() {
             </div>
           </div>
           <div className="chart-shell">
-            <ResponsiveContainer width="100%" height="100%">
-              <BarChart
-                data={salesByMake}
-                margin={{ top: 8, right: 8, left: 0, bottom: 8 }}
-              >
-                <CartesianGrid
-                  strokeDasharray="4 4"
-                  stroke="var(--border-color)"
-                />
-                <XAxis
-                  dataKey="make"
-                  tick={{ fontSize: 12, fill: "var(--text-muted)" }}
-                />
-                <YAxis
-                  allowDecimals={false}
-                  tick={{ fontSize: 12, fill: "var(--text-muted)" }}
-                />
-                <RechartsTooltip />
-                <Bar dataKey="count" fill="#2F73C9" radius={[8, 8, 0, 0]} />
-              </BarChart>
-            </ResponsiveContainer>
+            {salesByMake.length > 0 ? (
+              <ResponsiveContainer width="100%" height="100%">
+                <BarChart
+                  data={salesByMake}
+                  margin={{ top: 8, right: 8, left: 0, bottom: 8 }}
+                >
+                  <CartesianGrid
+                    strokeDasharray="4 4"
+                    stroke="var(--border-color)"
+                  />
+                  <XAxis
+                    dataKey="make"
+                    tick={{ fontSize: 12, fill: "var(--text-muted)" }}
+                  />
+                  <YAxis
+                    allowDecimals={false}
+                    tick={{ fontSize: 12, fill: "var(--text-muted)" }}
+                  />
+                  <RechartsTooltip />
+                  <Bar dataKey="count" fill="#2F73C9" radius={[8, 8, 0, 0]} />
+                </BarChart>
+              </ResponsiveContainer>
+            ) : (
+              <div className="empty-state compact" style={{ height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+                <p style={{ color: 'var(--text-muted)' }}>No vehicles have been sold yet in this period.</p>
+              </div>
+            )}
           </div>
         </div>
 

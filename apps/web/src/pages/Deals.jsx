@@ -164,7 +164,30 @@ export default function Deals() {
         </div>
       ),
     },
-    { key: 'stage', label: 'Stage', sortable: true, render: (value) => <StatusBadge value={value || 'inquiry'} compact /> },
+    { 
+      key: 'stage', 
+      label: 'Stage', 
+      sortable: true, 
+      render: (value, deal) => (
+        <select
+          value={value}
+          onChange={(e) => updateStageToValue(deal, e.target.value)}
+          style={{
+            padding: '4px 8px',
+            borderRadius: '6px',
+            border: '1px solid var(--border-color)',
+            backgroundColor: 'var(--bg-surface)',
+            color: 'var(--text-primary)',
+            fontSize: '0.85rem',
+            cursor: 'pointer'
+          }}
+        >
+          {lifecycleStages.map((stage) => (
+            <option key={stage.key} value={stage.key}>{stage.label}</option>
+          ))}
+        </select>
+      ) 
+    },
     { key: 'totalAmount', label: 'Total amount', sortable: true, render: (value, deal) => formatCurrency(value || deal.amount || 0) },
     { key: 'downPayment', label: 'Down payment', sortable: true, render: (value) => formatCurrency(value || 0) },
     { key: 'financedAmount', label: 'Financed', sortable: true, render: (value) => formatCurrency(value || 0) },
@@ -173,13 +196,23 @@ export default function Deals() {
       label: 'Actions',
       render: (_, deal) => (
         <div className="toolbar-cluster wrap">
-          <button className="btn btn-sm btn-outline-secondary" type="button" onClick={() => updateStage(deal, -1)}><ArrowLeft size={14} /> Back</button>
-          <button className="btn btn-sm btn-outline-primary" type="button" onClick={() => updateStage(deal, 1)}>Next <ArrowRight size={14} /></button>
-          <button className="btn btn-sm btn-outline-danger" type="button" onClick={() => cancelDeal(deal.id)}>Cancel</button>
+          {deal.stage !== 'cancelled' && deal.stage !== 'completed' ? (
+            <button className="btn btn-sm btn-outline-danger" type="button" onClick={() => cancelDeal(deal.id)}>Cancel</button>
+          ) : null}
         </div>
       ),
     },
   ];
+
+  async function updateStageToValue(deal, targetStage) {
+    try {
+      await api.put(`/deals/${deal.id}/stage`, { stage: targetStage });
+      toast.success(`Deal moved to ${lifecycleStages.find(s => s.key === targetStage)?.label || targetStage}`);
+      await loadData();
+    } catch (error) {
+      toast.error(error.message || 'Unable to update deal stage.');
+    }
+  }
 
   if (loading) {
     return <div className="page-shell"><div className="empty-state"><h3>Loading deal workspace...</h3></div></div>;
@@ -209,7 +242,7 @@ export default function Deals() {
         <div className="card-header compact row-between">
           <div>
             <div className="card-title">Lifecycle board</div>
-            <div className="card-subtitle">Kanban-style visibility into each transaction stage.</div>
+            <div className="card-subtitle">List-style visibility into each transaction stage.</div>
           </div>
           <input
             className="table-search-input"
@@ -219,45 +252,10 @@ export default function Deals() {
           />
         </div>
 
-        <div className="kanban-scroll">
-          {groupedDeals.map((stage) => (
-            <div key={stage.key} className="kanban-column">
-              <div className="kanban-column-head">
-                <h3>{stage.label}</h3>
-                <span>{stage.deals.length}</span>
-              </div>
-              <div className="kanban-column-body">
-                {stage.deals.map((deal) => (
-                  <div key={deal.id} className="kanban-card">
-                    <div className="list-row-head">
-                      <div>
-                        <div className="list-row-title">{deal.customerName || 'Customer pending'}</div>
-                        <div className="list-row-meta">{deal.vehicleDescription || 'Vehicle pending'}</div>
-                      </div>
-                      <StatusBadge value={deal.stage || 'inquiry'} compact />
-                    </div>
-                    <div className="list-row-meta">Total: {formatCurrency(deal.totalAmount || deal.amount || 0)}</div>
-                    <div className="toolbar-cluster wrap">
-                      <button className="btn btn-sm btn-outline-secondary" type="button" onClick={() => updateStage(deal, -1)}>Back</button>
-                      <button className="btn btn-sm btn-outline-primary" type="button" onClick={() => updateStage(deal, 1)}>Advance</button>
-                    </div>
-                  </div>
-                ))}
-                {!stage.deals.length ? <div className="empty-state compact"><h3>No deals</h3><p>Nothing is currently in this stage.</p></div> : null}
-              </div>
-            </div>
-          ))}
+        <div style={{ padding: '0 16px 16px' }}>
+          <DataTable columns={dealColumns} data={filteredDeals} keyField="id" />
         </div>
       </div>
-
-      <DataTable
-        title="Deal records"
-        subtitle="Structured table view for auditing and stage control."
-        columns={dealColumns}
-        data={deals}
-        filters={[{ key: 'stage', label: 'Stage', options: lifecycleStages.map((stage) => ({ label: stage.label, value: stage.key })) }]}
-        searchPlaceholder="Search deals by customer, vehicle, amount, or notes"
-      />
 
       <Modal open={activeModal} onClose={() => setActiveModal(false)} title="Create deal" subtitle="Start a transaction lifecycle record with linked customer and vehicle data." size="large">
         <form className="form-grid" onSubmit={createDeal}>

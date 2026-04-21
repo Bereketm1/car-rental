@@ -5,6 +5,7 @@ import api from '../api';
 import DataTable from '../components/DataTable';
 import MetricCard from '../components/MetricCard';
 import Modal from '../components/Modal';
+import ConfirmModal from '../components/ConfirmModal';
 import StatusBadge from '../components/StatusBadge';
 import { useToast } from '../components/Toast';
 import { formatCurrency, formatDate, safeArray } from '../utils/format';
@@ -38,6 +39,7 @@ export default function Partners() {
   const [tab, setTab] = useState('partners');
   const [activeModal, setActiveModal] = useState(null);
   const [selectedPartnerId, setSelectedPartnerId] = useState('');
+  const [partnerToDelete, setPartnerToDelete] = useState(null);
 
   const [partners, setPartners] = useState([]);
   const [agreements, setAgreements] = useState([]);
@@ -128,17 +130,15 @@ export default function Partners() {
     }
   }
 
-  async function deletePartner(partnerId) {
-    if (!window.confirm('Remove this partner from the ecosystem?')) {
-      return;
-    }
-
+  async function confirmDeletePartner() {
+    if (!partnerToDelete) return;
     try {
-      await api.delete(`/partners/${partnerId}`);
+      await api.delete(`/partners/${partnerToDelete.id}`);
       toast.success('Partner removed');
-      if (selectedPartnerId === partnerId) {
+      if (selectedPartnerId === partnerToDelete.id) {
         setSelectedPartnerId('');
       }
+      setPartnerToDelete(null);
       await loadData();
     } catch (error) {
       toast.error(error.message || 'Unable to remove partner.');
@@ -161,7 +161,7 @@ export default function Partners() {
       render: (_, partner) => (
         <div className="toolbar-cluster wrap">
           <button className="btn btn-sm btn-outline-primary" type="button" onClick={() => setSelectedPartnerId(partner.id)}>Focus</button>
-          <button className="btn btn-sm btn-outline-danger" type="button" onClick={() => deletePartner(partner.id)}>Remove</button>
+          <button className="btn btn-sm btn-outline-danger" type="button" onClick={() => setPartnerToDelete(partner)}>Remove</button>
         </div>
       ),
     },
@@ -320,6 +320,16 @@ export default function Partners() {
           </div>
         </form>
       </Modal>
+
+      <ConfirmModal
+        open={!!partnerToDelete}
+        onClose={() => setPartnerToDelete(null)}
+        onConfirm={confirmDeletePartner}
+        title="Remove Partner"
+        message={`Are you sure you want to remove ${partnerToDelete?.name}? This action will permanently sever the active relationship and may affect historical commission reports.`}
+        confirmText="Remove Partner"
+        isDestructive={true}
+      />
     </div>
   );
 }
