@@ -1,22 +1,27 @@
-import React from 'react';
+import React from "react";
 import {
   Box,
-  Chip,
+  Collapse,
   Divider,
   Drawer,
+  IconButton,
   List,
   ListItemButton,
   ListItemIcon,
   ListItemText,
-  ListSubheader,
-  Stack,
   Typography,
-} from '@mui/material';
+} from "@mui/material";
+import { alpha, useTheme } from "@mui/material/styles";
 import {
   Activity,
   ArrowLeftRight,
   BarChart3,
+  BookOpen,
+  ChevronDown,
+  ChevronRight,
   CarFront,
+  ClipboardList,
+  Database,
   HeartHandshake,
   LayoutDashboard,
   Megaphone,
@@ -24,43 +29,74 @@ import {
   Settings2,
   UsersRound,
   WalletCards,
-} from 'lucide-react';
-import { useLocation, useNavigate } from 'react-router-dom';
+} from "lucide-react";
+import { useLocation, useNavigate } from "react-router-dom";
 
-const DRAWER_WIDTH = 290;
+const DRAWER_WIDTH = 272;
 
-const menuGroups = [
+const navSections = [
   {
-    title: 'Core',
-    items: [
-      { label: 'Dashboard', path: '/dashboard', icon: LayoutDashboard },
-      { label: 'Reporting & Analytics', path: '/analytics', icon: BarChart3 },
-      { label: 'System Health', path: '/health', icon: Activity },
-      { label: 'Global Search', path: '/search', icon: Search },
+    key: "dashboard",
+    label: "Dashboards",
+    icon: LayoutDashboard,
+    links: [
+      {
+        label: "Executive Overview",
+        path: "/dashboard",
+        icon: LayoutDashboard,
+      },
+      { label: "Reporting & Analytics", path: "/analytics", icon: BarChart3 },
     ],
   },
   {
-    title: 'Marketplace Operations',
-    items: [
-      { label: 'CRM', path: '/customers', icon: UsersRound },
-      { label: 'Supplier Portal', path: '/vehicles', icon: CarFront },
-      { label: 'Financial Portal', path: '/finance', icon: WalletCards },
-      { label: 'Deal Lifecycle', path: '/deals', icon: ArrowLeftRight },
+    key: "operations",
+    label: "Manage Data",
+    icon: Database,
+    links: [
+      { label: "Customer CRM", path: "/customers", icon: UsersRound },
+      { label: "Vehicle Inventory", path: "/vehicles", icon: CarFront },
+      { label: "Deal Lifecycle", path: "/deals", icon: ArrowLeftRight },
     ],
   },
   {
-    title: 'Growth Systems',
-    items: [
-      { label: 'Partnerships', path: '/partners', icon: HeartHandshake },
-      { label: 'Lead & Marketing', path: '/marketing', icon: Megaphone },
-      { label: 'Settings', path: '/settings', icon: Settings2 },
+    key: "credit",
+    label: "Growth & Finance",
+    icon: WalletCards,
+    links: [
+      { label: "Financial Portal", path: "/finance", icon: WalletCards },
+      { label: "Partnerships", path: "/partners", icon: HeartHandshake },
+      { label: "Marketing & Leads", path: "/marketing", icon: Megaphone },
+    ],
+  },
+  {
+    key: "admin",
+    label: "Utilities",
+    icon: ClipboardList,
+    links: [
+      { label: "Global Search", path: "/search", icon: Search },
+      { label: "System Health", path: "/health", icon: Activity },
+      { label: "System Guide", path: "/documentation", icon: BookOpen },
+      { label: "Workspace Settings", path: "/settings", icon: Settings2 },
     ],
   },
 ];
 
 export default function Sidebar({ open, onClose, isDesktop }) {
+  const theme = useTheme();
   const location = useLocation();
   const navigate = useNavigate();
+  const [expanded, setExpanded] = React.useState(() =>
+    Object.fromEntries(navSections.map((section) => [section.key, true])),
+  );
+  const isDark = theme.palette.mode === "dark";
+  const drawerBackground = isDark
+    ? "linear-gradient(180deg, #091225 0%, #10203E 48%, #15294F 100%)"
+    : "linear-gradient(180deg, #16377E 0%, #204898 48%, #2A58B2 100%)";
+  const sectionText = "rgba(231, 239, 255, 0.95)";
+  const linkText = "rgba(222, 232, 255, 0.9)";
+  const activeBg = isDark
+    ? "rgba(117, 160, 255, 0.24)"
+    : "rgba(104, 157, 255, 0.28)";
 
   function navigateTo(path) {
     navigate(path);
@@ -69,103 +105,144 @@ export default function Sidebar({ open, onClose, isDesktop }) {
     }
   }
 
+  function toggleSection(key) {
+    setExpanded((current) => ({ ...current, [key]: !current[key] }));
+  }
+
+  function isSectionActive(section) {
+    return section.links.some((link) => location.pathname === link.path);
+  }
+
   const content = (
-    <Box sx={{ height: '100%', display: 'flex', flexDirection: 'column', bgcolor: '#0E2430' }}>
-      <Box sx={{ px: 2.5, pt: 2.5, pb: 2 }}>
+    <Box
+      sx={{
+        height: "100%",
+        display: "flex",
+        flexDirection: "column",
+        background: drawerBackground,
+      }}
+    >
+      <Box sx={{ px: 2.6, pt: 2.7, pb: 2.1 }}>
         <Typography
           sx={{
-            color: '#E7F4F8',
+            color: "#F5F8FF",
             fontWeight: 800,
-            fontSize: '1.1rem',
-            letterSpacing: '-0.02em',
+            fontSize: "1.92rem",
+            letterSpacing: "-0.02em",
+            lineHeight: 1,
           }}
         >
-          EthioAuto Nexus
+          Merkato Motors
         </Typography>
-        <Stack direction="row" spacing={1} alignItems="center" sx={{ mt: 1.2 }}>
-          <Chip
-            size="small"
-            label="Financing Marketplace"
-            sx={{
-              bgcolor: 'rgba(47, 142, 117, 0.18)',
-              color: '#D8FFF3',
-              border: '1px solid rgba(95, 191, 164, 0.45)',
-              fontWeight: 700,
-            }}
-          />
-        </Stack>
+        <Typography
+          sx={{
+            mt: 0.65,
+            color: "rgba(240, 246, 255, 0.86)",
+            fontSize: "0.76rem",
+            fontWeight: 600,
+            letterSpacing: "0.04em",
+          }}
+        >
+          Native mobility finance operations
+        </Typography>
       </Box>
 
-      <Divider sx={{ borderColor: 'rgba(169, 205, 218, 0.18)' }} />
+      <Divider sx={{ borderColor: alpha("#D7E3FF", 0.18) }} />
 
-      <Box sx={{ flex: 1, overflowY: 'auto', px: 1.2, py: 1.2 }}>
-        {menuGroups.map((group) => (
-          <List
-            key={group.title}
-            dense
-            subheader={(
-              <ListSubheader
-                disableGutters
+      <Box sx={{ flex: 1, overflowY: "auto", px: 1.2, py: 1.4 }}>
+        {navSections.map((section) => {
+          const sectionActive = isSectionActive(section);
+          const SectionIcon = section.icon;
+          const sectionExpanded = expanded[section.key];
+
+          return (
+            <Box key={section.key} sx={{ mb: 0.7 }}>
+              <Box
                 sx={{
-                  px: 1.25,
-                  py: 0.5,
-                  bgcolor: 'transparent',
-                  color: 'rgba(211, 236, 245, 0.72)',
-                  fontWeight: 700,
-                  fontSize: '0.72rem',
-                  letterSpacing: '0.09em',
-                  lineHeight: 1.4,
-                  textTransform: 'uppercase',
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "space-between",
+                  px: 1,
+                  py: 0.45,
+                  borderRadius: 1.5,
+                  color: sectionActive ? "#FFFFFF" : sectionText,
                 }}
               >
-                {group.title}
-              </ListSubheader>
-            )}
-            sx={{ mb: 1.15 }}
-          >
-            {group.items.map((item) => {
-              const Icon = item.icon;
-              const isActive = location.pathname === item.path;
-              return (
-                <ListItemButton
-                  key={item.path}
-                  onClick={() => navigateTo(item.path)}
-                  selected={isActive}
-                  sx={{
-                    borderRadius: 2,
-                    mb: 0.45,
-                    color: isActive ? '#03231E' : 'rgba(223, 243, 249, 0.88)',
-                    bgcolor: isActive ? '#86E0C4' : 'transparent',
-                    '&:hover': {
-                      bgcolor: isActive ? '#A4EBD4' : 'rgba(93, 145, 163, 0.28)',
-                    },
-                  }}
+                <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+                  <SectionIcon size={16} />
+                  <Typography sx={{ fontWeight: 700, fontSize: "0.98rem" }}>
+                    {section.label}
+                  </Typography>
+                </Box>
+                <IconButton
+                  onClick={() => toggleSection(section.key)}
+                  size="small"
+                  sx={{ color: "inherit", width: 26, height: 26 }}
                 >
-                  <ListItemIcon
-                    sx={{
-                      minWidth: 34,
-                      color: 'inherit',
-                    }}
-                  >
-                    <Icon size={18} />
-                  </ListItemIcon>
-                  <ListItemText
-                    primary={item.label}
-                    primaryTypographyProps={{
-                      fontSize: '0.9rem',
-                      fontWeight: isActive ? 800 : 600,
-                    }}
-                  />
-                </ListItemButton>
-              );
-            })}
-          </List>
-        ))}
+                  {sectionExpanded ? (
+                    <ChevronDown size={14} />
+                  ) : (
+                    <ChevronRight size={14} />
+                  )}
+                </IconButton>
+              </Box>
+
+              <Collapse in={sectionExpanded} timeout="auto" unmountOnExit>
+                <List disablePadding sx={{ mt: 0.2, ml: 0.2 }}>
+                  {section.links.map((item) => {
+                    const LinkIcon = item.icon;
+                    const isActive = location.pathname === item.path;
+
+                    return (
+                      <ListItemButton
+                        key={item.path}
+                        onClick={() => navigateTo(item.path)}
+                        selected={isActive}
+                        sx={{
+                          borderRadius: 1.6,
+                          minHeight: 38,
+                          mb: 0.25,
+                          pl: 1.2,
+                          color: isActive ? "#FFFFFF" : linkText,
+                          bgcolor: isActive ? activeBg : "transparent",
+                          "&:hover": {
+                            bgcolor: isActive
+                              ? activeBg
+                              : "rgba(255, 255, 255, 0.11)",
+                          },
+                        }}
+                      >
+                        <ListItemIcon sx={{ minWidth: 30, color: "inherit" }}>
+                          <LinkIcon size={15} />
+                        </ListItemIcon>
+                        <ListItemText
+                          primary={item.label}
+                          primaryTypographyProps={{
+                            fontSize: "0.9rem",
+                            fontWeight: isActive ? 700 : 600,
+                          }}
+                        />
+                      </ListItemButton>
+                    );
+                  })}
+                </List>
+              </Collapse>
+            </Box>
+          );
+        })}
       </Box>
 
-      <Box sx={{ px: 2.2, py: 1.8, borderTop: '1px solid rgba(169, 205, 218, 0.18)' }}>
-        <Typography sx={{ color: 'rgba(211, 236, 245, 0.72)', fontSize: '0.77rem' }}>
-          Platform mode: Production-ready demo
+      <Box
+        sx={{
+          px: 2.2,
+          py: 1.6,
+          borderTop: "1px solid rgba(201, 215, 255, 0.2)",
+        }}
+      >
+        <Typography
+          sx={{ color: "rgba(225, 236, 255, 0.85)", fontSize: "0.76rem" }}
+        >
+          Full platform guide included
         </Typography>
       </Box>
     </Box>
@@ -175,13 +252,15 @@ export default function Sidebar({ open, onClose, isDesktop }) {
     <Drawer
       open={open}
       onClose={onClose}
-      variant={isDesktop ? 'persistent' : 'temporary'}
+      variant={isDesktop ? "persistent" : "temporary"}
       ModalProps={{ keepMounted: true }}
       sx={{
-        '& .MuiDrawer-paper': {
+        "& .MuiDrawer-paper": {
           width: DRAWER_WIDTH,
-          borderRight: 'none',
-          boxShadow: '12px 0 30px rgba(7, 24, 31, 0.18)',
+          borderRight: "none",
+          boxShadow: isDark
+            ? "10px 0 32px rgba(0, 0, 0, 0.38)"
+            : "10px 0 32px rgba(18, 32, 67, 0.28)",
         },
       }}
     >

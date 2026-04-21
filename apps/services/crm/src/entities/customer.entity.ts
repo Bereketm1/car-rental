@@ -28,7 +28,7 @@ export class Customer {
   @Column({ nullable: true })
   city: string;
 
-  @Column({ type: 'jsonb', nullable: true, default: [] })
+  @Column({ type: 'simple-json', nullable: true, default: '[]' })
   documents: any[];
 
   @OneToMany(() => VehicleInterest, (interest: VehicleInterest) => interest.customer)

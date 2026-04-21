@@ -46,7 +46,7 @@ export class Vehicle {
   @Column({ default: 'available' })
   status: string;
 
-  @Column({ type: 'jsonb', nullable: true })
+  @Column({ type: 'simple-json', nullable: true })
   images: string[];
 
   @Column({ type: 'text', nullable: true })

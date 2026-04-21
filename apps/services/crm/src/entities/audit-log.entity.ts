@@ -17,7 +17,7 @@ export class AuditLog {
   @Column({ name: 'resource_id', nullable: true })
   resourceId: string;
 
-  @Column({ type: 'jsonb', nullable: true })
+  @Column({ type: 'simple-json', nullable: true })
   payload: any;
 
   @CreateDateColumn({ name: 'timestamp' })

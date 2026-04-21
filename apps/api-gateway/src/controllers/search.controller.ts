@@ -15,34 +15,34 @@ export class SearchController {
     if (!q || q.length < 2) {
       return { success: true, data: { customers: [], vehicles: [], deals: [] } };
     }
-    
+
     const query = q.toLowerCase();
-    
-    // Fetch all for MVP in-memory search across microservices
+
     const [custRes, vehRes, dealRes] = await Promise.all([
-      this.proxy.forward('crm', 'GET', '/customers').catch(() => ({ data: [] })),
-      this.proxy.forward('vehicle', 'GET', '/vehicles').catch(() => ({ data: [] })),
-      this.proxy.forward('deal', 'GET', '/deals').catch(() => ({ data: [] })),
+      this.proxy.forward('crm', 'GET', '/customers').catch(() => []),
+      this.proxy.forward('vehicle', 'GET', '/vehicles').catch(() => []),
+      this.proxy.forward('deal', 'GET', '/deals').catch(() => []),
     ]);
 
-    const customers = (custRes.data || []).filter((c: any) => 
-      (c.firstName || '').toLowerCase().includes(query) || 
+    const customers = this.unwrapCollection(custRes).filter((c: any) =>
+      (c.firstName || '').toLowerCase().includes(query) ||
       (c.lastName || '').toLowerCase().includes(query) ||
       (c.email || '').toLowerCase().includes(query) ||
       (c.phone || '').includes(query)
     );
 
-    const vehicles = (vehRes.data || []).filter((v: any) =>
+    const vehicles = this.unwrapCollection(vehRes).filter((v: any) =>
       (v.make || '').toLowerCase().includes(query) ||
       (v.model || '').toLowerCase().includes(query) ||
-      (v.trim || '').toLowerCase().includes(query) ||
-      (v.condition || '').toLowerCase().includes(query)
+      (v.condition || '').toLowerCase().includes(query) ||
+      (v.supplierName || '').toLowerCase().includes(query)
     );
 
-    const deals = (dealRes.data || []).filter((d: any) =>
+    const deals = this.unwrapCollection(dealRes).filter((d: any) =>
       (d.customerName || '').toLowerCase().includes(query) ||
       (d.vehicleDescription || '').toLowerCase().includes(query) ||
-      (d.stage || '').toLowerCase().includes(query)
+      (d.stage || '').toLowerCase().includes(query) ||
+      (d.notes || '').toLowerCase().includes(query)
     );
 
     return {
@@ -53,5 +53,17 @@ export class SearchController {
         deals
       }
     };
+  }
+
+  private unwrapCollection(payload: any) {
+    if (Array.isArray(payload)) {
+      return payload;
+    }
+
+    if (payload && typeof payload === 'object' && Array.isArray(payload.data)) {
+      return payload.data;
+    }
+
+    return [];
   }
 }

@@ -1,12 +1,20 @@
-import React, { useState } from 'react';
-import { ArrowRight, Building2, ShieldCheck } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
-import api from '../api';
-import { useToast } from '../components/Toast';
+import React, { useState } from "react";
+import { ArrowRight, Building2, ShieldCheck } from "lucide-react";
+import { useNavigate } from "react-router-dom";
+import api from "../api";
+import { useToast } from "../components/Toast";
 
 const demoAccounts = [
-  { role: 'Marketplace Admin', email: 'admin@merkatomotors.com', password: 'admin123' },
-  { role: 'Supplier User', email: 'supplier@merkatomotors.com', password: 'vendor123' },
+  {
+    role: "Marketplace Admin",
+    email: "admin@merkatomotors.com",
+    password: "admin123",
+  },
+  {
+    role: "Supplier Operator",
+    email: "supplier@merkatomotors.com",
+    password: "vendor123",
+  },
 ];
 
 export default function Login({ onLogin }) {
@@ -21,18 +29,20 @@ export default function Login({ onLogin }) {
     setLoading(true);
 
     try {
-      const response = await api.post('/auth/login', { email, password });
+      const response = await api.post("/auth/login", { email, password });
       if (!response?.access_token) {
-        throw new Error('Login response is missing access token.');
+        throw new Error("Login response is missing access token.");
       }
 
-      localStorage.setItem('token', response.access_token);
-      localStorage.setItem('user', JSON.stringify(response.user || {}));
+      localStorage.setItem("token", response.access_token);
+      localStorage.setItem("user", JSON.stringify(response.user || {}));
       onLogin(response.user || {});
-      toast.success('Signed in successfully', 'Welcome back');
-      navigate('/dashboard');
+      toast.success("Signed in successfully", "Welcome back");
+      navigate("/dashboard");
     } catch (error) {
-      toast.error(error.message || 'Unable to sign in with the provided credentials.');
+      toast.error(
+        error.message || "Unable to sign in with the provided credentials.",
+      );
     } finally {
       setLoading(false);
     }
@@ -44,12 +54,12 @@ export default function Login({ onLogin }) {
         <section className="auth-hero">
           <div className="auth-badge">
             <Building2 size={16} />
-            Vehicle Financing Marketplace
+            Native full-stack workspace
           </div>
-          <h1>EthioAuto Nexus</h1>
+          <h1>Merkato Motors Workspace</h1>
           <p>
-            Unified CRM, supplier, finance, deal, partnership, and analytics workspace
-            tailored for the Ethiopian mobility financing ecosystem.
+            Unified CRM, supplier, finance, deal, partnership, and analytics
+            operations tailored for the Ethiopian mobility financing ecosystem.
           </p>
           <div className="auth-highlight">
             <ShieldCheck size={18} />
@@ -59,7 +69,9 @@ export default function Login({ onLogin }) {
 
         <section className="auth-card">
           <h2>Sign in</h2>
-          <p className="auth-subtitle">Use one of the demo accounts or enter credentials manually.</p>
+          <p className="auth-subtitle">
+            Use one of the demo accounts or enter credentials manually.
+          </p>
 
           <div className="account-grid">
             {demoAccounts.map((account) => (
@@ -81,17 +93,35 @@ export default function Login({ onLogin }) {
           <form className="auth-form" onSubmit={submit}>
             <div>
               <label className="form-label">Email</label>
-              <input className="form-control" type="email" value={email} onChange={(event) => setEmail(event.target.value)} required />
+              <input
+                className="form-control"
+                type="email"
+                value={email}
+                onChange={(event) => setEmail(event.target.value)}
+                required
+              />
             </div>
 
             <div>
               <label className="form-label">Password</label>
-              <input className="form-control" type="password" value={password} onChange={(event) => setPassword(event.target.value)} required />
+              <input
+                className="form-control"
+                type="password"
+                value={password}
+                onChange={(event) => setPassword(event.target.value)}
+                required
+              />
             </div>
 
-            <button className="btn btn-primary w-100" type="submit" disabled={loading}>
-              {loading ? 'Signing in...' : 'Access workspace'}
-              {!loading ? <ArrowRight size={15} style={{ marginLeft: 8 }} /> : null}
+            <button
+              className="btn btn-primary w-100"
+              type="submit"
+              disabled={loading}
+            >
+              {loading ? "Signing in..." : "Access workspace"}
+              {!loading ? (
+                <ArrowRight size={15} style={{ marginLeft: 8 }} />
+              ) : null}
             </button>
           </form>
         </section>

@@ -1,4 +1,5 @@
 import { Module } from '@nestjs/common';
+import { join } from 'path';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { CustomersController } from './customers.controller';
 import { LoanApplicationsController } from './loan-applications.controller';
@@ -20,12 +21,9 @@ import { AuditLogService } from './audit-log.service';
 @Module({
   imports: [
     TypeOrmModule.forRoot({
-      type: 'postgres',
-      host: process.env.POSTGRES_HOST || 'localhost',
-      port: 5432,
-      username: process.env.POSTGRES_USER || 'merkato',
-      password: process.env.POSTGRES_PASSWORD || 'merkatopassword',
-      database: process.env.POSTGRES_DB || 'merkatomotors',
+      type: 'sqljs',
+      location: join(process.cwd(), 'crm.sqlite'),
+      autoSave: true,
       entities: [Customer, VehicleInterest, LoanApplication, Document, Notification, AuditLog],
       synchronize: true, // Warning: true only for dev!
     }),

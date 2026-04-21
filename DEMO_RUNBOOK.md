@@ -5,8 +5,15 @@
 Run these from the repository root.
 
 ```powershell
+npm install
 npm run dev
 ```
+
+This local setup is fully native now:
+
+- no Docker
+- no separate PostgreSQL service
+- each backend service persists to its own local SQLite file
 
 Wait for these URLs to respond:
 

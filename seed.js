@@ -1,7 +1,7 @@
 /**
  * MerkatoMotors Database Seed Script
- * Run: node apps/services/seed.js
- * Requires: PostgreSQL running with merkatomotors database
+ * Run: npm run seed
+ * Requires: local services running on localhost
  */
 
 const API = 'http://localhost:3000/api';

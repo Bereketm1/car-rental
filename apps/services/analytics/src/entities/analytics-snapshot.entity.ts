@@ -8,7 +8,7 @@ export class AnalyticsSnapshot {
   @Column({ name: 'snapshot_date', type: 'date' })
   snapshotDate: Date;
 
-  @Column({ type: 'jsonb' })
+  @Column({ type: 'simple-json' })
   data: any;
 
   @CreateDateColumn({ name: 'created_at' })

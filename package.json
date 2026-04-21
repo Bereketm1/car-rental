@@ -10,10 +10,11 @@
   ],
   "packageManager": "npm@11.6.2",
   "scripts": {
-    "dev": "turbo run dev",
+    "dev": "turbo run dev --ui stream --concurrency=11",
     "build": "turbo run build",
     "lint": "turbo run lint",
     "demo:smoke": "node scripts/demo-smoke.mjs",
+    "seed": "node seed.js",
     "dev:web": "npm run dev --workspace=apps/web",
     "dev:gateway": "npm run dev --workspace=apps/api-gateway",
     "dev:crm": "npm run dev --workspace=apps/services/crm",

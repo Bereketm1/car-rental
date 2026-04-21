@@ -1,4 +1,5 @@
 import { Module } from '@nestjs/common';
+import { join } from 'path';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { VehiclesController } from './vehicles.controller';
 import { SuppliersController } from './suppliers.controller';
@@ -11,12 +12,9 @@ import { Supplier } from './entities/supplier.entity';
 @Module({
   imports: [
     TypeOrmModule.forRoot({
-      type: 'postgres',
-      host: process.env.POSTGRES_HOST || 'localhost',
-      port: 5432,
-      username: process.env.POSTGRES_USER || 'merkato',
-      password: process.env.POSTGRES_PASSWORD || 'merkatopassword',
-      database: process.env.POSTGRES_DB || 'merkatomotors',
+      type: 'sqljs',
+      location: join(process.cwd(), 'vehicle.sqlite'),
+      autoSave: true,
       entities: [Vehicle, Supplier],
       synchronize: true, // Warning: true only for dev!
     }),

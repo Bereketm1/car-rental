@@ -53,9 +53,19 @@ export class VehiclesService {
   }
 
   async createVehicle(dto: any) {
+    let supplierName = dto.supplierName || '';
+
+    if (dto.supplierId) {
+      const supplier = await this.supplierRepo.findOne({ where: { id: dto.supplierId } });
+      if (supplier) {
+        supplierName = supplier.companyName;
+      }
+    }
+
     const vehicle = this.vehicleRepo.create({
       ...dto,
-      status: 'available',
+      supplierName,
+      status: dto.status || 'available',
     });
     const saved = await this.vehicleRepo.save(vehicle);
     return { success: true, data: saved, message: 'Vehicle registered' };
@@ -64,7 +74,14 @@ export class VehiclesService {
   async updateVehicle(id: string, dto: any) {
     const vehicle = await this.vehicleRepo.findOne({ where: { id } });
     if (!vehicle) throw new NotFoundException('Vehicle not found');
-    
+
+    if (dto.supplierId) {
+      const supplier = await this.supplierRepo.findOne({ where: { id: dto.supplierId } });
+      if (supplier) {
+        dto.supplierName = supplier.companyName;
+      }
+    }
+
     Object.assign(vehicle, dto);
     const saved = await this.vehicleRepo.save(vehicle);
     return { success: true, data: saved };

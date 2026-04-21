@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import {
   Box,
   Card,
@@ -63,6 +63,21 @@ export default function DataTable({
     Object.fromEntries(filters.map((item) => [item.key, 'all'])),
   );
 
+  const filterSignature = useMemo(
+    () => filters.map((filter) => filter.key).join('|'),
+    [filters],
+  );
+
+  useEffect(() => {
+    setFilterState((current) => {
+      const next = {};
+      for (const filter of filters) {
+        next[filter.key] = current[filter.key] || 'all';
+      }
+      return next;
+    });
+  }, [filterSignature]);
+
   const processedRows = useMemo(() => {
     const normalizedQuery = query.trim().toLowerCase();
 
@@ -107,6 +122,13 @@ export default function DataTable({
     return rows;
   }, [data, filters, filterState, query, searchKeys, sort]);
 
+  useEffect(() => {
+    const maxPage = Math.max(0, Math.ceil(processedRows.length / pageSize) - 1);
+    if (page > maxPage) {
+      setPage(maxPage);
+    }
+  }, [page, pageSize, processedRows.length]);
+
   const paginatedRows = useMemo(() => {
     const start = page * pageSize;
     return processedRows.slice(start, start + pageSize);
@@ -134,13 +156,14 @@ export default function DataTable({
           title={title || null}
           subheader={subtitle || null}
           action={actions || null}
-          titleTypographyProps={{ fontSize: '1.02rem', fontWeight: 800 }}
+          titleTypographyProps={{ fontSize: '1.03rem', fontWeight: 800 }}
           subheaderTypographyProps={{ fontSize: '0.84rem', color: 'text.secondary' }}
         />
       ) : null}
 
       <CardContent sx={{ pt: title || subtitle || actions ? 0.5 : 2 }}>
         <Box
+          className="table-toolbar"
           sx={{
             mb: 1.8,
             display: 'grid',
@@ -193,14 +216,16 @@ export default function DataTable({
         </Box>
 
         <div className="table-container table-responsive">
-          <table className="table table-hover align-middle mb-0">
+          <table className="table table-striped table-hover align-middle mb-0">
             <thead>
               <tr>
                 {columns.map((column) => {
                   const activeSort = sort?.key === column.key ? sort.direction : null;
+                  const ariaSort = activeSort || 'none';
                   return (
                     <th
                       key={column.key}
+                      aria-sort={ariaSort}
                       style={{
                         cursor: column.sortable ? 'pointer' : 'default',
                         width: column.width || 'auto',
@@ -215,7 +240,7 @@ export default function DataTable({
                             ? <ArrowUpAZ size={14} />
                             : activeSort === 'desc'
                               ? <ArrowDownAZ size={14} />
-                              : null
+                              : <ArrowUpAZ size={14} style={{ opacity: 0.35 }} />
                         ) : null}
                       </span>
                     </th>
