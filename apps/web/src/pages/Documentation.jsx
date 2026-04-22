@@ -18,458 +18,208 @@ import {
   UsersRound,
   WalletCards,
   Workflow,
+  BookOpen,
+  Presentation,
+  CheckCircle2
 } from "lucide-react";
 
 const sections = [
-  { id: "overview", label: "Overview", icon: LayoutDashboard },
-  { id: "modules", label: "Modules", icon: Sparkles },
-  { id: "workflows", label: "Workflows", icon: Workflow },
-  { id: "operations", label: "Operations", icon: PlayCircle },
-  { id: "data", label: "Data Model", icon: Database },
-  { id: "support", label: "Support", icon: LifeBuoy },
+  { id: "overview", label: "Platform Overview", icon: LayoutDashboard },
+  { id: "demo-guide", label: "Demo Guide", icon: Presentation },
+  { id: "modules", label: "Module Guide", icon: Sparkles },
+  { id: "technical", label: "Technical Reference", icon: Database },
 ];
 
 const modules = [
   {
     id: "dashboard",
-    title: "Executive Overview",
+    title: "Executive Dashboard",
     route: "/dashboard",
     icon: LayoutDashboard,
     owner: "Leadership and operations",
-    description:
-      "Top-line KPIs, marketplace pulse, and executive visibility into sales, finance, partners, and demand.",
-    capabilities: [
-      "Marketplace KPIs",
-      "Revenue pulse",
-      "Lead and deal snapshot",
-      "Cross-functional health view",
-    ],
+    description: "Top-line KPIs, marketplace pulse, and executive visibility into sales, finance, partners, and demand. Aggregates live data from all microservices to show total revenue, active deals, and approval rates.",
+    capabilities: ["Marketplace KPIs", "Revenue pulse", "Lead and deal snapshot", "Cross-functional health view"],
   },
   {
     id: "customers",
     title: "Customer CRM",
     route: "/customers",
     icon: UsersRound,
-    owner: "Sales, onboarding, and underwriting prep",
-    description:
-      "Customer onboarding, interest capture, loan applications, and document attachment connected to the CRM service.",
-    capabilities: [
-      "Customer registry",
-      "Vehicle interests",
-      "Loan applications",
-      "Document uploads",
-    ],
+    owner: "Sales & Onboarding",
+    description: "Manage the customer registry, record vehicle interests, submit loan applications, and attach identity documents securely.",
+    capabilities: ["Customer registry", "Vehicle interests", "Loan applications", "Document uploads"],
   },
   {
     id: "vehicles",
     title: "Vehicle Inventory",
     route: "/vehicles",
     icon: CarFront,
-    owner: "Supply and inventory operations",
-    description:
-      "Supplier onboarding, live vehicle inventory, inventory state changes, and lead-to-supplier routing.",
-    capabilities: [
-      "Vehicle CRUD",
-      "Supplier registry",
-      "Inventory summary",
-      "Lead routing",
-    ],
+    owner: "Supply & Inventory",
+    description: "Track live vehicle inventory, manage supplier relationships, and change inventory status from available to reserved or sold.",
+    capabilities: ["Vehicle CRUD", "Supplier registry", "Inventory summary", "Status management"],
   },
   {
     id: "deals",
     title: "Deal Lifecycle",
     route: "/deals",
     icon: Workflow,
-    owner: "Commercial operations",
-    description:
-      "End-to-end transaction flow from inquiry through completion with stage transitions and financial context.",
-    capabilities: [
-      "Deal creation",
-      "Stage progression",
-      "Pipeline board",
-      "Cancelled/completed tracking",
-    ],
+    owner: "Commercial Operations",
+    description: "End-to-end transaction flow from inquiry through completion with stage transitions and financial context.",
+    capabilities: ["Deal creation", "Stage progression", "Pipeline tracking", "Commission calculations"],
   },
   {
     id: "finance",
     title: "Financial Portal",
     route: "/finance",
     icon: WalletCards,
-    owner: "Credit and underwriting teams",
-    description:
-      "Finance review desk, lender registry, document requests, and approval decisions backed by live review records.",
-    capabilities: [
-      "Loan reviews",
-      "Institution registry",
-      "Document requests",
-      "Approval actions",
-    ],
+    owner: "Credit & Underwriting",
+    description: "Review loan applications, manage lending institutions, request additional documents, and approve or reject financing.",
+    capabilities: ["Loan reviews", "Institution registry", "Document requests", "Approval actions"],
   },
   {
     id: "partners",
     title: "Partnerships",
     route: "/partners",
     icon: HeartHandshake,
-    owner: "Business development and ecosystem managers",
-    description:
-      "Partner onboarding, agreements, commissions, and focused partner context for the operating network.",
-    capabilities: [
-      "Partner registry",
-      "Agreement management",
-      "Commission ledger",
-      "Focused partner view",
-    ],
+    owner: "Business Development",
+    description: "Onboard partners (dealers, insurance, banks), manage commercial agreements, and track earned commissions.",
+    capabilities: ["Partner registry", "Agreement management", "Commission ledger"],
   },
   {
     id: "marketing",
     title: "Lead & Marketing",
     route: "/marketing",
     icon: Megaphone,
-    owner: "Growth and acquisition teams",
-    description:
-      "Leads, campaigns, and referrals with live conversion metrics and campaign performance tracking.",
-    capabilities: [
-      "Lead capture",
-      "Campaign tracking",
-      "Referral ledger",
-      "Conversion metrics",
-    ],
-  },
-  {
-    id: "analytics",
-    title: "Reporting & Analytics",
-    route: "/analytics",
-    icon: BarChart3,
-    owner: "Leadership and analysts",
-    description:
-      "Aggregated KPIs from live CRM, deal, finance, partner, vehicle, and lead data instead of hardcoded mock values.",
-    capabilities: [
-      "Live summary KPIs",
-      "Revenue trends",
-      "Financing outcomes",
-      "Partner performance",
-    ],
-  },
-  {
-    id: "health",
-    title: "System Health",
-    route: "/health",
-    icon: Activity,
-    owner: "Admins and support",
-    description:
-      "Gateway and service reachability checks, audit visibility, and operational confidence monitoring.",
-    capabilities: [
-      "Gateway reachability",
-      "Service checks",
-      "Audit trail explorer",
-      "Refreshable status view",
-    ],
-  },
-  {
-    id: "search",
-    title: "Global Search",
-    route: "/search",
-    icon: Search,
-    owner: "All operators",
-    description:
-      "Cross-entity search across customers, vehicles, and deals routed through the API gateway.",
-    capabilities: [
-      "Cross-module lookup",
-      "Customer search",
-      "Vehicle search",
-      "Deal search",
-    ],
-  },
-  {
-    id: "settings",
-    title: "Workspace Settings",
-    route: "/settings",
-    icon: Settings2,
-    owner: "Admins",
-    description:
-      "Workspace preferences, language, theming, and platform-level controls.",
-    capabilities: [
-      "Theme controls",
-      "Language selection",
-      "Workspace preferences",
-      "Admin configuration",
-    ],
+    owner: "Growth & Acquisition",
+    description: "Capture leads, track marketing campaigns, manage referral programs, and monitor conversion metrics.",
+    capabilities: ["Lead capture", "Campaign tracking", "Referral ledger", "Conversion metrics"],
   },
 ];
 
-const workflows = [
+const demoSteps = [
   {
-    id: "customer-to-funding",
-    title: "Customer to Funding Workflow",
-    outcome: "Turns a prospect into an approved and tracked financing record.",
-    steps: [
-      "Create the customer in CRM and record vehicle interest.",
-      "Submit a loan application tied to a real vehicle record.",
-      "Open a finance review from the application and assign an institution.",
-      "Approve, reject, or request more documents from the finance desk.",
+    title: "1. The Big Picture (Executive Dashboard)",
+    action: "Start on the Dashboard page.",
+    talkingPoints: [
+      "Welcome to Zelalem Motors. This is the Executive Command Center.",
+      "Highlight the KPIs at the top: These are live metrics aggregated from our 7 microservices.",
+      "Point out the 'Closed Revenue' and 'Active Deals' to show system scale.",
+      "Mention the charts: 'Revenue and lead momentum' shows our month-over-month growth."
     ],
+    outcome: "Establishes that this is a comprehensive, data-driven platform."
   },
   {
-    id: "inventory-to-deal",
-    title: "Inventory to Deal Workflow",
-    outcome:
-      "Moves a real inventory unit from availability into an executable commercial deal.",
-    steps: [
-      "Register the supplier and add the vehicle to inventory.",
-      "Reserve or sell the vehicle from the inventory workspace.",
-      "Create a deal linked to the selected customer, vehicle, and financing context.",
-      "Progress the deal board until completion or cancellation.",
+    title: "2. Capturing Demand (Marketing & Leads)",
+    action: "Navigate to 'Leads & Marketing' in the sidebar.",
+    talkingPoints: [
+      "Every sale starts with a lead. Here we track prospects across campaigns and referrals.",
+      "Show the 'Lead capture' tab and click 'Capture lead' to show the modal.",
+      "Explain how leads flow through statuses: New → Contacted → Qualified → Converted.",
+      "Point out the 'Export' button: 'All our tables feature one-click professional PDF and CSV exports.'"
     ],
+    outcome: "Demonstrates top-of-funnel capabilities."
   },
   {
-    id: "partner-commercialization",
-    title: "Partner Commercialization Workflow",
-    outcome: "Formalizes ecosystem relationships and tracks payouts.",
-    steps: [
-      "Create the partner with its commercial type and commission rate.",
-      "Register an agreement with active dates and terms.",
-      "Record commissions against the partner and related deal references.",
-      "Review partner throughput in analytics and the partner workspace.",
+    title: "3. Knowing the Customer (CRM)",
+    action: "Navigate to 'Customer CRM'.",
+    talkingPoints: [
+      "Once a lead converts, they become a Customer. This is our unified view of the buyer.",
+      "Expand a customer record (e.g., Abebe Kebede).",
+      "Show the sub-tabs: Vehicle Interests, Loan Applications, and Documents.",
+      "Click 'View' on a document to show the secure file serving capability."
     ],
+    outcome: "Shows deep customer context and document management."
   },
   {
-    id: "growth-ops",
-    title: "Growth Operations Workflow",
-    outcome:
-      "Captures demand and measures campaign quality using live lead data.",
-    steps: [
-      "Capture a lead or attach the lead to a campaign.",
-      "Advance lead status through contacted, qualified, and converted.",
-      "Create campaigns and referrals from the marketing workspace.",
-      "Track campaign conversions and referral pipeline in analytics-ready views.",
+    title: "4. Managing Supply (Vehicle Inventory)",
+    action: "Navigate to 'Vehicle Inventory'.",
+    talkingPoints: [
+      "To satisfy the customer, we need inventory. This module tracks our vehicles and suppliers.",
+      "Highlight the 'Status' badges (Available, Reserved, Sold).",
+      "Show the 'Suppliers' tab to demonstrate how we manage our dealer network.",
+      "Mention the professional UI: 'Notice the clean, responsive data tables and status indicators.'"
     ],
+    outcome: "Proves we handle the physical assets and supply chain."
   },
+  {
+    title: "5. Connecting Buyer to Vehicle (Deals)",
+    action: "Navigate to 'Deal Lifecycle'.",
+    talkingPoints: [
+      "The Deal connects the Customer to the Vehicle.",
+      "Show how deals progress through stages (Inquiry → Negotiation → Financing → Completed).",
+      "Highlight the financial math: Amounts, Down Payments, and Financed Amounts are tracked here."
+    ],
+    outcome: "Shows the core transaction engine."
+  },
+  {
+    title: "6. Securing the Capital (Financial Portal)",
+    action: "Navigate to 'Financial Portal'.",
+    talkingPoints: [
+      "Since most vehicles are financed, our Underwriting team uses this portal.",
+      "Show the 'Loan Reviews' tab. This is where banks (like CBE or Awash) process applications.",
+      "Demonstrate the action buttons: Approve, Reject, or Request Docs.",
+      "Show the 'Institutions' tab to highlight multi-lender support."
+    ],
+    outcome: "Demonstrates the fintech/lending capability."
+  },
+  {
+    title: "7. Rewarding the Network (Partnerships)",
+    action: "Navigate to 'Partnerships'.",
+    talkingPoints: [
+      "We don't operate alone. We rely on dealers, insurance companies, and banks.",
+      "Show how we track Commission Rates per partner.",
+      "Explain that when a deal closes, commissions are automatically calculated based on these agreements."
+    ],
+    outcome: "Shows ecosystem management."
+  },
+  {
+    title: "8. System Reliability (Health & Search)",
+    action: "Show 'Global Search' then 'System Health'.",
+    talkingPoints: [
+      "Search: 'Our API Gateway provides unified cross-service search.' Type 'Toyota' to show vehicles, leads, and deals in one view.",
+      "Health: 'Enterprise reliability.' Show the microservice health checks and the live audit trail of everything we just did.",
+      "Conclude: 'Zelalem Motors is a complete, scalable operating system for mobility finance.'"
+    ],
+    outcome: "Leaves a strong technical and enterprise-grade impression."
+  }
 ];
 
 const architecture = [
-  { name: "Web app", port: "5173", note: "Vite-powered admin frontend." },
-  {
-    name: "API gateway",
-    port: "3000",
-    note: "Auth, routing, search, notifications, and audit interception.",
-  },
-  {
-    name: "CRM service",
-    port: "3001",
-    note: "Customers, interests, documents, and loan applications.",
-  },
-  {
-    name: "Vehicle service",
-    port: "3002",
-    note: "Vehicles, suppliers, and inventory summary.",
-  },
-  {
-    name: "Finance service",
-    port: "3003",
-    note: "Reviews, institutions, and document requests.",
-  },
-  {
-    name: "Deal service",
-    port: "3004",
-    note: "Deal lifecycle and stage orchestration.",
-  },
-  {
-    name: "Partner service",
-    port: "3005",
-    note: "Partners, agreements, and commissions.",
-  },
-  {
-    name: "Lead service",
-    port: "3006",
-    note: "Leads, campaigns, and referrals.",
-  },
-  {
-    name: "Analytics service",
-    port: "3007",
-    note: "Cross-service KPI aggregation and reporting.",
-  },
+  { name: "Web Frontend", port: "5173", note: "React/Vite admin SPA with Material UI." },
+  { name: "API Gateway", port: "3000", note: "Node/Express hub. Handles auth, static files (/uploads), search, and proxies requests." },
+  { name: "CRM Service", port: "3001", note: "Manages customers, interests, documents, and loan applications (crm.sqlite)." },
+  { name: "Vehicle Service", port: "3002", note: "Manages vehicles, suppliers, and inventory (vehicle.sqlite)." },
+  { name: "Finance Service", port: "3003", note: "Manages loan reviews, institutions, and document requests (finance.sqlite)." },
+  { name: "Deal Service", port: "3004", note: "Manages deal lifecycle, stages, and commercial context (deal.sqlite)." },
+  { name: "Partner Service", port: "3005", note: "Manages partners, agreements, and commissions (partner.sqlite)." },
+  { name: "Lead Service", port: "3006", note: "Manages leads, campaigns, and referrals (lead.sqlite)." },
+  { name: "Analytics Service", port: "3007", note: "Aggregates cross-service KPIs. No dedicated DB; fetches from other services." },
 ];
-
-const operations = [
-  {
-    id: "startup",
-    title: "Local Startup",
-    summary: "Run the whole platform natively without Docker.",
-    commands: ["npm install", "npm run dev"],
-    checks: [
-      "Frontend on http://localhost:5173",
-      "Gateway on http://localhost:3000/api",
-      "Services on ports 3001-3007",
-    ],
-  },
-  {
-    id: "build",
-    title: "Build Verification",
-    summary: "Confirm every package compiles before release or demo.",
-    commands: ["npm run build"],
-    checks: [
-      "Turbo completes successfully",
-      "Web bundle builds",
-      "All Express microservices compile/start",
-    ],
-  },
-  {
-    id: "smoke",
-    title: "Smoke Testing",
-    summary: "Validate the happy path after changes or before handoff.",
-    commands: ["npm run demo:smoke"],
-    checks: [
-      "Login succeeds",
-      "Core modules respond",
-      "Search and analytics return live data",
-    ],
-  },
-  {
-    id: "storage",
-    title: "Data Storage Model",
-    summary:
-      "Services persist locally using better-sqlite3 and dedicated SQLite files per service.",
-    commands: ["*.sqlite files are created in service working directories"],
-    checks: [
-      "No Postgres dependency for local development",
-      "Database files are gitignored",
-      "Service state survives restarts locally",
-    ],
-  },
-];
-
-const dataModel = [
-  {
-    name: "Customer",
-    entities: "customer, vehicle interest, loan application, attached document",
-  },
-  { name: "Vehicle", entities: "vehicle, supplier, inventory summary" },
-  { name: "Finance", entities: "loan review, institution, document request" },
-  { name: "Deal", entities: "deal, stage, commission context" },
-  { name: "Partner", entities: "partner, agreement, commission" },
-  { name: "Growth", entities: "lead, campaign, referral" },
-  { name: "Audit", entities: "audit log, notification" },
-  {
-    name: "Analytics",
-    entities: "snapshot, summary KPIs, revenue trend, partner rollups",
-  },
-];
-
-const supportTopics = [
-  {
-    id: "empty-data",
-    title: "A page looks empty or stale",
-    body: "Use System Health first. If services are online, create or update records in the owning module and refresh the page. Analytics only reflects real underlying data now, so empty charts usually mean empty source tables.",
-  },
-  {
-    id: "modal-layering",
-    title: "A modal appears behind the layout",
-    body: "The modal layer is configured above the app shell. If a modal still seems hidden, reload the frontend and confirm you are on the latest build.",
-  },
-  {
-    id: "search",
-    title: "Global search is missing results",
-    body: "Search now unwraps gateway payloads correctly. Recheck the exact customer, vehicle, or deal text in the source module, then search again from the header or the dedicated search page.",
-  },
-  {
-    id: "dark-mode",
-    title: "Dark mode feels inconsistent",
-    body: "Most shell and content surfaces are tokenized for theme mode. If you see a page with poor contrast, log it against the specific module so the remaining isolated hardcoded colors can be normalized.",
-  },
-];
-
-function filterCollection(items, query) {
-  const normalized = query.trim().toLowerCase();
-  if (!normalized) {
-    return items;
-  }
-
-  return items.filter((item) =>
-    JSON.stringify(item).toLowerCase().includes(normalized),
-  );
-}
 
 export default function Documentation() {
   const [activeSection, setActiveSection] = useState("overview");
-  const [query, setQuery] = useState("");
-
-  const filteredModules = useMemo(
-    () => filterCollection(modules, query),
-    [query],
-  );
-  const filteredWorkflows = useMemo(
-    () => filterCollection(workflows, query),
-    [query],
-  );
-  const filteredOperations = useMemo(
-    () => filterCollection(operations, query),
-    [query],
-  );
-  const filteredDataModel = useMemo(
-    () => filterCollection(dataModel, query),
-    [query],
-  );
-  const filteredSupport = useMemo(
-    () => filterCollection(supportTopics, query),
-    [query],
-  );
-  const filteredArchitecture = useMemo(
-    () => filterCollection(architecture, query),
-    [query],
-  );
 
   return (
     <div className="page-shell">
-      <div className="card docs-hero">
-        <div className="docs-hero-main">
-          <div className="pill-list">
-            <span className="pill">Admin documentation</span>
-            <span className="pill">Live-data platform guide</span>
-            <span className="pill">Operations runbook</span>
+      <div className="card docs-hero" style={{ background: 'linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%)', color: 'white', border: 'none' }}>
+        <div className="docs-hero-main" style={{ padding: '32px' }}>
+          <div className="pill-list" style={{ marginBottom: '16px' }}>
+            <span className="pill" style={{ background: 'rgba(255,255,255,0.2)', color: 'white', border: 'none' }}>System Documentation</span>
+            <span className="pill" style={{ background: 'rgba(255,255,255,0.2)', color: 'white', border: 'none' }}>Zelalem Motors</span>
           </div>
-          <h1>Complete system guide for the Merkato Motors platform</h1>
-          <p>
-            This admin-facing guide covers every major module, the main
-            workflows that connect them, how the stack runs locally, what each
-            service owns, and how to troubleshoot the platform with confidence.
+          <h1 style={{ color: 'white', fontSize: '2.5rem', marginBottom: '16px' }}>Zelalem Motors Platform Guide</h1>
+          <p style={{ color: 'rgba(255,255,255,0.9)', fontSize: '1.1rem', maxWidth: '800px' }}>
+            The complete operating system for Ethiopian mobility finance. This guide covers platform architecture, 
+            module capabilities, and a step-by-step walkthrough for conducting professional product demonstrations.
           </p>
-        </div>
-
-        <div className="docs-kpi-grid">
-          <div className="docs-kpi">
-            <span className="docs-kpi-label">Modules</span>
-            <strong>{modules.length}</strong>
-          </div>
-          <div className="docs-kpi">
-            <span className="docs-kpi-label">Workflows</span>
-            <strong>{workflows.length}</strong>
-          </div>
-          <div className="docs-kpi">
-            <span className="docs-kpi-label">Services</span>
-            <strong>{architecture.length}</strong>
-          </div>
-          <div className="docs-kpi">
-            <span className="docs-kpi-label">Runtime</span>
-            <strong>NPM + SQLite</strong>
-          </div>
         </div>
       </div>
 
       <div className="card">
         <div className="card-header compact row-between">
           <div>
-            <div className="card-title">Guide navigation</div>
-            <div className="card-subtitle">
-              Jump between sections and search for modules, entities, commands,
-              or troubleshooting topics.
-            </div>
+            <div className="card-title">Documentation Sections</div>
           </div>
-          <input
-            className="table-search-input docs-search"
-            value={query}
-            onChange={(event) => setQuery(event.target.value)}
-            placeholder="Search modules, commands, workflows, ports, or support topics"
-          />
         </div>
         <div className="list-stack">
           <div className="tabs">
@@ -491,102 +241,89 @@ export default function Documentation() {
         </div>
       </div>
 
-      {activeSection === "overview" ? (
+      {activeSection === "overview" && (
         <div className="section-grid">
-          <div className="card">
-            <div className="card-header compact">
-              <div>
-                <div className="card-title">Platform architecture</div>
-                <div className="card-subtitle">
-                  Service ownership and local runtime map.
-                </div>
-              </div>
+          <div className="card" style={{ gridColumn: '1 / -1' }}>
+            <div className="card-header">
+              <div className="card-title">What is Zelalem Motors?</div>
             </div>
-            <div className="docs-grid docs-grid-tight">
-              {filteredArchitecture.map((service) => (
-                <div key={service.name} className="docs-mini-card">
-                  <div className="docs-mini-heading">{service.name}</div>
-                  <div className="docs-mini-port">:{service.port}</div>
-                  <p>{service.note}</p>
+            <div className="docs-card-body">
+              <p style={{ fontSize: '1rem', lineHeight: '1.6' }}>
+                <strong>Zelalem Motors</strong> is an enterprise-grade, microservices-based platform designed specifically to handle the complex workflows of vehicle financing in Ethiopia. 
+              </p>
+              <p style={{ fontSize: '1rem', lineHeight: '1.6' }}>
+                Unlike standard CRMs, Zelalem Motors connects the entire ecosystem: capturing leads, onboarding customers, managing physical vehicle inventory, coordinating with lending institutions for loan approvals, tracking the deal pipeline, and calculating partner commissions—all in one unified workspace.
+              </p>
+              <div style={{ marginTop: '16px', display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
+                <div className="docs-mini-card" style={{ flex: '1 1 300px' }}>
+                  <div className="docs-mini-heading"><Network size={16} style={{display: 'inline', marginRight: '8px'}}/> Microservices Architecture</div>
+                  <p>Built on 7 independent Node.js services communicating through an Express API Gateway, ensuring scalability and fault isolation.</p>
                 </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="card">
-            <div className="card-header compact">
-              <div>
-                <div className="card-title">What is fixed in this build</div>
-                <div className="card-subtitle">
-                  The platform is positioned as a live workspace instead of a
-                  mock demo.
-                </div>
-              </div>
-            </div>
-            <div className="list-stack">
-              <div className="list-row">
-                <div className="list-row-title">
-                  Analytics uses live service data
-                </div>
-                <div className="list-row-meta">
-                  Revenue, financing, partner contribution, and KPI summaries
-                  are aggregated from the backend services.
-                </div>
-              </div>
-              <div className="list-row">
-                <div className="list-row-title">
-                  Search unwraps gateway payloads correctly
-                </div>
-                <div className="list-row-meta">
-                  Customer, vehicle, and deal search results come from real
-                  gateway responses instead of silently collapsing to empty
-                  arrays.
-                </div>
-              </div>
-              <div className="list-row">
-                <div className="list-row-title">
-                  Finance review creation uses readable vehicle records
-                </div>
-                <div className="list-row-meta">
-                  Review creation now resolves application vehicle IDs into
-                  human-readable descriptions.
-                </div>
-              </div>
-              <div className="list-row">
-                <div className="list-row-title">
-                  Notifications and audit activity are surfaced together
-                </div>
-                <div className="list-row-meta">
-                  Mutating actions now create audit logs and user-visible
-                  notifications for operators.
+                <div className="docs-mini-card" style={{ flex: '1 1 300px' }}>
+                  <div className="docs-mini-heading"><ShieldCheck size={16} style={{display: 'inline', marginRight: '8px'}}/> Role-Based Workspaces</div>
+                  <p>Admins, Sales, Finance, and Marketing users see the same system but utilize different modules tailored to their operations.</p>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      ) : null}
+      )}
 
-      {activeSection === "modules" ? (
+      {activeSection === "demo-guide" && (
+        <div className="card">
+          <div className="card-header">
+            <div>
+              <div className="card-title">Demo Session Walkthrough</div>
+              <div className="card-subtitle">A proven, step-by-step script for presenting Zelalem Motors to stakeholders.</div>
+            </div>
+          </div>
+          <div className="docs-card-body">
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
+              {demoSteps.map((step, idx) => (
+                <div key={idx} style={{ padding: '20px', border: '1px solid var(--border-color)', borderRadius: '12px', background: 'var(--bg-subtle)' }}>
+                  <h3 style={{ color: 'var(--accent-primary)', marginBottom: '12px', fontSize: '1.1rem', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                    {step.title}
+                  </h3>
+                  <div style={{ marginBottom: '12px' }}>
+                    <span style={{ fontWeight: 'bold', fontSize: '0.85rem', textTransform: 'uppercase', color: 'var(--text-muted)' }}>Action:</span>
+                    <p style={{ margin: '4px 0 0 0', color: 'var(--text-primary)', fontWeight: '500' }}>{step.action}</p>
+                  </div>
+                  <div style={{ marginBottom: '12px' }}>
+                    <span style={{ fontWeight: 'bold', fontSize: '0.85rem', textTransform: 'uppercase', color: 'var(--text-muted)' }}>Talking Points:</span>
+                    <ul style={{ margin: '8px 0 0 0', paddingLeft: '20px', color: 'var(--text-secondary)' }}>
+                      {step.talkingPoints.map((point, i) => <li key={i} style={{ marginBottom: '4px' }}>{point}</li>)}
+                    </ul>
+                  </div>
+                  <div style={{ padding: '8px 12px', background: 'var(--accent-success-soft)', color: 'var(--accent-success)', borderRadius: '6px', fontSize: '0.85rem', fontWeight: '600', display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
+                    <CheckCircle2 size={14} /> Outcome: {step.outcome}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
+
+      {activeSection === "modules" && (
         <div className="docs-grid">
-          {filteredModules.map((module) => {
+          {modules.map((module) => {
             const Icon = module.icon;
             return (
               <div key={module.id} className="card docs-card">
                 <div className="card-header compact">
                   <div>
                     <div className="docs-card-title">
-                      <Icon size={16} />
+                      <Icon size={18} color="var(--accent-primary)" />
                       {module.title}
                     </div>
-                    <div className="card-subtitle">{module.owner}</div>
+                    <div className="card-subtitle">User: {module.owner}</div>
                   </div>
-                  <code className="docs-route">{module.route}</code>
                 </div>
                 <div className="docs-card-body">
                   <p>{module.description}</p>
-                  <div className="pill-list">
+                  <div className="pill-list" style={{ marginTop: 'auto' }}>
                     {module.capabilities.map((capability) => (
-                      <span key={capability} className="pill">
+                      <span key={capability} className="pill" style={{ background: 'var(--bg-surface)' }}>
                         {capability}
                       </span>
                     ))}
@@ -595,164 +332,46 @@ export default function Documentation() {
               </div>
             );
           })}
-          {!filteredModules.length ? (
-            <div className="empty-state">
-              <h3>No module matches</h3>
-              <p>
-                Try a different search term such as finance, analytics,
-                document, or partner.
-              </p>
-            </div>
-          ) : null}
         </div>
-      ) : null}
+      )}
 
-      {activeSection === "workflows" ? (
-        <div className="docs-grid">
-          {filteredWorkflows.map((workflow) => (
-            <div key={workflow.id} className="card docs-card">
-              <div className="card-header compact">
-                <div>
-                  <div className="card-title">{workflow.title}</div>
-                  <div className="card-subtitle">{workflow.outcome}</div>
-                </div>
-              </div>
-              <div className="docs-step-list">
-                {workflow.steps.map((step, index) => (
-                  <div key={step} className="docs-step">
-                    <span className="docs-step-index">{index + 1}</span>
-                    <div className="docs-step-text">{step}</div>
+      {activeSection === "technical" && (
+        <div className="section-grid">
+          <div className="card" style={{ gridColumn: '1 / -1' }}>
+            <div className="card-header">
+              <div className="card-title">Microservices Architecture Map</div>
+              <div className="card-subtitle">API Gateway (Port 3000) routes to 7 local Node.js services.</div>
+            </div>
+            <div className="docs-card-body">
+              <div className="docs-grid docs-grid-tight">
+                {architecture.map((service) => (
+                  <div key={service.name} className="docs-mini-card">
+                    <div className="docs-mini-heading">{service.name}</div>
+                    <div className="docs-mini-port">Port: {service.port}</div>
+                    <p style={{ fontSize: '0.85rem' }}>{service.note}</p>
                   </div>
                 ))}
               </div>
             </div>
-          ))}
-          {!filteredWorkflows.length ? (
-            <div className="empty-state">
-              <h3>No workflow matches</h3>
-              <p>Search for onboarding, inventory, finance, or growth.</p>
-            </div>
-          ) : null}
-        </div>
-      ) : null}
-
-      {activeSection === "operations" ? (
-        <div className="docs-stack">
-          {filteredOperations.map((item) => (
-            <details key={item.id} className="card docs-disclosure" open>
-              <summary>
-                <span>{item.title}</span>
-                <span className="docs-summary-meta">{item.summary}</span>
-              </summary>
-              <div className="docs-disclosure-body">
-                <div>
-                  <div className="docs-section-label">Commands</div>
-                  {item.commands.map((command) => (
-                    <code key={command} className="docs-snippet">
-                      {command}
-                    </code>
-                  ))}
-                </div>
-                <div>
-                  <div className="docs-section-label">Verification</div>
-                  <div className="pill-list">
-                    {item.checks.map((check) => (
-                      <span key={check} className="pill">
-                        {check}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </details>
-          ))}
-        </div>
-      ) : null}
-
-      {activeSection === "data" ? (
-        <div className="docs-grid docs-grid-tight">
-          {filteredDataModel.map((item) => (
-            <div key={item.name} className="card docs-card">
-              <div className="card-header compact">
-                <div>
-                  <div className="card-title">{item.name}</div>
-                  <div className="card-subtitle">
-                    Primary records and ownership model
-                  </div>
-                </div>
-              </div>
-              <div className="docs-card-body">
-                <p>{item.entities}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      ) : null}
-
-      {activeSection === "support" ? (
-        <div className="docs-stack">
-          <div className="card">
-            <div className="card-header compact">
-              <div>
-                <div className="card-title">Support and troubleshooting</div>
-                <div className="card-subtitle">
-                  Quick answers for the issues operators will hit most often.
-                </div>
-              </div>
-            </div>
-            <div className="docs-support-list">
-              {filteredSupport.map((topic) => (
-                <details key={topic.id} className="docs-support-item" open>
-                  <summary>{topic.title}</summary>
-                  <p>{topic.body}</p>
-                </details>
-              ))}
-            </div>
           </div>
 
-          <div className="card">
-            <div className="card-header compact">
-              <div>
-                <div className="card-title">Admin quick references</div>
-                <div className="card-subtitle">
-                  Fast reminders for day-to-day platform ownership.
-                </div>
-              </div>
+          <div className="card" style={{ gridColumn: '1 / -1' }}>
+            <div className="card-header">
+              <div className="card-title">Export Capabilities</div>
             </div>
-            <div className="list-stack">
-              <div className="list-row">
-                <div className="docs-card-title">
-                  <ShieldCheck size={16} /> Authentication
-                </div>
-                <div className="list-row-meta">
-                  Use the seeded admin or supplier credentials from the login
-                  screen when working locally.
-                </div>
-              </div>
-              <div className="list-row">
-                <div className="docs-card-title">
-                  <Network size={16} /> Runtime model
-                </div>
-                <div className="list-row-meta">
-                  The platform runs fully through native npm processes and local
-                  SQLite persistence. Docker is no longer required for local
-                  verification.
-                </div>
-              </div>
-              <div className="list-row">
-                <div className="docs-card-title">
-                  <ScrollText size={16} /> Auditability
-                </div>
-                <div className="list-row-meta">
-                  Create, update, approve, reject, and delete flows are designed
-                  to appear in audit logs and notifications for support
-                  visibility.
-                </div>
-              </div>
+            <div className="docs-card-body">
+              <p>
+                All data tables across the platform support professional exporting:
+              </p>
+              <ul style={{ color: 'var(--text-secondary)' }}>
+                <li><strong>CSV Export:</strong> Generates clean, comma-separated values files for Excel/Sheets analysis. Excludes action buttons.</li>
+                <li><strong>PDF Export:</strong> Generates branded, styled PDF reports using <code>jspdf</code> and <code>jspdf-autotable</code>. Includes Zelalem Motors branding, timestamps, page numbers, and alternating row colors.</li>
+              </ul>
+              <p style={{ fontSize: '0.85rem', marginTop: '8px' }}><em>Note: Exports respect current table filters and sorting.</em></p>
             </div>
           </div>
         </div>
-      ) : null}
+      )}
     </div>
   );
 }

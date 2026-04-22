@@ -259,9 +259,15 @@ export default function Customers() {
       label: 'Open',
       render: (value, row) => {
         if (!value) return 'Unavailable';
-        // Use the filename from the upload, strip trailing slashes
-        const cleanUrl = value.replace(/\/+$/, '');
-        return <a href={cleanUrl} target="_blank" rel="noreferrer" className="btn btn-sm btn-outline-primary">View</a>;
+        
+        let targetUrl = value;
+        // If the URL is an /uploads/ path, route it through our API gateway's robust file viewer
+        if (value.startsWith('/uploads/')) {
+          const filename = value.replace('/uploads/', '').replace(/\/+$/, '');
+          targetUrl = `/api/documents/view/${encodeURIComponent(filename)}`;
+        }
+        
+        return <a href={targetUrl} target="_blank" rel="noreferrer" className="btn btn-sm btn-outline-primary">View</a>;
       },
     },
   ];
