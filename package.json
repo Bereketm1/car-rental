@@ -26,9 +26,11 @@
     "dev:lead": "npm run dev --workspace=apps/services/lead",
     "dev:analytics": "npm run dev --workspace=apps/services/analytics"
   },
+  "dependencies": {
+    "ts-node": "^10.9.0",
+    "typescript": "^5.0.0"
+  },
   "devDependencies": {
-    "turbo": "^2.0.0",
-    "typescript": "^5.0.0",
-    "ts-node": "^10.9.0"
+    "turbo": "^2.0.0"
   }
 }
