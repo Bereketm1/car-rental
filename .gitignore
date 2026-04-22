@@ -33,14 +33,6 @@ Thumbs.db
 
 **/*.tsbuildinfo
 
-# Generated JS declaration output from TS backend services
-apps/api-gateway/src/**/*.js
-apps/api-gateway/src/**/*.js.map
-apps/api-gateway/src/**/*.d.ts
-apps/services/*/src/**/*.js
-apps/services/*/src/**/*.js.map
-apps/services/*/src/**/*.d.ts
-
 # Generated shared-types output
 packages/shared-types/src/**/*.js
 packages/shared-types/src/**/*.d.ts
