@@ -2,8 +2,24 @@ const { spawn } = require('child_process');
 const path = require('path');
 const fs = require('fs');
 
-// IMPORTANT: Register ts-node so we can require .ts files
-require('ts-node/register');
+// Try to load ts-node/register with fallbacks
+try {
+  require('ts-node/register');
+} catch (e) {
+  console.error('⚠️ Direct require(ts-node/register) failed. Trying local path...');
+  try {
+    const localTsNode = path.join(__dirname, 'node_modules', 'ts-node', 'register.js');
+    if (fs.existsSync(localTsNode)) {
+      require(localTsNode);
+      console.log('✅ Loaded ts-node from local node_modules');
+    } else {
+      throw new Error('Local ts-node not found at ' + localTsNode);
+    }
+  } catch (e2) {
+    console.error('❌ ALL ts-node loading attempts failed:', e2.message);
+    console.log('📂 node_modules content:', fs.readdirSync(path.join(__dirname, 'node_modules')).slice(0, 10));
+  }
+}
 
 console.log('🚀 Zelalem Motors: Bootstrapping for cPanel (TS Mode)...');
 console.log('📍 __dirname:', __dirname);
