@@ -1,78 +1,53 @@
-# Zelalem Motors cPanel Deployment Guide
+# Zelalem Motors Hybrid Deployment Guide
 
-This guide explains how to host your entire platform (Frontend + Backend) natively on your cPanel server using subdomains.
+This guide explains how to host your **Backend** on your cPanel server and your **Frontend** on Vercel.
 
-You will need two subdomains:
-1. `api.yourdomain.com` (Routes to your Node.js Backend)
-2. `app.yourdomain.com` (Serves your React Frontend)
+- **Backend (cPanel):** `https://zelalemapi.piassabet.com`
+- **Frontend (Vercel):** `https://your-app.vercel.app`
 
 ---
 
-## Phase 1: Set up the Backend (`api.yourdomain.com`)
+## Phase 1: Set up the Backend on cPanel
 
 1. **Log into cPanel** and go to **Subdomains**.
-2. Create a new subdomain called `api` (e.g., `api.yourdomain.com`). Take note of its Document Root (e.g., `/public_html/api`).
-3. **Open Terminal via SSH** and run your backend:
+2. Create the subdomain `zelalemapi` for `piassabet.com`.
+3. **Open Terminal via SSH** and launch the backend:
    ```bash
-   cd ~/car-rental # Go to where you cloned your repository
+   cd ~/car-rental
+   # Install Node.js if you haven't (curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash)
+   nvm install 20
    npm install
-   npm install -g pm2
-   pm2 start start-prod.js --name "zelalem-api"
-   pm2 save
+   npx pm2 start start-prod.js --name "zelalem-api"
    ```
-   *Your API is now running internally on port `3000`.*
-
-4. **Connect the Subdomain to Port 3000 (Reverse Proxy):**
-   Go to the cPanel **File Manager**. Navigate to the Document Root for `api.yourdomain.com` (e.g., `/public_html/api`). 
-   Ensure "Show Hidden Files" is checked in settings. 
-   Create or edit the `.htaccess` file in that folder and paste this exact code:
-
+4. **Reverse Proxy to Port 3000:**
+   In cPanel **File Manager**, go to the folder for `zelalemapi.piassabet.com`.
+   Create a `.htaccess` file and paste this code:
    ```apache
    RewriteEngine On
    RewriteRule ^(.*)$ http://127.0.0.1:3000/$1 [P,L]
    ```
-   *Save the file. If you visit `https://api.yourdomain.com/api/system/health`, it should now load your backend data!*
+   *Your backend is now live at `https://zelalemapi.piassabet.com`.*
 
 ---
 
-## Phase 2: Build & Set up the Frontend (`app.yourdomain.com`)
+## Phase 2: Set up the Frontend on Vercel
 
-Now we need to tell your React frontend to talk to your new `api.yourdomain.com` server, build it, and serve it.
+1. **Push your code to GitHub** (ensure all latest changes are pushed).
+2. **Log into Vercel** and click **Add New Project**.
+3. Import your GitHub repository.
+4. **Configure Project:**
+   - **Framework Preset:** `Vite`
+   - **Root Directory:** Set to `apps/web`
+5. **Environment Variables:**
+   Add a new variable:
+   - **Name:** `VITE_API_URL`
+   - **Value:** `https://zelalemapi.piassabet.com/api`
+6. **Deploy!**
 
-1. **Build the Frontend:**
-   Go back to your SSH Terminal and navigate to your repository folder.
-   Run this exact command to build the frontend, injecting your new API URL:
-   ```bash
-   cd ~/car-rental
-   VITE_API_URL=https://api.yourdomain.com/api npm run build --workspace=apps/web
-   ```
-   *This creates a `dist` folder inside `apps/web/dist` containing your fully compiled, static React application.*
-
-2. **Create the Frontend Subdomain:**
-   Go to cPanel -> **Subdomains**.
-   Create a new subdomain called `app` (e.g., `app.yourdomain.com`).
-   For the **Document Root**, do not use the default! Change it to point exactly to your new `dist` folder:
-   `/car-rental/apps/web/dist`
-
-3. **Enable React Routing:**
-   Go to cPanel **File Manager**. Navigate to `/car-rental/apps/web/dist`.
-   Create a new `.htaccess` file inside the `dist` folder and paste this code:
-   
-   ```apache
-   <IfModule mod_rewrite.c>
-     RewriteEngine On
-     RewriteBase /
-     RewriteRule ^index\.html$ - [L]
-     RewriteCond %{REQUEST_FILENAME} !-f
-     RewriteCond %{REQUEST_FILENAME} !-d
-     RewriteCond %{REQUEST_FILENAME} !-l
-     RewriteRule . /index.html [L]
-   </IfModule>
-   ```
-   *This ensures that refreshing the page on your React app doesn't cause a 404 error.*
+Vercel will build the React app and automatically connect it to your cPanel backend.
 
 ---
 
-## You're Done!
+## Phase 3: Final Verification
 
-You can now visit `https://app.yourdomain.com` and log in to the Zelalem Motors platform. Everything is fully hosted on your own server!
+Visit your Vercel URL. If you can log in, the connection between Vercel and your cPanel server is successful!
