@@ -10,22 +10,21 @@ The optimal strategy is a **Hybrid Deployment**:
 
 ## 1. Deploy the Backend (API & Microservices)
 
-We recommend using **Render** as it natively handles background Node.js processes and persistent disks perfectly.
+We recommend using **Render.com** because it has a generous **100% Free Tier** that perfectly hosts our Node.js microservices.
 
-### Using Render.com
+*Note: Render's Free Tier automatically puts servers to "sleep" after 15 minutes of inactivity, which resets local files. To ensure your platform always works perfectly for demos, we have added a smart boot script (`start-prod.js`) that automatically seeds the database with fresh demo data every time the server wakes up!*
+
+### Using Render.com (100% Free)
 1. Create a free account at [render.com](https://render.com).
-2. Create a new **Web Service**.
+2. Click **New** -> **Web Service**.
 3. Connect your GitHub repository.
 4. Set the following configuration:
    - **Environment:** `Node`
    - **Build Command:** `npm install`
-   - **Start Command:** `npm run start` *(Ensure your root `package.json` has a `"start": "node apps/api-gateway/src/index.js & node apps/services/crm/src/index.js ..."` script, or use PM2).*
-5. **CRITICAL STEP (Persistent Data):** Go to the "Advanced" settings and add a **Disk**.
-   - Name: `sqlite-data`
-   - Mount Path: `/opt/render/project/src/apps/services`
-   - Size: `1 GB`
-6. Click **Create Web Service**.
-7. Once deployed, Render will give you a public URL (e.g., `https://zelalem-api.onrender.com`). **Copy this URL**.
+   - **Start Command:** `npm start` *(This runs the new `start-prod.js` script to auto-seed data and boot all microservices)*
+   - **Instance Type:** `Free`
+5. Click **Create Web Service**.
+6. Once deployed, Render will give you a public URL (e.g., `https://zelalem-api.onrender.com`). **Copy this URL**.
 
 ---
 
