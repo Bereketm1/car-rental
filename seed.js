@@ -4,7 +4,7 @@
  * Requires: local services running on localhost
  */
 
-const API = 'http://localhost:3000/api';
+const API = process.env.API_URL || 'http://localhost:3000/api';
 
 async function post(path, body) {
   const res = await fetch(`${API}${path}`, {
