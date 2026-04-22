@@ -10,21 +10,24 @@ The optimal strategy is a **Hybrid Deployment**:
 
 ## 1. Deploy the Backend (API & Microservices)
 
-We recommend using **Render.com** because it has a generous **100% Free Tier** that perfectly hosts our Node.js microservices.
+Since many platforms are locking down their free tiers, the absolute best, most reliable platform that **guarantees no credit card is required** and supports full Node.js Docker environments is **Back4App Containers**.
 
-*Note: Render's Free Tier automatically puts servers to "sleep" after 15 minutes of inactivity, which resets local files. To ensure your platform always works perfectly for demos, we have added a smart boot script (`start-prod.js`) that automatically seeds the database with fresh demo data every time the server wakes up!*
+*Note: Your container will sleep after 15 minutes of inactivity on the free tier, but our `start-prod.js` script will automatically re-seed your data instantly when it wakes up!*
 
-### Using Render.com (100% Free)
-1. Create a free account at [render.com](https://render.com).
-2. Click **New** -> **Web Service**.
-3. Connect your GitHub repository.
+### Using Back4App Containers (Highly Recommended)
+Back4App will use the `Dockerfile` we already created in your repository to build and host your entire backend.
+
+1. Go to [back4app.com](https://www.back4app.com) and sign up for free using your GitHub account.
+2. Once logged in, click **Build a new app** and select **Containers as a Service (CaaS)**.
+3. Connect your GitHub account and select this repository.
 4. Set the following configuration:
-   - **Environment:** `Node`
-   - **Build Command:** `npm install`
-   - **Start Command:** `npm start` *(This runs the new `start-prod.js` script to auto-seed data and boot all microservices)*
-   - **Instance Type:** `Free`
-5. Click **Create Web Service**.
-6. Once deployed, Render will give you a public URL (e.g., `https://zelalem-api.onrender.com`). **Copy this URL**.
+   - **App Name:** `zelalem-motors-api` (or similar)
+   - **Branch:** `main`
+   - **Root Directory:** `./`
+   - **Environment Variables:** You don't need any for the demo to work!
+5. Click **Deploy**.
+6. Back4App will automatically detect the `Dockerfile`, install all dependencies, and launch your microservices!
+7. Once the deployment is green, you will see an "App URL" on the left sidebar (e.g., `https://zelalemmotorsapi-xxx.b4a.run`). **Copy this URL**.
 
 ---
 
