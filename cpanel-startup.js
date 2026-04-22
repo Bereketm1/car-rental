@@ -2,17 +2,18 @@ const { spawn } = require('child_process');
 const path = require('path');
 const fs = require('fs');
 
-console.log('🚀 Zelalem Motors: Bootstrapping for cPanel...');
+// IMPORTANT: Register ts-node so we can require .ts files
+require('ts-node/register');
+
+console.log('🚀 Zelalem Motors: Bootstrapping for cPanel (TS Mode)...');
 console.log('📍 __dirname:', __dirname);
 
 // Deep log helper
 function logDir(dir) {
   try {
     const files = fs.readdirSync(dir);
-    console.error(`📂 Content of ${dir}:`, files);
     return files;
   } catch (e) {
-    console.error(`❌ Failed to read ${dir}:`, e.message);
     return [];
   }
 }
@@ -29,7 +30,6 @@ function findCorrectPath(base, targetPath) {
     if (match) {
       current = path.join(current, match);
     } else {
-      console.error(`❌ Could not find "${part}" in ${current}`);
       return null;
     }
   }
@@ -38,20 +38,21 @@ function findCorrectPath(base, targetPath) {
 
 // 1. Start the 7 Microservices
 const services = [
-  'apps/services/crm/src/index.js',
-  'apps/services/vehicle/src/index.js',
-  'apps/services/finance/src/index.js',
-  'apps/services/deal/src/index.js',
-  'apps/services/partner/src/index.js',
-  'apps/services/lead/src/index.js',
-  'apps/services/analytics/src/index.js'
+  'apps/services/crm/src/app.module.ts',
+  'apps/services/vehicle/src/app.module.ts',
+  'apps/services/finance/src/app.module.ts',
+  'apps/services/deal/src/app.module.ts',
+  'apps/services/partner/src/app.module.ts',
+  'apps/services/lead/src/app.module.ts',
+  'apps/services/analytics/src/app.module.ts'
 ];
 
-console.log('📦 Starting microservices...');
+console.log('📦 Starting microservices (TS)...');
 services.forEach(s => {
   const fullPath = findCorrectPath(__dirname, s);
   if (fullPath && fs.existsSync(fullPath)) {
-    const child = spawn('node', [fullPath], { 
+    // Use npx ts-node to run .ts files directly
+    const child = spawn('npx', ['ts-node', fullPath], { 
       stdio: 'inherit',
       detached: true,
       env: { ...process.env, PORT: undefined }
@@ -62,17 +63,22 @@ services.forEach(s => {
 });
 
 // 2. API Gateway
-const gatewayPath = findCorrectPath(__dirname, 'apps/api-gateway/src/index.js');
+// We use the index.js entry point if it exists, or the main ts file
+const gatewayPath = findCorrectPath(__dirname, 'apps/api-gateway/src/index.ts');
 if (gatewayPath && fs.existsSync(gatewayPath)) {
   console.log(`✅ Gateway found: ${gatewayPath}`);
   require(gatewayPath);
+} else {
+  // Fallback to searching for any suitable entry point
+  console.error('❌ Could not find gateway entry point. Please ensure apps/api-gateway/src/index.ts exists.');
 }
 
 // 3. Seed
 setTimeout(() => {
   const seedPath = findCorrectPath(__dirname, 'seed.js');
   if (seedPath) spawn('node', [seedPath], { stdio: 'inherit', detached: true }).unref();
-}, 25000);
+}, 30000);
+
 
 
 

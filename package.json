@@ -27,6 +27,8 @@
     "dev:analytics": "npm run dev --workspace=apps/services/analytics"
   },
   "devDependencies": {
-    "turbo": "^2.0.0"
+    "turbo": "^2.0.0",
+    "typescript": "^5.0.0",
+    "ts-node": "^10.9.0"
   }
 }
