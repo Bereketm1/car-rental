@@ -2,6 +2,8 @@ const { spawn } = require('child_process');
 const path = require('path');
 
 console.log('🚀 Zelalem Motors: Bootstrapping for cPanel...');
+console.log('📍 Current Directory (__dirname):', __dirname);
+console.log('📂 Working Directory (process.cwd()):', process.cwd());
 
 // 1. Start the 7 Microservices in the background immediately
 const services = [
