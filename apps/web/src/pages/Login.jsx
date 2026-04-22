@@ -6,9 +6,28 @@ import { useToast } from "../components/Toast";
 
 const demoAccounts = [
   {
-    role: "Marketplace Admin",
-    email: "admin@merkato.com",
+    role: "Admin",
+    email: "admin@zelalem.com",
     password: "admin123",
+    description: "Full platform access",
+  },
+  {
+    role: "Sales Manager",
+    email: "sales@zelalem.com",
+    password: "sales123",
+    description: "CRM, deals & vehicles",
+  },
+  {
+    role: "Finance Officer",
+    email: "finance@zelalem.com",
+    password: "finance123",
+    description: "Loan reviews & institutions",
+  },
+  {
+    role: "Marketing Manager",
+    email: "marketing@zelalem.com",
+    password: "marketing123",
+    description: "Leads, campaigns & referrals",
   },
 ];
 
@@ -50,9 +69,9 @@ export default function Login({ onLogin }) {
         <section className="auth-hero">
           <div className="auth-badge">
             <Building2 size={16} />
-            Native full-stack workspace
+            Vehicle financing workspace
           </div>
-          <h1>Merkato Motors Workspace</h1>
+          <h1>Zelalem Motors</h1>
           <p>
             Unified CRM, supplier, finance, deal, partnership, and analytics
             operations tailored for the Ethiopian mobility financing ecosystem.
@@ -66,7 +85,7 @@ export default function Login({ onLogin }) {
         <section className="auth-card">
           <h2>Sign in</h2>
           <p className="auth-subtitle">
-            Use one of the demo accounts or enter credentials manually.
+            Select a demo role or enter credentials manually.
           </p>
 
           <div className="account-grid">
@@ -74,14 +93,14 @@ export default function Login({ onLogin }) {
               <button
                 key={account.email}
                 type="button"
-                className="account-chip"
+                className={`account-chip ${email === account.email ? 'active' : ''}`}
                 onClick={() => {
                   setEmail(account.email);
                   setPassword(account.password);
                 }}
               >
                 <strong>{account.role}</strong>
-                <span>{account.email}</span>
+                <span>{account.description}</span>
               </button>
             ))}
           </div>

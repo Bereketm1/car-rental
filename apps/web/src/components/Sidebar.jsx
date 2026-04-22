@@ -132,7 +132,7 @@ export default function Sidebar({ open, onClose, isDesktop }) {
             lineHeight: 1,
           }}
         >
-          Merkato Motors
+          Zelalem Motors
         </Typography>
         <Typography
           sx={{
@@ -143,7 +143,7 @@ export default function Sidebar({ open, onClose, isDesktop }) {
             letterSpacing: "0.04em",
           }}
         >
-          Native mobility finance operations
+          Vehicle financing operations platform
         </Typography>
       </Box>
 

@@ -1,5 +1,5 @@
 /**
- * MerkatoMotors Database Seed Script
+ * Zelalem Motors Database Seed Script
  * Run: npm run seed
  * Requires: local services running on localhost
  */
@@ -16,7 +16,7 @@ async function post(path, body) {
 }
 
 async function seed() {
-  console.log('🌱 Seeding MerkatoMotors database...\n');
+  console.log('🌱 Seeding Zelalem Motors database...\n');
 
   // ── Customers ──
   console.log('👥 Creating customers...');

@@ -257,11 +257,12 @@ export default function Customers() {
     {
       key: 'url',
       label: 'Open',
-      render: (value) => (
-        value
-          ? <a href={value} target="_blank" rel="noreferrer" className="btn btn-sm btn-outline-primary">View</a>
-          : 'Unavailable'
-      ),
+      render: (value, row) => {
+        if (!value) return 'Unavailable';
+        // Use the filename from the upload, strip trailing slashes
+        const cleanUrl = value.replace(/\/+$/, '');
+        return <a href={cleanUrl} target="_blank" rel="noreferrer" className="btn btn-sm btn-outline-primary">View</a>;
+      },
     },
   ];
 

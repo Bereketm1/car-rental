@@ -895,6 +895,13 @@ button.list-row {
   z-index: 1500;
 }
 
+.modal-backdrop-click {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  cursor: default;
+}
+
 .modal-overlay .modal {
   position: relative;
   width: min(820px, calc(100vw - 22px));
@@ -2045,6 +2052,8 @@ body.dark-mode {
 /* ─────────────── Modal Dialog (used by Modal.jsx) ─────────────── */
 .modal-dialog {
   position: relative;
+  z-index: 2;
+  pointer-events: auto;
   width: min(760px, calc(100vw - 32px));
   max-height: calc(100vh - 48px);
   overflow: auto;
