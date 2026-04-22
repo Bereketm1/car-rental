@@ -3,37 +3,39 @@ const path = require('path');
 
 console.log('🚀 Zelalem Motors: Bootstrapping for cPanel...');
 
-// 1. Run the seed script
-const seed = spawn('node', ['seed.js'], { stdio: 'inherit' });
+// 1. Start the 7 Microservices in the background immediately
+const services = [
+  'apps/services/crm/src/index.js',
+  'apps/services/vehicle/src/index.js',
+  'apps/services/finance/src/index.js',
+  'apps/services/deal/src/index.js',
+  'apps/services/partner/src/index.js',
+  'apps/services/lead/src/index.js',
+  'apps/services/analytics/src/index.js'
+];
 
-seed.on('close', (code) => {
-  if (code !== 0) {
-    console.error('❌ Seeding failed.');
-  }
-
-  // 2. Start the 7 Microservices in the background
-  const services = [
-    'apps/services/crm/src/index.js',
-    'apps/services/vehicle/src/index.js',
-    'apps/services/finance/src/index.js',
-    'apps/services/deal/src/index.js',
-    'apps/services/partner/src/index.js',
-    'apps/services/lead/src/index.js',
-    'apps/services/analytics/src/index.js'
-  ];
-
-  console.log('📦 Starting microservices in background...');
-  services.forEach(servicePath => {
-    const fullPath = path.resolve(__dirname, servicePath);
-    spawn('node', [fullPath], { 
-      stdio: 'inherit',
-      detached: true,
-      env: { ...process.env, PORT: undefined } // Ensure children use their default ports, not the cPanel PORT
-    });
+console.log('📦 Starting microservices in background...');
+services.forEach(servicePath => {
+  const fullPath = path.join(__dirname, servicePath);
+  const child = spawn('node', [fullPath], { 
+    stdio: 'inherit',
+    detached: true,
+    env: { ...process.env, PORT: undefined }
   });
-
-  // 3. START THE API GATEWAY IN THIS PROCESS
-  // This is the key: this process must bind to the port cPanel provides
-  console.log('🌐 Starting API Gateway (Master Process)...');
-  require('./apps/api-gateway/src/index.js');
+  child.unref();
 });
+
+// 2. Start the API Gateway in the SAME process
+// Use absolute path for require to avoid MODULE_NOT_FOUND
+console.log('🌐 Starting API Gateway (Master Process)...');
+const gatewayPath = path.join(__dirname, 'apps/api-gateway/src/index.js');
+require(gatewayPath);
+
+// 3. Run the seed script after a 10-second delay (once services are up)
+setTimeout(() => {
+  console.log('🌱 Attempting to seed database...');
+  const seedPath = path.join(__dirname, 'seed.js');
+  const seed = spawn('node', [seedPath], { stdio: 'inherit', detached: true });
+  seed.unref();
+}, 10000);
+
