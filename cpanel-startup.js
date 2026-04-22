@@ -5,6 +5,18 @@ const fs = require('fs');
 console.log('🚀 Zelalem Motors: Bootstrapping for cPanel...');
 console.log('📍 __dirname:', __dirname);
 
+// Deep log helper
+function logDir(dir) {
+  try {
+    const files = fs.readdirSync(dir);
+    console.error(`📂 Content of ${dir}:`, files);
+    return files;
+  } catch (e) {
+    console.error(`❌ Failed to read ${dir}:`, e.message);
+    return [];
+  }
+}
+
 // Helper to find file regardless of case
 function findCorrectPath(base, targetPath) {
   const parts = targetPath.split('/');
@@ -12,15 +24,12 @@ function findCorrectPath(base, targetPath) {
   
   for (const part of parts) {
     if (part === '.' || part === '') continue;
-    try {
-      const files = fs.readdirSync(current);
-      const match = files.find(f => f.toLowerCase() === part.toLowerCase());
-      if (match) {
-        current = path.join(current, match);
-      } else {
-        return null;
-      }
-    } catch (e) {
+    const files = logDir(current);
+    const match = files.find(f => f.toLowerCase() === part.toLowerCase());
+    if (match) {
+      current = path.join(current, match);
+    } else {
+      console.error(`❌ Could not find "${part}" in ${current}`);
       return null;
     }
   }
@@ -49,8 +58,6 @@ services.forEach(s => {
     });
     child.unref();
     console.log(`✅ Started: ${fullPath}`);
-  } else {
-    console.error(`❌ NOT FOUND (checked case-insensitive): ${s}`);
   }
 });
 
@@ -59,16 +66,14 @@ const gatewayPath = findCorrectPath(__dirname, 'apps/api-gateway/src/index.js');
 if (gatewayPath && fs.existsSync(gatewayPath)) {
   console.log(`✅ Gateway found: ${gatewayPath}`);
   require(gatewayPath);
-} else {
-  console.error('❌ Gateway NOT FOUND. Printing root content:');
-  console.error(fs.readdirSync(__dirname));
 }
 
 // 3. Seed
 setTimeout(() => {
   const seedPath = findCorrectPath(__dirname, 'seed.js');
   if (seedPath) spawn('node', [seedPath], { stdio: 'inherit', detached: true }).unref();
-}, 20000);
+}, 25000);
+
 
 
 
