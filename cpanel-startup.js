@@ -3,10 +3,31 @@ const path = require('path');
 const fs = require('fs');
 
 console.log('🚀 Zelalem Motors: Bootstrapping for cPanel...');
-console.log('📍 Script Directory (__dirname):', __dirname);
-console.log('📂 Working Directory (process.cwd()):', process.cwd());
+console.log('📍 __dirname:', __dirname);
 
-// 1. Start the 7 Microservices in the background immediately
+// Helper to find file regardless of case
+function findCorrectPath(base, targetPath) {
+  const parts = targetPath.split('/');
+  let current = base;
+  
+  for (const part of parts) {
+    if (part === '.' || part === '') continue;
+    try {
+      const files = fs.readdirSync(current);
+      const match = files.find(f => f.toLowerCase() === part.toLowerCase());
+      if (match) {
+        current = path.join(current, match);
+      } else {
+        return null;
+      }
+    } catch (e) {
+      return null;
+    }
+  }
+  return current;
+}
+
+// 1. Start the 7 Microservices
 const services = [
   'apps/services/crm/src/index.js',
   'apps/services/vehicle/src/index.js',
@@ -17,43 +38,38 @@ const services = [
   'apps/services/analytics/src/index.js'
 ];
 
-console.log('📦 Starting microservices in background...');
-services.forEach(servicePath => {
-  const fullPath = path.join(__dirname, servicePath);
-  if (fs.existsSync(fullPath)) {
+console.log('📦 Starting microservices...');
+services.forEach(s => {
+  const fullPath = findCorrectPath(__dirname, s);
+  if (fullPath && fs.existsSync(fullPath)) {
     const child = spawn('node', [fullPath], { 
       stdio: 'inherit',
       detached: true,
       env: { ...process.env, PORT: undefined }
     });
     child.unref();
-    console.log(`✅ Started: ${servicePath}`);
+    console.log(`✅ Started: ${fullPath}`);
   } else {
-    console.error(`❌ Microservice NOT FOUND at: ${fullPath}`);
+    console.error(`❌ NOT FOUND (checked case-insensitive): ${s}`);
   }
 });
 
-// 2. Start the API Gateway in the SAME process
-console.log('🌐 Locating API Gateway...');
-const gatewayPath = path.join(__dirname, 'apps/api-gateway/src/index.js');
-
-if (fs.existsSync(gatewayPath)) {
-  console.log(`✅ Gateway found! Starting: ${gatewayPath}`);
+// 2. API Gateway
+const gatewayPath = findCorrectPath(__dirname, 'apps/api-gateway/src/index.js');
+if (gatewayPath && fs.existsSync(gatewayPath)) {
+  console.log(`✅ Gateway found: ${gatewayPath}`);
   require(gatewayPath);
 } else {
-  console.error(`❌ Gateway NOT FOUND at: ${gatewayPath}`);
-  console.log('📂 Content of current directory:', fs.readdirSync(__dirname));
+  console.error('❌ Gateway NOT FOUND. Printing root content:');
+  console.error(fs.readdirSync(__dirname));
 }
 
-// 3. Run the seed script after a 20-second delay
+// 3. Seed
 setTimeout(() => {
-  console.log('🌱 Attempting to seed database...');
-  const seedPath = path.join(__dirname, 'seed.js');
-  if (fs.existsSync(seedPath)) {
-    const seed = spawn('node', [seedPath], { stdio: 'inherit', detached: true });
-    seed.unref();
-  }
+  const seedPath = findCorrectPath(__dirname, 'seed.js');
+  if (seedPath) spawn('node', [seedPath], { stdio: 'inherit', detached: true }).unref();
 }, 20000);
+
 
 
 
